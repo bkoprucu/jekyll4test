@@ -1,11 +1,11 @@
 ---
 title: Second post title
-layout: mylayout
+#layout: mylayout
 date:   2023-08-15 14:50 +0200
 ---
 
-Hello there
+## Hello there
 
-## This is a header
+This is second post
 
 
