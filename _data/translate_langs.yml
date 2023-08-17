@@ -1,0 +1,18 @@
+# Translate languages
+# langs refer to https://cloud.google.com/translate/docs/languages
+
+# - lang: en
+#   img: https://cdn.countryflags.com/thumbs/united-kingdom/flag-400.png
+#   text: English
+
+# - lang: de
+#   img: https://cdn.countryflags.com/thumbs/germany/flag-400.png
+#   text: Deutsch
+
+# - lang: tr
+#   img: https://cdn.countryflags.com/thumbs/turkey/flag-400.png
+#   text: Türkçe
+
+# - lang: se
+#   img: https://cdn.countryflags.com/thumbs/sweden/flag-400.png
+#   text: Svenska

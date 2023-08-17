@@ -5,4 +5,4 @@ permalink: /tags/
 ---
 
 
-Here some tags:
+Some tags:
