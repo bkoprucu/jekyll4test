@@ -21,7 +21,7 @@ $white-color: #fdfdfd !default;
 
 $table-text-align: left !default;
 
-$header-height: $base-line-height * $base-font-size * 2.85 !default;
+$header-height: $base-line-height * $base-font-size * 2.5 !default;
 $header-text-color: invert($theme-color) !default;
 $header-background-color: $theme-color !default;
 
@@ -62,11 +62,11 @@ $on-laptop:        800px !default;
   "yat/base",
   "yat/layout",
   "yat/dark",
-  "yat/custom-styles",
   "misc/theme-toggle",
   "misc/article-menu",
   "misc/common-list",
   "misc/google-translate",
   "misc/gitment",
-  "misc/click-to-top"
+  "misc/click-to-top",
+  "yat/custom-styles"
 ;

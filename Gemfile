@@ -23,6 +23,9 @@ group :jekyll_plugins do
   gem "jekyll-sitemap", "~> 1.4"
   gem "jekyll-paginate", "~> 1.1"
   gem "jekyll-feed", "~> 0.12"
+  #gem "jekyll-seo-tag", "~> 2.1"
+  gem "jekyll-spaceship"
+
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -37,4 +40,4 @@ end
 
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+#gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
