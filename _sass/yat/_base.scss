@@ -294,3 +294,17 @@ table {
   overflow: hidden;
 }
 
+
+// --------------------
+
+.icon-moon {
+  width: 18px;
+  height: 24px;
+  background-position: 0 0;
+  vertical-align: middle;
+}
+.svg-icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(/assets/images/icon/sprite.svg);
+}

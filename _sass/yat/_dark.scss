@@ -86,6 +86,21 @@ html[data-theme="dark"]  {
     }
   }
 
+  // ------------------
+  .svg-icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(/assets/images/icon/sprite-dark.svg);
+  }
+
+  .icon-moon {
+    width: 18px;
+    height: 24px;
+    background-position: 0 0;
+    vertical-align: middle;
+  }
+  // ------------------
+
   .site-footer {
     color: #eee;
     background-color: $dark-header-background-color;

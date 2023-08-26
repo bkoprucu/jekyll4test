@@ -43,8 +43,6 @@ google_analytics: false
 
 markdown: kramdown
 
-content_width: 1000px
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
