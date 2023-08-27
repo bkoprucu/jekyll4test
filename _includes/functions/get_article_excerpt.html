@@ -1,5 +1,5 @@
-{% if post.exc %}
-  {% assign return = post.exc %}
+{% if post.excerpt %}
+  {% assign return = post.excerpt %}
 {% else %}
   {% if include.params.article %}
     {% assign article = include.params.article %}
@@ -19,10 +19,6 @@
       | default: 350 %}
   {% endif %}
 
-
   {% assign _article = article | strip_html %}
-
   {% assign return = _article | truncate: excerpt_size %}
 {% endif %}
-
-

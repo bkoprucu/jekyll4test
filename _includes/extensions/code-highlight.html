@@ -6,20 +6,20 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 
 {%- assign name = 'code_badge.enabled' -%}
-{%- include functions.html func='get_value' default='false' -%}
+{%- include functions.html func='get_value' default='true' -%}
 {%- assign badge_enabled = false -%}
 
 {%- assign name = 'code_badge.color' -%}
-{%- include functions.html func='get_value' default='#fff' -%}
+{%- include functions.html func='get_value' default='#eee' -%}
 {%- assign badge_color = return -%} 
 
 {%- assign name = 'code_badge.background_color' -%}
 {%- include functions.html func='get_value' default='#000' -%}
 {%- assign badge_background_color = return -%}
 
-{%- assign name = 'code_badge.text_transform' -%}
-{%- include functions.html func='get_value' default='uppercase' -%}
-{%- assign badge_text_transform = return -%}
+ {%- assign name = 'code_badge.text_transform' -%}
+ {%- include functions.html func='get_value' default='uppercase' -%}
+ {%- assign badge_text_transform = return -%}
 
 <script>
   hljs.highlightAll();
