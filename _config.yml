@@ -39,11 +39,9 @@ debug: true
 
 paginate: 6
 google_analytics: false
-
+seo_enabled: false
 
 markdown: kramdown
-
-content_width: 1000px
 
 plugins:
   - jekyll-feed
