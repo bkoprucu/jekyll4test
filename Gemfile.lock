@@ -97,6 +97,7 @@ DEPENDENCIES
   jekyll (~> 4.3.2)
   jekyll-feed (~> 0.12)
   jekyll-paginate (~> 1.1)
+  jekyll-seo-tag (~> 2.1)
   jekyll-sitemap (~> 1.4)
   jekyll-spaceship
   jekyll-theme-yat
