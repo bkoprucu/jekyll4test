@@ -44,7 +44,8 @@ html {
       }
     } */
   }
-  @include media-query($on-palm) {
+
+  @media screen and (max-height: $on-palm) {
     &[data-scroll-status='down'] {
       header.site-header {
         top: -$header-height;
@@ -54,13 +55,9 @@ html {
       }
     }
   }
-
 }
 
 
-/**
- * Site header
- */
 .site-header {
   background-color: $header-background-color;
   height: $header-height;
