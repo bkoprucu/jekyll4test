@@ -29,6 +29,7 @@ header_pages:
   - categories.html
   - tags.html
   - about.md
+  - archives.html
 
 yat:
   date_format: "%b %d, %Y"
