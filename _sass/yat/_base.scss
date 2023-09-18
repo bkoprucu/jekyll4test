@@ -179,22 +179,23 @@ pre {
 
 
 
-/**
- * Wrapper
- */
+/* Wrapper */
 .wrapper {
   max-width: $content-width;
   margin: auto;
   padding-right: $spacing-unit - 15;
   padding-left: $spacing-unit + 10;
   @extend %clearfix;
+
+  @include media-query($on-palm) {
+    margin: 0 10px;
+    padding: 0 10px;
+    max-width: unset;
+  }
 }
 
 
-
-/**
- * Clearfix
- */
+/* Clearfix */
 %clearfix:after {
   content: "";
   display: table;
@@ -202,9 +203,7 @@ pre {
 }
 
 
-/**
- * Tables
- */
+/* Tables */
 table {
   display: block;
   margin-bottom: $spacing-unit;
@@ -215,8 +214,7 @@ table {
   overflow: auto;
 
   /*
-  tr {
-    
+  tr { 
     &:nth-child(even) {
       background-color: lighten($grey-color-light, 6%);
     }
@@ -225,7 +223,6 @@ table {
   th, td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
-
   
   th {
     background-color: lighten($grey-color-light, 3%);
@@ -239,9 +236,7 @@ table {
   */
 }
 
-/**
- * Flex layout
- */
+/* Flex layout */
 %flex {
   display: flex;
 }
@@ -295,7 +290,7 @@ table {
 }
 
 
-// --------------------
+// -----------
 
 .icon-moon {
   width: 18px;
