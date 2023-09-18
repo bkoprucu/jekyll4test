@@ -185,7 +185,7 @@ pre {
 .wrapper {
   max-width: $content-width;
   margin: auto;
-  padding-right: $spacing-unit - 10;
+  padding-right: $spacing-unit - 15;
   padding-left: $spacing-unit + 10;
   @extend %clearfix;
 }

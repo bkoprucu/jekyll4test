@@ -83,15 +83,6 @@ html {
     padding: 0;
     max-width: 100%;
     transition: 0.2s margin;
-
-    @include media-query(1024px) {
-      margin: 0 20px;
-      max-width: unset;
-    }
-  }
-
-  a {
-    text-decoration: none;
   }
 
   .site-header-inner {
@@ -144,7 +135,7 @@ html {
     }
   }
 
-  @include media-query($on-laptop) {
+  @include media-query($on-palm) {
     position: absolute;
     top: 0;
     text-align: left;
@@ -253,7 +244,6 @@ html {
  */
 .page-content {
   @extend %flex-1; /* <-- Keep footer on the bottom */
-  -ms-flex: none; /* <-- Fix IE footer issue */
   padding: $spacing-unit * 2 0;
   padding-top: 72px;
 }
