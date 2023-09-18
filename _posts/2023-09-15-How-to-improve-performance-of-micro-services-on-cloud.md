@@ -1,12 +1,12 @@
 ---
 author: "Berk Koprucu"
 exc: "We look at some Java code and we wonder"
-categories: [Test]
 # published: false
 tags: [AWS, Spring]
+categories: [Java, Test, How to improve cloud performance]
 ---
 
-## Third  post
+## How to improve performance?
 
 Here is some java code:
 

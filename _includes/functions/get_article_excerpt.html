@@ -1,24 +1,10 @@
-{% if post.excerpt %}
-  {% assign return = post.excerpt %}
+
+{% if post.exc %}
+  {% assign return = post.exc %}
 {% else %}
+  {% assign excerpt_size = site.excerpt_size | default: 350 %}
   {% if include.params.article %}
     {% assign article = include.params.article %}
   {% endif %}
-
-  {% if include.params.lang %}
-    {% assign lang = include.params.lang %}
-  {% else %}
-    {% assign lang = lang | default: site.lang | default: "en" %}
-  {% endif %}
-
-  {% if include.params.excerpt_size %}
-    {% assign excerpt_size = include.params.excerpt_size %}
-  {% else %}
-    {% assign excerpt_size = excerpt_size
-      | default: site.excerpt_size
-      | default: 350 %}
-  {% endif %}
-
-  {% assign _article = article | strip_html %}
-  {% assign return = _article | truncate: excerpt_size %}
+  {% assign return = article | strip_html | truncate: excerpt_size %}
 {% endif %}

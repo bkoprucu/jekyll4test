@@ -1,25 +1,26 @@
-$dark-background-color:       #0e0e0e !default;
+$dark-background-color: #0e0e0e !default;
 $dark-text-color: #bbb !default;
+$text-color: $dark-text-color;
 
 html[data-theme="dark"]  {
-  &[data-scroll-status='top'] {
-    header.site-header-transparent {
-      &.site-header {
-        @include media-query($on-laptop) {
-          .page-link {
-            color: #f8f8f8;
-          }
-        }
-      }
-    }
+  // &[data-scroll-status='top'] {
+  //   header.site-header-transparent {
+  //     &.site-header {
+  //       @include media-query($on-laptop) {
+  //         .page-link {
+  //           color: #f8f8f8;
+  //         }
+  //       }
+  //     }
+  //   }
 
-    footer.site-footer {
-      .site-footer-inner {
-        border-top: solid 1px #2f2f2f !important;
-        transition: 0s;
-      }
-    }
-  }
+  //   footer.site-footer {
+  //     .site-footer-inner {
+  //       border-top: solid 1px #2f2f2f !important;
+  //       transition: 0s;
+  //     }
+  //   }
+  // }
 
   body {
     color: $dark-text-color;
@@ -28,7 +29,7 @@ html[data-theme="dark"]  {
 
   *:not(pre) > code {
     color: $dark-text-color;
-    background-color: #454545;
+    background-color: #444;
   }
 
   blockquote {
@@ -38,12 +39,9 @@ html[data-theme="dark"]  {
   /*  
   table {
     color: #9d9d9d;
-
     th {
       background-color: #050505;
     }
-
-    
     tr:nth-child(even) {
       background-color: #080808;
     }
@@ -51,20 +49,6 @@ html[data-theme="dark"]  {
   */
 
   .site-header {
-    background-color: $dark-header-background-color;
-
-    .site-brand {
-      .site-brand-inner {
-        &, &:visited {
-          color: #f8f8f8;
-        }
-      }
-    }
-
-    .site-nav .page-link {
-      color: #f8f8f8;
-    }
-
     .ct-language-dropdown {
       color: #f8f8f8;
       background-color: $dark-background-color;
@@ -86,7 +70,6 @@ html[data-theme="dark"]  {
     }
   }
 
-  // ------------------
   .svg-icon {
     display: inline-block;
     background-repeat: no-repeat;
@@ -99,24 +82,22 @@ html[data-theme="dark"]  {
     background-position: 0 0;
     vertical-align: middle;
   }
-  // ------------------
 
   .site-footer {
-    color: #eee;
-    background-color: $dark-header-background-color;
+    background-color: $header-background-color;
   }
 
   .left-vsplit:before {
     background-color: #9a9a9a;
   }
 
-  .page-banner {
+/*.page-banner {
     .page-banner-img {
       & > *:first-child {
         opacity: 0.718;
       }
     }
-  }
+  } */
 
   .pagination {
     .post-link {
@@ -140,7 +121,7 @@ html[data-theme="dark"]  {
     }
 
     .post-tags .post-tag:hover {
-      color: #d7d7d7;
+      color: #ddd;
     }
   }
 
@@ -210,27 +191,39 @@ html[data-theme="dark"]  {
 
   .post-menu {
     .post-menu-title {
-      color: #ddd;
+      color: $dark-text-color;
     }
 
     .post-menu-content {
       ul {
-        border-left: 1px solid #787878;
-
-        .active {
-          background-color: #2d2d2d;
-          border-left: 2px solid #aaa;
-        }
+        border-left: 1px solid #666;
 
         a {
-          color: $dark-text-color;
+          color: #777;
+          &:hover {
+            color: #ddd !important;
+          }
         }
 
-        a:hover {
-          color: #fff !important;
+        .active {
+          background-color: $dark-background-color;
+          color: #ccc;
+          border-left: 2px solid #ccc;
+          &:hover {
+            background-color: #444;
+          }
+          a {
+            color: #ccc;
+          }
         }
       }
     }
   }
-}
 
+  #footer-social {
+    a:hover {
+        color: #ccc;
+    }
+  }
+
+}

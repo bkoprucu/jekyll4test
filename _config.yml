@@ -29,9 +29,12 @@ header_pages:
   - categories.html
   - tags.html
   - about.md
+  - archives.html
 
 yat:
   date_format: "%b %d, %Y"
+
+brandimage_enabled: false # Logo image on header bar
 
 timezone: Europe/Stockholm
 
@@ -40,6 +43,7 @@ debug: true
 paginate: 6
 google_analytics: false
 seo_enabled: false
+excerpt_size: 350
 
 markdown: kramdown
 
