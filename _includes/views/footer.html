@@ -1,8 +1,6 @@
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <!-- <div class="wrapper"> -->
-    <div class="site-footer-inner">
+  <div class="site-footer-inner">
         {%- assign currentYear = 'now' | date: "%Y" -%}
         {%- assign copyright = site.copyright
             | replace: '{currentYear}', currentYear
@@ -12,7 +10,7 @@
             | replace: '(cleft)', '<span class="copyleft">&copy;</span>'
         -%}
       
-      <div id="footer-social">
+    <div id="footer-social">
       {% for entry in site.data.contact %}
         {% if entry.type == 'rss' %}
           {% assign url = '/feed.xml' | relative_url %}
@@ -34,9 +32,9 @@
           </a>
           &nbsp;    
       {% endfor %}
-      </div>
-      <div style="padding-top: 2rem;">{{ copyright }}</div>
     </div>
-    
-  <!-- </div> -->
+
+    <div style="padding-top: 2rem;">{{ copyright }}</div>
+
+  </div>
 </footer>
