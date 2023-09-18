@@ -2,7 +2,8 @@
   <i class="fa fa-arrow-up"></i>
 </div>
 <script>
-  (function () {
+  (function () {    
+    if(window.innerWidth > 800 && window.innerHeight > 500) {
     const clickToTop = document.getElementById('click-to-top');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 1000) {
@@ -14,5 +15,6 @@
     clickToTop.addEventListener('click', () => {
       window.smoothScrollTo(0);
     });
+    }
   })();
 </script>
