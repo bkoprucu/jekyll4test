@@ -193,23 +193,26 @@ html {
   @include relative-font-size(1.0);
   color: $footer-text-color;
   background-color: $footer-background-color;
-  text-align: left;
+  text-align: center;
   // transition: background-color 0.2s;
 
   .site-footer-inner {
-    transition: border-top 0.2s;
-    padding: $spacing-unit * 1.8 0;
+    // transition: border-top 0.2s;
+    padding: $spacing-unit 0 $spacing-unit * .6;
   }
 
-  a {
-    $a-color: $brand-color;
-    color: $a-color;
-
-    &:hover {
-      color: lighten($a-color, 10%);
+  #footer-social {
+    font-size: 26px;
+    a {
+      color: $footer-text-color;
+      text-decoration: none;
+      &:hover {
+        color: $text-color;
+      }
     }
-  }
+  }  
 }
+
 
 .copyleft {
   display: inline-block;

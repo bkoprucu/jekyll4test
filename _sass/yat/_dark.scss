@@ -1,5 +1,6 @@
-$dark-background-color:       #0e0e0e !default;
+$dark-background-color: #0e0e0e !default;
 $dark-text-color: #bbb !default;
+$text-color: $dark-text-color;
 
 html[data-theme="dark"]  {
   &[data-scroll-status='top'] {
@@ -38,12 +39,9 @@ html[data-theme="dark"]  {
   /*  
   table {
     color: #9d9d9d;
-
     th {
       background-color: #050505;
     }
-
-    
     tr:nth-child(even) {
       background-color: #080808;
     }
@@ -86,7 +84,6 @@ html[data-theme="dark"]  {
     }
   }
 
-  // ------------------
   .svg-icon {
     display: inline-block;
     background-repeat: no-repeat;
@@ -99,10 +96,8 @@ html[data-theme="dark"]  {
     background-position: 0 0;
     vertical-align: middle;
   }
-  // ------------------
 
   .site-footer {
-    color: #eee;
     background-color: $dark-header-background-color;
   }
 
@@ -110,13 +105,13 @@ html[data-theme="dark"]  {
     background-color: #9a9a9a;
   }
 
-  .page-banner {
+/*.page-banner {
     .page-banner-img {
       & > *:first-child {
         opacity: 0.718;
       }
     }
-  }
+  } */
 
   .pagination {
     .post-link {
@@ -232,5 +227,10 @@ html[data-theme="dark"]  {
       }
     }
   }
-}
 
+  #footer-social {
+    a:hover {
+        color: #ccc;
+    }
+  }  
+}
