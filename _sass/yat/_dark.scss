@@ -3,24 +3,24 @@ $dark-text-color: #bbb !default;
 $text-color: $dark-text-color;
 
 html[data-theme="dark"]  {
-  &[data-scroll-status='top'] {
-    header.site-header-transparent {
-      &.site-header {
-        @include media-query($on-laptop) {
-          .page-link {
-            color: #f8f8f8;
-          }
-        }
-      }
-    }
+  // &[data-scroll-status='top'] {
+  //   header.site-header-transparent {
+  //     &.site-header {
+  //       @include media-query($on-laptop) {
+  //         .page-link {
+  //           color: #f8f8f8;
+  //         }
+  //       }
+  //     }
+  //   }
 
-    footer.site-footer {
-      .site-footer-inner {
-        border-top: solid 1px #2f2f2f !important;
-        transition: 0s;
-      }
-    }
-  }
+  //   footer.site-footer {
+  //     .site-footer-inner {
+  //       border-top: solid 1px #2f2f2f !important;
+  //       transition: 0s;
+  //     }
+  //   }
+  // }
 
   body {
     color: $dark-text-color;
@@ -29,7 +29,7 @@ html[data-theme="dark"]  {
 
   *:not(pre) > code {
     color: $dark-text-color;
-    background-color: #454545;
+    background-color: #444;
   }
 
   blockquote {
@@ -49,20 +49,6 @@ html[data-theme="dark"]  {
   */
 
   .site-header {
-    background-color: $dark-header-background-color;
-
-    .site-brand {
-      .site-brand-inner {
-        &, &:visited {
-          color: #f8f8f8;
-        }
-      }
-    }
-
-    .site-nav .page-link {
-      color: #f8f8f8;
-    }
-
     .ct-language-dropdown {
       color: #f8f8f8;
       background-color: $dark-background-color;
@@ -98,7 +84,7 @@ html[data-theme="dark"]  {
   }
 
   .site-footer {
-    background-color: $dark-header-background-color;
+    background-color: $header-background-color;
   }
 
   .left-vsplit:before {
@@ -135,7 +121,7 @@ html[data-theme="dark"]  {
     }
 
     .post-tags .post-tag:hover {
-      color: #d7d7d7;
+      color: #ddd;
     }
   }
 
@@ -214,7 +200,6 @@ html[data-theme="dark"]  {
 
         a {
           color: #777;
-          // color: darken($text-color, 10%);  
           &:hover {
             color: #ddd !important;
           }
