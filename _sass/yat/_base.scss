@@ -126,10 +126,10 @@ a {
  */
 blockquote {
   color: $grey-color;
-  border-left: 4px solid $grey-color-light;
-  padding-left: calc($spacing-unit / 2);
-  @include relative-font-size(1.125);
-  letter-spacing: -1px;
+  border-left: 5px solid $grey-color-light;
+  padding: 25px 25px 5px;
+  // padding-left: calc($spacing-unit / 2);
+  @include relative-font-size(1.1);
   font-style: italic;
 
   > :last-child {

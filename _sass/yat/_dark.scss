@@ -143,21 +143,22 @@ html[data-theme="dark"]  {
       }
     }
   }
-/*
+
   .post {
     .post-header {
-      border-bottom: 1px solid #555;
+        border-bottom: 1px solid $muted-color;
     }
 
-    .post-content {
-      img:not(.emoji):not([raw]) {
-        background-color: #ffffff33;
-      }
-    }
+    // .post-content {
+    //   img:not(.emoji):not([raw]) {
+    //     background-color: #ffffff33;
+    //   }
+    // } 
   }
-*/
 
+  
   .post-nav {
+    border-top: 1px solid $muted-color;
     a {
       background-color: $header-background-color;
       color: $text-color;
