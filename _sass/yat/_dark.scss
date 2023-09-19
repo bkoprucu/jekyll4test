@@ -170,13 +170,14 @@ html[data-theme="dark"]  {
   }
 
   .post-related {
+    
     & > *:first-child {
       color: $text-color;
     }
 
-    a: {
-      color: $muted-color;
-    }
+    // a: {
+    //   color: $text-color;
+    // }
 
     a:visited:after {
       background-color: $dark-background-color;
@@ -186,25 +187,25 @@ html[data-theme="dark"]  {
       color: $dark-background-color;
     }
 
-    a:hover {
-      color: $bright-color;
+    ul {
+      a {
+        color: #888;
+        text-decoration: none;
+        &:hover {
+          color: #ddd;
+        }
+      }
+
     }
   }
 
   .common-list {
     li {
-      border-bottom: solid 1px #40404088;
-
       a {
-        color: #aaa;
+        color: #999;
       }
-
       a:hover {
-        background-color: #272727;
-      }
-
-      span {
-        background-color: #333;
+        color: $bright-color;
       }
     }
   }
