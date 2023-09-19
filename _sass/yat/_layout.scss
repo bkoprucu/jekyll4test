@@ -45,7 +45,7 @@ html {
     } */
   }
 
-  @media screen and (max-height: $on-palm) {
+  @media screen and ((max-height: ($on-palm - 200)) or (max-width: $on-palm)) {
     &[data-scroll-status='down'] {
       header.site-header {
         top: -$header-height;
@@ -54,7 +54,7 @@ html {
         top: 20px;
       }
     }
-  }
+  } 
 }
 
 
@@ -81,7 +81,7 @@ html {
     padding: 0;
     max-width: 100%;
     transition: 0.2s margin;
-    @include media-query(800px) {
+    @include media-query($on-palm) {
       margin: 0 20px;
       max-width: unset;
     }
@@ -180,18 +180,14 @@ html {
   }
 }
 
-/**
- * Site footer
- */
+
 .site-footer {
   @include relative-font-size(1.0);
   color: $footer-text-color;
   background-color: $footer-background-color;
   text-align: center;
-  // transition: background-color 0.2s;
 
   .site-footer-inner {
-    // transition: border-top 0.2s;
     padding: $spacing-unit 0 $spacing-unit * .6;
   }
 
@@ -238,9 +234,7 @@ html {
   }
 }
 
-/**
- * Page content
- */
+/* Page content */
 .page-content {
   @extend %flex-1; /* <-- Keep footer on the bottom */
   padding: $spacing-unit * 2 0;
@@ -255,9 +249,8 @@ html {
   @include relative-font-size(1.75);
 }
 
-/**
- * Pagination page
- */
+
+/* Pagination */
 .pagination {
   .post-list {
     margin-left: 0;
@@ -371,11 +364,10 @@ html {
 }
 
 
-/**
- * Posts
- */
+/* Posts */
 .post {
   @extend %post-header;
+  max-width: 980px;
 
   .post-header {
     margin: 50px auto 60px;
@@ -496,9 +488,7 @@ html {
 }
 
 
-/**
- * Posts misc
- */
+/* Posts misc */
 .post-nav {
   display: flex;
   justify-content: space-between;
@@ -520,7 +510,6 @@ html {
     padding: 4px;
     margin-right: 8px;
     transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
   }
 
   .next:after {
@@ -531,14 +520,11 @@ html {
     padding: 4px;
     margin-left: 8px;
     transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
   }
 }
 
 
-/**
- * Archives page
- */
+/* Archives page */
 .page-archives {
   .page-archives-list {
     margin-left: 0;
@@ -561,9 +547,7 @@ html {
 }
 
 
-/**
- * Page banner
- */
+/* Page banner */
 .page-banner {
   display: block;
   position: relative;
@@ -679,11 +663,9 @@ html {
 }
 
 
-/**
- * Layout and sidebar
- */
+/* Layout and sidebar */
 .framework {
-    @extend %flex;
+  @extend %flex;
 
   .main {
     @extend %flex-1;
@@ -691,21 +673,16 @@ html {
 
   .sidebar {
     padding-left: 8px;
-    transition: top 0.2s, display 0.2s;
-
+    transition: top 0.2s;
     @include flex-sticky($header-height + 20px);
-
     @include media-query($on-laptop) {
       display: none;
     }
-
   }
 }
 
 
-/**
- * Segments page
- */
+/* Segments page */
 .page-segments {
   .page-segments-list {
     margin-left: 0;

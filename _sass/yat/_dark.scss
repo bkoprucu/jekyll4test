@@ -206,7 +206,7 @@ html[data-theme="dark"]  {
         }
 
         .active {
-          background-color: $dark-background-color;
+          background-color: $header-background-color;
           color: #ccc;
           border-left: 2px solid #ccc;
           &:hover {
