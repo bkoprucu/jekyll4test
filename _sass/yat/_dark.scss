@@ -165,7 +165,7 @@ html[data-theme="dark"]  {
       transition: background-color .3s;
       &:hover {
         color: $bright-color;
-        background-color: $muted-color;
+        background-color: #444;
       }
     }
   }
@@ -201,12 +201,18 @@ html[data-theme="dark"]  {
   }
 
   .common-list {
+    
     li {
+      border-bottom: solid 1px #333;
       a {
         color: #999;
       }
       a:hover {
         color: $bright-color;
+        background-color: $header-background-color;
+      }
+      span {
+        color: $dark-background-color;
       }
     }
   }
