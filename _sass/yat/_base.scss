@@ -144,12 +144,12 @@ blockquote {
  */
 pre,
 code {
-  @include relative-font-size(0.85);
+  @include relative-font-size(0.8);
   color: $text-color;
 }
 
 *:not(pre) > code {
-  padding: 3px 6px;
+  padding: 3px 5px;
   border-radius: 3px;
   background-color: #eee;
   margin: 0 5px;
@@ -171,7 +171,7 @@ pre {
     margin-bottom: 0;
 
     .gutter, .code {
-      padding: 6px;
+      padding: 5px;
       border: none;
     }
   }

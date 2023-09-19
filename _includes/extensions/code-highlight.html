@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github-dark-dimmed.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script> -->
 
@@ -22,6 +22,10 @@
  {%- assign badge_text_transform = return -%}
 
 <script>
+  hljs.configure({
+    languages: [ "java","kotlin","yaml","json","xml","plaintext","bash","shell","sql","javascript","graphql","markdown","c","cpp","csharp","css","scss","diff","go"],
+    ignoreUnescapedHTML: true
+  });  
   hljs.highlightAll();
   hljs.initLineNumbersOnLoad();
 </script>
@@ -42,9 +46,9 @@
     -ms-user-select: none;
     user-select: none;
   }
-  td.hljs-ln-code {
-    padding-left: 10px;
-  }
+  /* td.hljs-ln-code {
+    padding-left: 5px;
+  } */
 
   code {
     white-space: pre-wrap;
