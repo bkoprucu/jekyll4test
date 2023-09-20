@@ -3,7 +3,7 @@ author: "Berk Koprucu"
 exc: "We look at some Java code and we wonder"
 # published: false
 tags: [AWS, Spring]
-categories: [Java, Test, How to improve cloud performance]
+categories: [Java, Test, How to improve performance]
 ---
 
 ## How to improve performance?

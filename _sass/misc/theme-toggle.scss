@@ -1,8 +1,8 @@
 .theme-toggle {
   position: relative;
   width: $base-font-size * 7.65;
-  margin-top: 10px;
-  margin-right: 60px;
+  margin-top: 12px;
+  margin-right: 50px;
   margin-left: auto;
   transition: .3s cubic-bezier(.4,.03,0,1);
 
@@ -69,14 +69,13 @@
     color: #ccc;
   }
 
-  @include media-query(1024px) {
-    margin-right: 35px;
-  }
+  // @include media-query(1024px) {
+  //   margin-right: 35px;
+  // }
 
   @include media-query($on-palm) {
     width: $base-font-size * 6.65;
     margin-right: 20px;
-
     .names {
       font-size: .85em;
     }

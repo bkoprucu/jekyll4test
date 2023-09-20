@@ -1,0 +1,32 @@
+
+.about-box {
+  // padding-left: 35px;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #e3e3e3;
+  h5 {
+    margin: 0 0 15px 12px;
+  }
+  a {
+    text-decoration: none;
+    color: #777;
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+#about-box-img {
+  max-width: 180px;
+  border-radius: 6px;
+  margin-left: 40px;
+  opacity: .9;
+}
+
+#about-box-desc {
+  margin-left: 15px;
+  max-width: 240px;
+  font-size: 15px;
+  color: #777;
+
+}

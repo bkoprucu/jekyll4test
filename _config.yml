@@ -14,7 +14,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   System Design, Software Architecture, Backend, Cloud Computing, Kubernetes, AWS
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jekyll4test.pages.dev/" # the base hostname & protocol for your site, e.g. http://example.com
-favicon: "/favicon.png"
+# favicon: "/favicon.png"
+favicon: "/favicon.svg"
 
 #twitter_username: jekyllrb
 #github_username:  jekyll

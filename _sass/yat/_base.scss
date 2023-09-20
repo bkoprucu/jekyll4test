@@ -183,8 +183,8 @@ pre {
 .wrapper {
   max-width: $content-width;
   margin: auto;
-  padding-right: $spacing-unit - 30;
-  padding-left: $spacing-unit + 10;
+  padding-right: 35px;
+  padding-left: 60px;
   @extend %clearfix;
 
   @include media-query($on-palm) {
