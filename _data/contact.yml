@@ -5,39 +5,46 @@
 #  icon: "fab fa-twitter"
 
 - type: email
-  icon: 'fa fa-envelope'
+  # icon: 'fas fa-envelope-square'
+  #icon: 'fas fa-at'
+  icon: 'far fa-envelope'
   noblank: true # open link in current tab
   url: 'mailto:bkoprucu@gmail.com'
   title: 'Email'
 
 - type: linkedin
-  icon: 'fa fa-linkedin'
+  # icon: 'fab fa-linkedin'
+  icon: 'fab fa-linkedin'
   url: 'https://linkedin.com/in/koprucu'
   title: 'LinkedIn'
 
 - type: github
-  icon: 'fa fa-github'
+  # icon: 'fab fa-github-square'
+  icon: 'fab fa-github'
   url: 'https://github.com/bkoprucu'
   title: 'GitHub'
 
 - type: youtube
-  icon: 'fa fa-youtube'
+  # icon: 'fab fa-youtube-square'
+  icon: 'fab fa-youtube'
   url: 'https://youtube.com/@marchoftime'
   title: 'YouTube'
 
 - type: rss
-  icon: 'fa fa-rss'
+  # icon: 'fas fa-rss-square'
+  icon: 'fas fa-rss'
   noblank: true
-  url: "'/feed.xml' | relative_url"
   title: 'RSS'
 
+# - type: location
+#   icon: 'fas fa-map-marker-alt'
+#   noblank: true
+#   title: 'Stockholm - Sweden'
 
-# Uncomment and complete the url below to enable more contact options
-#
 # - type: mastodon
-#   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
+#   icon: 'fab fa-mastodon'
 #   url:  ''                  # Fill with your Mastodon account page, rel="me" will be applied for verification
 #
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
-#   url:  ''                  # Fill with your stackoverflow homepage
+#   url:  ''

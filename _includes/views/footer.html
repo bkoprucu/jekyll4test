@@ -2,13 +2,12 @@
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
   <div class="site-footer-inner">
         {%- assign currentYear = 'now' | date: "%Y" -%}
-        {%- assign copyright = site.copyright
+        {% assign copyright = site.copyright
             | replace: '{currentYear}', currentYear
             | replace: '{author}', site.author
             | replace: '(c)', '&copy;'
-            | replace: '(p)', '℗'
-            | replace: '(cleft)', '<span class="copyleft">&copy;</span>'
-        -%}
+            
+        %}
       
     <div id="footer-social">
       {% for entry in site.data.contact %}
@@ -24,7 +23,7 @@
               target="_blank"
               {% assign link_types = 'noopener noreferrer' %}
             {% endunless %}
-            {% unless link_types == empty %}
+            {% unless link_types == '' %}
               rel="{{ link_types }}"
             {% endunless %}
           >
