@@ -1,33 +1,29 @@
 #  The contact options.
 
-
-#- type: twitter
-#  icon: "fab fa-twitter"
-
 - type: email
   # icon: 'fas fa-envelope-square'
-  #icon: 'fas fa-at'
   icon: 'far fa-envelope'
   noblank: true # open link in current tab
-  url: 'mailto:bkoprucu@gmail.com'
-  title: 'Email'
+  prefix: 'mailto:'
+  url: 'bkoprucu@gmail.com'
+  title: 'bkoprucu@gmail.com'
 
 - type: linkedin
   # icon: 'fab fa-linkedin'
   icon: 'fab fa-linkedin'
-  url: 'https://linkedin.com/in/koprucu'
+  url: 'linkedin.com/in/koprucu'
   title: 'LinkedIn'
 
 - type: github
   # icon: 'fab fa-github-square'
   icon: 'fab fa-github'
-  url: 'https://github.com/bkoprucu'
+  url: 'github.com/bkoprucu'
   title: 'GitHub'
 
 - type: youtube
   # icon: 'fab fa-youtube-square'
   icon: 'fab fa-youtube'
-  url: 'https://youtube.com/@marchoftime'
+  url: 'youtube.com/@marchoftime'
   title: 'YouTube'
 
 - type: rss
@@ -35,6 +31,9 @@
   icon: 'fas fa-rss'
   noblank: true
   title: 'RSS'
+
+#- type: twitter
+#  icon: "fab fa-twitter"
 
 # - type: location
 #   icon: 'fas fa-map-marker-alt'

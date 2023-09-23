@@ -1,12 +1,12 @@
 
 .about-box {
-  // padding-left: 35px;
   margin-top: 40px;
   padding-top: 15px;
   border-top: 1px solid #e3e3e3;
   h5 {
     margin: 0 0 15px 12px;
   }
+  
   a {
     text-decoration: none;
     color: #777;
@@ -14,19 +14,28 @@
       color: #000;
     }
   }
+  i {
+    font-size: 20px;
+  }
 }
 
 #about-box-img {
-  max-width: 180px;
-  border-radius: 6px;
-  margin-left: 40px;
-  opacity: .9;
+  max-width: 170px;
+  border-radius: 8px;
+  margin-left: 50px;
 }
 
 #about-box-desc {
   margin-left: 15px;
   max-width: 240px;
-  font-size: 15px;
+  font-size: 14px;
   color: #777;
+}
 
+#about-box-social {
+  max-width: 160px;
+  margin-left: 50px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
 }

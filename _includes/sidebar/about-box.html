@@ -1,18 +1,23 @@
-<div class="about-box">
-  <h5>
-    <a href="/about">ABOUT ME</a>
-  </h5>
-
+<div class="about-box">  
   <a href="/about">
+    <h5>ABOUT ME</h5>
+  </a>
+  <a>  
     <img id="about-box-img" src="/assets/images/berk_small_sq.jpg" />
   </a>
+  <div id="about-box-social">
+    &nbsp;
+    {%- include views/social-list.html skip='rss' -%}
+  </div>
+
   <p id="about-box-desc">
     <br>
-    I am a software engineer
-    <br>
-    I do great software engineering
-    <br>
+    I am a software engineer.
+    I do great software engineering.<br>
     Contact if you want some consultancy etc.
+    <br><br>
+    
+    <br>
   </p> 
 </div>
 
