@@ -2,7 +2,7 @@
 .about-box {
   margin-top: 40px;
   padding-top: 15px;
-  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
   h5 {
     margin: 0 0 15px 12px;
   }
@@ -17,10 +17,14 @@
   i {
     font-size: 20px;
   }
+
+  // .aboutimg {
+  //   max-width: 180px;
+  // }
 }
 
 #about-box-img {
-  max-width: 170px;
+  max-width: 160px;
   border-radius: 8px;
   margin-left: 50px;
 }

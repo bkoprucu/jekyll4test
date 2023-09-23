@@ -182,7 +182,6 @@ html {
 
 
 .site-footer {
-
   color: $footer-text-color;
   background-color: $footer-background-color;
   text-align: center;
@@ -293,7 +292,7 @@ html {
   }
 
   .post-meta {
-    font-size: $base-font-size;
+    font-size: $base-font-size - 1;
     color: $grey-color;
     margin-bottom: $spacing-unit * 0.5;
   }
@@ -305,7 +304,7 @@ html {
   }
 
   .post-excerpt {
-    color: #777;
+    color: #333;
     word-break: break-word;
     overflow-wrap: break-word;
   }
@@ -315,10 +314,10 @@ html {
     text-decoration: none;
     border: 1px solid;
     padding: 2px 4px;
-    border-radius: 2px;
+    border-radius: 5px;
     transition: color 0.2s;
     margin-bottom: 8px;
-
+    font-size: $base-font-size - 2;
     &:not(:last-child) {
       margin-right: 8px;
     }
@@ -753,8 +752,9 @@ html {
   content: "";
   display: inline-block;
   width: 1px;
-  height: 10px;
-  margin: 0 10px;
-  background-color: #e3e3e3e3;
+  height: 11px;
+  margin: 0 12px 0 9px;
+  background-color: $grey-color;
   vertical-align: baseline;
 }
+
