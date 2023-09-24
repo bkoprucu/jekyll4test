@@ -1,9 +1,8 @@
 $dark-background-color: #0e0e0e !default;
 $dark-text-color: #bbb !default;
-$text-color: $dark-text-color;
 $footer-background-color: $header-background-color;
 $muted-color: #777;
-$bright-color: #ccc;
+$bold-color: #ddd;
 
 html[data-theme="dark"]  {
   /* &[data-scroll-status='top'] {
@@ -38,6 +37,12 @@ html[data-theme="dark"]  {
   blockquote {
     border-left: 4px solid #555;
   }
+
+  .post-meta {
+    color: $muted-color;
+  }
+
+
 
   /*  
   table {
@@ -119,14 +124,14 @@ html[data-theme="dark"]  {
     }
 
     .post-tags .post-tag:hover {
-      color: $bright-color;
+      color: $bold-color;
     }
   }
 
   .page-segments {
     li {
       a {
-        color: $bright-color;
+        color: $bold-color;
       }
 
       a:visited:after {
@@ -156,10 +161,10 @@ html[data-theme="dark"]  {
     border-top: 1px solid #444;
     a {
       background-color: $header-background-color;
-      color: $text-color;
+      color: $dark-text-color;
       transition: background-color .3s;
       &:hover {
-        color: $bright-color;
+        color: $bold-color;
         background-color: #444;
       }
     }
@@ -168,11 +173,11 @@ html[data-theme="dark"]  {
   .post-related {
     
     & > *:first-child {
-      color: $text-color;
+      color: $dark-text-color;
     }
 
     // a: {
-    //   color: $text-color;
+    //   color: $dark-text-color;
     // }
 
     a:visited:after {
@@ -199,9 +204,9 @@ html[data-theme="dark"]  {
     li {
       border-bottom: solid 1px #333;
       a {
-        color: #999;
+        color: #777;
         &:hover {
-          color: $bright-color;
+          color: $bold-color;
           background-color: $header-background-color;
         }
       }
@@ -222,19 +227,19 @@ html[data-theme="dark"]  {
         a {
           color: $muted-color;
           &:hover {
-            color: $bright-color !important;
+            color: $bold-color !important;
           }
         }
 
         .active {
           background-color: $header-background-color;
-          color: $bright-color;
-          border-left: 2px solid $bright-color;
+          color: $bold-color;
+          border-left: 2px solid $bold-color;
           &:hover {
             background-color: #444;
           }
           a {
-            color: $bright-color;
+            color: $bold-color;
           }
         }
       }
@@ -243,17 +248,18 @@ html[data-theme="dark"]  {
 
   #footer-social {
     a:hover {
-        color: $bright-color;
+        color: $bold-color;
     }
   }
 
   .about-box {
     border-bottom: 1px solid #555;
+    border-top: 1px solid #555;
     color: $muted-color;
     a {
       text-decoration: none;
       &:hover {
-        color: $bright-color;
+        color: $bold-color;
       }
     }
   }

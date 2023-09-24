@@ -207,6 +207,24 @@ html {
   transform: rotate(180deg);
 }
 
+.post-meta {
+  font-size: $small-font-size;
+  color: $muted-color;
+  margin-bottom: $spacing-unit * 0.5;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: $small-font-size;
+  text-decoration: none;
+  border: 1px solid;
+  padding: 1px 5px;
+  border-radius: 6px;
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
 /** Post header */
 %post-header {
   .post-header {
@@ -214,21 +232,11 @@ html {
   }
 
   .post-title {
-    @include relative-font-size(2.625);
-    letter-spacing: -1px;
+    @include relative-font-size(2.6);
     line-height: 1;
 
-    @include media-query($on-laptop) {
+    @include media-query($on-palm) {
       @include relative-font-size(2.25);
-    }
-  }
-
-  .post-tags {
-    padding-right: 150px;
-
-    .post-tag {
-      display: inline-block;
-      margin: 0 12px 0 0;
     }
   }
 }
@@ -292,38 +300,31 @@ html {
   }
 
   .post-meta {
-    font-size: $base-font-size - 1;
-    color: $grey-color;
     margin-bottom: $spacing-unit * 0.5;
   }
 
   .post-link {
     @include relative-font-size(1.65);
     font-weight: $base-font-weight * 1.5;
-    color: #333;
+    color: $text-color;
   }
 
   .post-excerpt {
-    color: #333;
+    color: #777;
     word-break: break-word;
     overflow-wrap: break-word;
+    transition: color .2s;
+    &:hover {
+        color: #000;
+        text-decoration: none; 
+    }
   }
 
   .post-tags .post-tag {
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid;
-    padding: 2px 4px;
-    border-radius: 5px;
     transition: color 0.2s;
     margin-bottom: 8px;
-    font-size: $base-font-size - 2;
-    &:not(:last-child) {
-      margin-right: 8px;
-    }
-
     &:hover {
-      color: #787878;
+      color: #000;
     }
   }
 
@@ -332,7 +333,7 @@ html {
 
     & > .previous:before {
       content: ' ';
-      border: solid #787878;
+      border: solid #777;
       border-width: 0 2px 2px 0;
       display: inline-block;
       padding: 4px;
@@ -343,7 +344,7 @@ html {
 
     & > .next:after {
       content: ' ';
-      border: solid #787878;
+      border: solid #777;
       border-width: 0 2px 2px 0;
       display: inline-block;
       padding: 4px;
@@ -353,7 +354,7 @@ html {
     }
 
     .previous span, .next span {
-      color: #b3b3b3;
+      color: #bbb;
     }
 
     .indicator {
@@ -378,10 +379,6 @@ html {
 
     .post-subtitle {
       font-weight: lighter;
-    }
-
-    .post-meta {
-      color: #808080;
     }
   }
 
@@ -443,7 +440,7 @@ html {
   .post-related {
     &>*:first-child {
       @include relative-font-size(1.425);
-      color: #333;
+      color: $text-color;
       margin-bottom: 14px;
     }
 
@@ -452,10 +449,10 @@ html {
       .post-link {
         @include relative-font-size(1.075);
       }
-
+      color: $muted-color;
       a {
-        color: $text-color;
-
+        color: $muted-color;
+        text-decoration: none;
         &:hover {
           color: #000;
         }
@@ -546,10 +543,6 @@ html {
     margin-bottom: 8px;
   }
 
-  .post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-  }
 }
 
 
@@ -711,11 +704,6 @@ html {
       left: -1em;
       position: absolute;
     }
-  }
-
-  .post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
   }
 
   li a {
