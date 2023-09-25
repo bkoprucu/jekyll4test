@@ -133,6 +133,9 @@ blockquote {
   }
 }
 
+big-font {
+  font-size: 24px;
+}
 
 /**
  * Code formatting
@@ -173,6 +176,11 @@ pre {
   }
 }
 
+hr {
+  color: #0000;
+  border-top: 1px solid $more-muted-color;
+  margin-bottom: 30px;
+}
 
 
 /* Wrapper */

@@ -97,6 +97,10 @@ html[data-theme="dark"]  {
     }
   }
 
+  hr {
+    border-top: 1px solid #555;
+  }
+
   .pagination {
     .post-link {
       color: $dark-text-color;

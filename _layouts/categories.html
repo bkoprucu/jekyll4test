@@ -1,8 +1,11 @@
 ---
 layout: framework
-sidebar: category-list
+sidebar: [category-list, about-box]
 ---
 
+<div style="font-size: 34px; font-weight: 600;">Categories</div>
+<hr>
+<br>
 {%- if site.posts.size > 0 -%}
 
   {%- include functions.html func='log' level='debug' msg='Get value' -%}

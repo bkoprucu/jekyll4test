@@ -1,17 +1,17 @@
 ---
 layout: framework
-sidebar: about-box
-# tag-list
+sidebar: [tag-list, about-box]
 ---
 
-{%- if site.posts.size > 0 -%}
+<div style="font-size: 34px; font-weight: 600;">Tags</div>
+<hr>
+<br>
 
+
+{%- if site.posts.size > 0 -%}
   {%- include functions.html func='log' level='debug' msg='Get tags value' -%}
   {%- include functions.html func='get_tags' -%}
-  {% assign tags = return %}
-
-  {% assign keys = tags %}
+  {% assign keys = return %}
   {% assign field = 'tags' %}
   {%- include views/segments.html -%}
-
 {%- endif -%}
