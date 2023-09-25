@@ -121,22 +121,17 @@ a {
   }
 }
 
-/**
- * Blockquotes
- */
-blockquote {
-  color: $grey-color;
-  border-left: 5px solid $grey-color-light;
-  padding: 25px 25px 5px;
-  // padding-left: calc($spacing-unit / 2);
-  @include relative-font-size(1.1);
-  font-style: italic;
 
+blockquote {
+  color: $muted-color;
+  border-left: 5px solid $more-muted-color;
+  padding: 25px 5px 5px 25px;
+  margin: 25px;
+  @include relative-font-size(1.05);
   > :last-child {
     margin-bottom: 0;
   }
 }
-
 
 
 /**
@@ -252,12 +247,12 @@ table {
  */
 @mixin flex-sticky($top) {
   position: sticky;
-  // position: -moz-sticky; /* <-- fix sticky compatibility issue */
-  // position: -ms-sticky;
-  // position: -o-sticky;
-  // position: -webkit-sticky;
+  position: -moz-sticky; /* <-- fix sticky compatibility issue */
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: -webkit-sticky;
   align-self: flex-start; /* <-- fix the sticky not work issue */
-  //transform: scale(0.9999); /* <-- fix the sticky x overflow issue */
+  transform: scale(0.9999); /* <-- fix the sticky x overflow issue */
   top: $top;
 }
 
