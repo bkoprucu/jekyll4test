@@ -204,7 +204,7 @@ html[data-theme="dark"]  {
     li {
       border-bottom: solid 1px #333;
       a {
-        color: #777;
+        color: $muted-color;
         &:hover {
           color: $bold-color;
           background-color: $header-background-color;
@@ -257,7 +257,6 @@ html[data-theme="dark"]  {
     border-top: 1px solid #555;
     color: $muted-color;
     a {
-      text-decoration: none;
       &:hover {
         color: $bold-color;
       }
