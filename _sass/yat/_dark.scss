@@ -43,7 +43,6 @@ html[data-theme="dark"]  {
   }
 
 
-
   /*  
   table {
     color: #9d9d9d;
@@ -104,10 +103,15 @@ html[data-theme="dark"]  {
   .pagination {
     .post-link {
       color: $dark-text-color;
+      &:hover {
+        color: $bold-color;
+      }
     }
 
     .post-excerpt {
-      color: $dark-text-color;
+      &:hover {
+        color: $bold-color;
+      }
     }
 
     .post-title {
@@ -135,7 +139,10 @@ html[data-theme="dark"]  {
   .page-segments {
     li {
       a {
-        color: $bold-color;
+        color: $dark-text-color;
+        &:hover {
+          color: $bold-color;
+        }
       }
 
       a:visited:after {
@@ -152,15 +159,14 @@ html[data-theme="dark"]  {
     .post-header {
         border-bottom: 1px solid #444;
     }
-
-    // .post-content {
-    //   img:not(.emoji):not([raw]) {
-    //     background-color: #ffffff33;
-    //   }
-    // } 
+    /*
+    .post-content {
+      img:not(.emoji):not([raw]) {
+        background-color: #ffffff33;
+      }
+    } */
   }
 
-  
   .post-nav {
     border-top: 1px solid #444;
     a {
@@ -175,23 +181,15 @@ html[data-theme="dark"]  {
   }
 
   .post-related {
-    
     & > *:first-child {
       color: $dark-text-color;
     }
-
-    // a: {
-    //   color: $dark-text-color;
-    // }
-
     a:visited:after {
       background-color: $dark-background-color;
     }
-
     a:after {
       color: $dark-background-color;
     }
-
     ul {
       a {
         color: #888;
@@ -200,7 +198,6 @@ html[data-theme="dark"]  {
           color: #ddd;
         }
       }
-
     }
   }
 
@@ -270,5 +267,4 @@ html[data-theme="dark"]  {
   #about-box-desc {
     color: $muted-color;
   }
-
 }
