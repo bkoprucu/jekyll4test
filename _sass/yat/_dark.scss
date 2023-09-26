@@ -113,10 +113,10 @@ html[data-theme="dark"]  {
         color: $dark-background-color;
       }
     }
+  }
 
-    .post-tags .post-tag:hover {
-      color: $bold-color;
-    }
+  .post-tag:hover {
+    color: $bold-color;
   }
 
   .page-segments {

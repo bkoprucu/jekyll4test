@@ -16,7 +16,6 @@ $more-muted-color: #ccc;
 $background-color:#fff !default;
 
 
-
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
@@ -42,7 +41,7 @@ $banner-background: rgba(0,0,0,0.8) !default;
 // Width of the content area
 $content-width: 1300px !default;
 $on-palm:        700px !default;
-$on-laptop:     1200px !default;
+$on-laptop:     1220px !default;
 
 /* Use media queries like this:
 @include media-query($on-palm) {
@@ -61,19 +60,21 @@ $on-laptop:     1200px !default;
   font-size: $base-font-size * $ratio;
 }
 
-
 @mixin borderb() {
-  border-bottom: 1px solid rgba(128, 128, 128, .45);  
-}
-
-@mixin borderblight() {
-  border-bottom: 1px solid rgba(128, 128, 128, .3);
+  border-bottom: 1px solid rgba(128, 128, 128, .33);  
 }
 
 @mixin bordert() {
-  border-top: 1px solid rgba(128, 128, 128, .45);  
+  border-top: 1px solid rgba(128, 128, 128, .33);  
 }
 
+@mixin borderbo($op) {
+  border-bottom: 1px solid rgba(128, 128, 128, $op);
+}
+
+@mixin borderto($op) {
+  border-top: 1px solid rgba(128, 128, 128, $op);  
+}
 
 @import
   "yat/custom-variables",
