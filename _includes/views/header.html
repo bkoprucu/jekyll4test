@@ -1,13 +1,13 @@
 {%- include functions.html func='get_banner' -%}
 
 {%- include functions.html func='log' level='debug' msg='Get header_transparent value' -%}
-{%- assign name = 'header_transparent' -%}
+{% assign name = 'header_transparent' %}
 {%- include functions.html func='get_value' default=true -%}
-{%- assign header_transparent = return -%}
+{% assign header_transparent = return %}
 
-{%- if has_banner and header_transparent -%}
-  {%- assign header_transparent_class = "site-header-transparent" -%}
-{%- endif -%}
+{% if has_banner and header_transparent %}
+  {% assign header_transparent_class = "site-header-transparent" %}
+{% endif %}
 
 <!-- <header class="site-header {{ header_transparent_class }}" role="banner"> -->
   <header class="site-header" role="banner">

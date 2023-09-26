@@ -17,7 +17,7 @@ body {
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
-          font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
@@ -215,12 +215,8 @@ table {
 /* Flex sticky */
 @mixin flex-sticky($top) {
   position: sticky;
-  position: -moz-sticky; /* <-- fix sticky compatibility issue */
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: -webkit-sticky;
   align-self: flex-start; /* <-- fix the sticky not work issue */
-  transform: scale(0.9999); /* <-- fix the sticky x overflow issue */
+  //transform: scale(0.9999); /* <-- fix the sticky x overflow issue */
   top: $top;
 }
 
