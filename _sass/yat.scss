@@ -16,6 +16,7 @@ $more-muted-color: #ccc;
 $background-color:#fff !default;
 
 
+
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
@@ -59,6 +60,20 @@ $on-laptop:     1200px !default;
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
 }
+
+
+@mixin borderb() {
+  border-bottom: 1px solid rgba(128, 128, 128, .45);  
+}
+
+@mixin borderblight() {
+  border-bottom: 1px solid rgba(128, 128, 128, .3);
+}
+
+@mixin bordert() {
+  border-top: 1px solid rgba(128, 128, 128, .45);  
+}
+
 
 @import
   "yat/custom-variables",

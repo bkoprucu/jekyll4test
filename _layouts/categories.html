@@ -3,17 +3,13 @@ layout: framework
 sidebar: [category-list, about-box]
 ---
 
-<div style="font-size: 34px; font-weight: 600;">Categories</div>
-<hr>
-<br>
-{%- if site.posts.size > 0 -%}
+<div class="pheader">Categories</div>
 
-  {%- include functions.html func='log' level='debug' msg='Get value' -%}
+{%- if site.posts.size > 0 -%}
   {%- include functions.html func='get_categories' -%}
   {% assign categories = return %}
-
   {% assign keys = categories %}
   {% assign field = 'categories' %}
   {%- include views/segments.html -%}
-
 {%- endif -%}
+

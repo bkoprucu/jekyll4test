@@ -15,13 +15,6 @@ html[data-theme="dark"]  {
         }
       }
     }
-
-    footer.site-footer {
-      .site-footer-inner {
-        border-top: solid 1px #2f2f2f !important;
-        transition: 0s;
-      }
-    }
   }*/
 
   body {
@@ -96,10 +89,6 @@ html[data-theme="dark"]  {
     }
   }
 
-  hr {
-    border-top: 1px solid #555;
-  }
-
   .pagination {
     .post-link {
       color: $dark-text-color;
@@ -122,12 +111,6 @@ html[data-theme="dark"]  {
 
       a:after {
         color: $dark-background-color;
-      }
-    }
-
-    .post-list {
-      & > li:not(:last-child) {
-        border-bottom: 1px solid #444;
       }
     }
 
@@ -155,27 +138,14 @@ html[data-theme="dark"]  {
     }
   }
 
-  .post {
-    .post-header {
-        border-bottom: 1px solid #444;
-    }
-    /*
-    .post-content {
-      img:not(.emoji):not([raw]) {
-        background-color: #ffffff33;
-      }
-    } */
-  }
-
   .post-nav {
-    border-top: 1px solid #444;
     a {
       background-color: $header-background-color;
       color: $dark-text-color;
       transition: background-color .3s;
       &:hover {
         color: $bold-color;
-        background-color: #444;
+        background-color: #334;
       }
     }
   }
@@ -203,7 +173,6 @@ html[data-theme="dark"]  {
 
   .common-list {
     li {
-      border-bottom: solid 1px #333;
       a {
         color: $muted-color;
         &:hover {
@@ -224,7 +193,6 @@ html[data-theme="dark"]  {
     .post-menu-content {
       ul {
         border-left: 1px solid $muted-color;
-
         a {
           color: $muted-color;
           &:hover {
@@ -237,7 +205,7 @@ html[data-theme="dark"]  {
           color: $bold-color;
           border-left: 2px solid $bold-color;
           &:hover {
-            background-color: #444;
+            background-color: #334;
           }
           a {
             color: $bold-color;
@@ -254,8 +222,6 @@ html[data-theme="dark"]  {
   }
 
   .about-box {
-    border-bottom: 1px solid #555;
-    border-top: 1px solid #555;
     color: $muted-color;
     a {
       &:hover {
@@ -263,7 +229,6 @@ html[data-theme="dark"]  {
       }
     }
   }
-    
   #about-box-desc {
     color: $muted-color;
   }

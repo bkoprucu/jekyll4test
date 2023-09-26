@@ -11,7 +11,8 @@
   }
 
   li {
-    border-bottom: solid 1px #00000018;
+    @include borderbo(.2);
+
 
     &:last-child {
       border-bottom: none;
@@ -28,6 +29,7 @@
 
       &:hover {
         background-color: mix($theme-color, #eaeaea, 20%);
+        color: #000;
       }
     }
 

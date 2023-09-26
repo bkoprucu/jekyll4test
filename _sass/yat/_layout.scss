@@ -218,7 +218,7 @@ html {
   font-size: $small-font-size;
   border: 1px solid;
   border-radius: 10px;
-  padding: 1px 5px;
+  padding: 2px 6px ;
   margin-bottom: 8px;
   &:not(:last-child) {
     margin-right: 8px;
@@ -248,8 +248,7 @@ html {
 /* Page content */
 .page-content {
   @extend %flex-1; /* <-- Keep footer on the bottom */
-  padding: $spacing-unit * 2 0;
-  padding-top: 72px;
+  padding: 72px 0;
 }
 
 .page-heading {
@@ -263,6 +262,14 @@ html {
 
 /* Pagination */
 .pagination {
+  margin-right: 70px;
+  @include media-query($on-laptop) {
+    margin-right: 15px;
+  }
+  @include media-query($on-palm) {
+    margin-right: 0;
+  }
+
   .post-list {
     margin-left: 0;
     list-style: none;
@@ -272,7 +279,7 @@ html {
       padding-bottom: 30px;
 
       &:not(:last-child) {
-        border-bottom: 1px solid #e3e3e3;
+        @include borderb();
       }
     }
   }
@@ -371,7 +378,7 @@ html {
   .post-header {
     margin: 50px auto 60px;
     padding: 0 0 20px;
-    border-bottom: 1px solid #ccc;
+    @include borderb();
 
     .post-title {
       margin-bottom: 6px;
@@ -483,13 +490,14 @@ html {
   justify-content: space-between;
   margin: 80px 0 60px;
   padding: 40px 0 0;
-  border-top: 1px solid #ccc;
+  @include bordert();
+
   a {
-    line-height: 30px;
+    line-height: 33px;
     border-radius: 3px;
     background-color: $footer-background-color;
     color: $text-color;
-    padding: 2px 10px;
+    padding: 2px 10px 1px;
     max-width: 50%;
     transition: background-color .3s;
     &:hover {
@@ -501,7 +509,7 @@ html {
 
   .previous:before {
     content: ' ';
-    border: solid #787878;
+    border: solid #888;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
@@ -511,7 +519,7 @@ html {
 
   .next:after {
     content: ' ';
-    border: solid #787878;
+    border: solid #888;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
@@ -530,13 +538,11 @@ html {
 
   .archives-time {
     @include relative-font-size(1.5);
-
     &:not(:first-child) {
       margin-top: 18px;
     }
     margin-bottom: 8px;
   }
-
 }
 
 

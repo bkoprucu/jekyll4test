@@ -1,6 +1,4 @@
-/**
- * Reset some basic elements
- */
+/* Reset some basic elements */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -9,10 +7,7 @@ dl, dd, ol, ul, figure {
 }
 
 
-
-/**
- * Basic styling
- */
+/* Basic styling */
 body {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
@@ -22,9 +17,6 @@ body {
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
           font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
@@ -33,10 +25,7 @@ body {
 }
 
 
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
+/*Set `margin-bottom` to maintain vertical rhythm */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
@@ -45,29 +34,17 @@ ul, ol, dl, figure,
 }
 
 
-
-/**
- * `main` element
- */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
 
-
-/**
- * Images
- */
 img {
   max-width: 100%;
   vertical-align: middle;
 }
 
 
-
-/**
- * Figures
- */
 figure > img {
   display: block;
 }
@@ -77,10 +54,6 @@ figcaption {
 }
 
 
-
-/**
- * Lists
- */
 ul, ol {
   margin-left: $spacing-unit;
 }
@@ -93,28 +66,19 @@ li {
 }
 
 
-
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight * 1.5;
 }
 
-/**
- * Links
- */
+
 a {
   color: $brand-color;
   text-decoration: none;
-
   &:hover {
     text-decoration: underline;
   }
-
   .social-media-list &:hover {
     text-decoration: none;
-
     .username {
       text-decoration: underline;
     }
@@ -177,13 +141,11 @@ pre {
 }
 
 hr {
-  color: #0000;
-  border-top: 1px solid $more-muted-color;
+  @include bordert();
   margin-bottom: 30px;
 }
 
 
-/* Wrapper */
 .wrapper {
   max-width: $content-width;
   margin: auto;
@@ -247,12 +209,10 @@ table {
 
 %flex-1 {
   flex: 1;
-  min-width: 0; /* <-- fix flexbox width with pre tags  */
+  min-width: 0; /* fix flexbox width with pre tags  */
 }
 
-/**
- * Flex sticky
- */
+/* Flex sticky */
 @mixin flex-sticky($top) {
   position: sticky;
   position: -moz-sticky; /* <-- fix sticky compatibility issue */
@@ -264,27 +224,19 @@ table {
   top: $top;
 }
 
-/**
- * Vertical center
- */
 @mixin vertical-center($position) {
   position: $position;
   top: 50%;
   transform: translateY(-50%);
 }
 
-/**
- * Horizontal center
- */
 @mixin horizontal-center($position) {
   position: $position;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/**
- * Center background image
- */
+/* Center background image */
 @mixin center-image {
   height: 100%;
   max-width: 1000%;
@@ -296,6 +248,22 @@ table {
 
 // -----------
 
+@mixin borderb() {
+  border-bottom: 1px solid rgba(128, 128, 128, .33);  
+}
+
+@mixin bordert() {
+  border-top: 1px solid rgba(128, 128, 128, .33);  
+}
+
+@mixin borderbo($op) {
+  border-bottom: 1px solid rgba(128, 128, 128, $op);
+}
+
+@mixin borderto($op) {
+  border-top: 1px solid rgba(128, 128, 128, $op);  
+}
+
 .icon-moon {
   width: 18px;
   height: 24px;
@@ -306,4 +274,18 @@ table {
   display: inline-block;
   background-repeat: no-repeat;
   background-image: url(/assets/images/icon/sprite.svg);
+}
+
+.pheader {
+  font-size: 38px;
+  font-weight: 600;
+  margin: 10px 70px 75px 0;
+  @include media-query($on-laptop) {
+    margin-right: 15px;
+  }
+  @include media-query($on-palm) {
+    margin-right: 0;
+  }
+  padding-bottom: 10px;
+  @include borderb();
 }

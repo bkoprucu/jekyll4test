@@ -2,8 +2,8 @@
 .about-box {
   margin-top: 40px;
   padding-top: 15px;
-  border-bottom: 1px solid $more-muted-color;
-  border-top: 1px solid $more-muted-color; // #e3e3e3
+  @include borderb();
+  @include bordert();
   h5 {
     margin: 0 0 15px 12px;
   }
@@ -15,10 +15,10 @@
       color: #000;
     }
   }
+
   i {
     font-size: 20px;
   }
-
 }
 
 #about-box-img {
