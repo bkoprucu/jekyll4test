@@ -1,7 +1,7 @@
-{%- if page.paginator -%}
-  {%- assign paginator = page.paginator -%}
-{%- elsif paginator == nil -%}
-  {%- assign paginator = site -%}
+{% if page.paginator -%}
+  {% assign paginator = page.paginator %}
+{% elsif paginator == nil %}
+  {% assign paginator = site %}
 {%- endif -%}
 
 {%- if paginator.posts.size > 0 -%}
@@ -18,7 +18,7 @@
       {% assign reading_time = return %}
       {%- include functions.html func='get_article_excerpt' -%}
       {% assign excerpt = return %}
-      {%- assign post_url = post.url | relative_url -%}
+      {% assign post_url = post.url | relative_url %}
 
       <h2 class="post-title">
         <a class="post-link" href="{{ post_url }}">
@@ -44,8 +44,8 @@
   </ul>
 
   <!-- Pagination links -->
-  {%- if paginator.posts.size < site.posts.size -%}
+  {% if paginator.posts.size < site.posts.size %}
     {%- include views/paginator.html -%}
-  {%- endif -%}
+  {% endif %}
 </div>
 {%- endif -%}

@@ -25,7 +25,7 @@ body {
 }
 
 
-/*Set `margin-bottom` to maintain vertical rhythm */
+/* Set `margin-bottom` to maintain vertical rhythm */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
@@ -101,9 +101,7 @@ big-font {
   font-size: 24px;
 }
 
-/**
- * Code formatting
- */
+/* Code formatting */
 pre,
 code {
   @include relative-font-size(0.79);
@@ -243,22 +241,6 @@ table {
 
 
 // -----------
-
-@mixin borderb() {
-  border-bottom: 1px solid rgba(128, 128, 128, .33);  
-}
-
-@mixin bordert() {
-  border-top: 1px solid rgba(128, 128, 128, .33);  
-}
-
-@mixin borderbo($op) {
-  border-bottom: 1px solid rgba(128, 128, 128, $op);
-}
-
-@mixin borderto($op) {
-  border-top: 1px solid rgba(128, 128, 128, $op);  
-}
 
 .icon-moon {
   width: 18px;
