@@ -183,6 +183,9 @@ html {
 
   #footer-social {
     font-size: 26px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
     a {
       color: $footer-text-color;
       text-decoration: none;

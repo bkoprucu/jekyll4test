@@ -8,13 +8,13 @@
 
 <div class="page-segments">
   <ul class="page-segments-list">
-    {% for key in keys -%}
+    {%- for key in keys %}
     <h4 id="{{ key }}" class="segment-name
     {%- if field == 'tags' %} post-tag{% endif %}">
     {{ key }}
     </h4>
       {% assign items = site.posts | where: field, key %}
-      {% for item in items -%}
+      {%- for item in items %}
         {% if item != nil %}
           {% assign post_item_class = "" %}
           {% if item.top %}
@@ -24,7 +24,7 @@
             {%- include views/post-item.html -%}
           </li>
         {% endif %}
-      {% endfor %}
-    {%- endfor %}
+      {% endfor -%}
+    {% endfor -%}
   </ul>
 </div>

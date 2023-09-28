@@ -1,13 +1,16 @@
 
 .about-box {
+  display: flex;
+  flex-direction: column;
   margin-top: 40px;
   padding-top: 15px;
+  color: $muted-color;
+
   @include borderb();
   @include bordert();
   h5 {
     margin: 0 0 15px 12px;
   }
-  
   a {
     text-decoration: none;
     color: $muted-color;
@@ -15,29 +18,22 @@
       color: #000;
     }
   }
-
-  i {
-    font-size: 20px;
+  img {
+    width: 160px;
+    border-radius: 8px;  
+  }
+  p {
+    margin: 0 15px 15px;
+    max-width: 240px;
+    font-size: 14px;      
   }
 }
 
-#about-box-img {
-  max-width: 160px;
-  border-radius: 8px;
-  margin-left: 50px;
-}
-
-#about-box-desc {
-  margin-left: 15px;
-  max-width: 240px;
-  font-size: 14px;
-  color: $muted-color;
-}
-
 #about-box-social {
-  max-width: 160px;
-  margin-left: 50px;
-  padding: 10px 0;
+  font-size: 20px;
   display: flex;
+  align-self: center;
+  width: 180px;
+  padding: 6px 0;
   justify-content: space-evenly;
 }

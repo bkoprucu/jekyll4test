@@ -20,11 +20,11 @@
   url: 'github.com/bkoprucu'
   title: 'GitHub'
 
-- type: youtube
-  # icon: 'fab fa-youtube-square'
-  icon: 'fab fa-youtube'
-  url: 'youtube.com/@marchoftime'
-  title: 'YouTube'
+# - type: youtube
+#   # icon: 'fab fa-youtube-square'
+#   icon: 'fab fa-youtube'
+#   url: 'youtube.com/@marchoftime'
+#   title: 'YouTube'
 
 - type: rss
   # icon: 'fas fa-rss-square'
