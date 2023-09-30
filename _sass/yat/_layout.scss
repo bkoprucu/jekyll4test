@@ -212,7 +212,7 @@ html {
   font-size: $small-font-size;
   border: 1px solid;
   border-radius: 10px;
-  padding: 1px 6px;
+  padding: 1px 7px 2px;
   margin-bottom: 8px;
   &:not(:last-child) {
     margin-right: 8px;
@@ -284,23 +284,6 @@ html {
 
     a {
       text-decoration: none;
-
-      &:after {
-        content: 'NEW';
-        position: absolute;
-        margin-left: 8px;
-        margin-top: 3px;
-        padding: 0px 3px;
-        background-color: $brand-color;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 600;
-        border-radius: 2px;
-      }
-
-      &:visited:after {
-        background-color: $background-color;
-      }
     }
   }
 
@@ -448,23 +431,6 @@ html {
         text-decoration: none;
         &:hover {
           color: #000;
-        }
-        
-        &:after {
-          content: 'NEW';
-          position: absolute;
-          margin-left: 8px;
-          margin-top: 3px;
-          padding: 0px 3px;
-          background-color: $brand-color;
-          color: #fff;
-          font-size: 10px;
-          font-weight: 600;
-          border-radius: 2px;
-        }
-
-        &:visited:after {
-          background-color: $background-color;
         }
       }
     }

@@ -105,13 +105,6 @@ html[data-theme="dark"]  {
 
     .post-title {
       color: $muted-color;
-      a:visited:after {
-        background-color: $dark-background-color;
-      }
-
-      a:after {
-        color: $dark-background-color;
-      }
     }
   }
 
@@ -126,14 +119,6 @@ html[data-theme="dark"]  {
         &:hover {
           color: $bold-color;
         }
-      }
-
-      a:visited:after {
-        background-color: $dark-background-color;
-      }
-
-      a:after {
-        color: $dark-background-color;
       }
     }
   }
@@ -154,12 +139,7 @@ html[data-theme="dark"]  {
     & > *:first-child {
       color: $dark-text-color;
     }
-    a:visited:after {
-      background-color: $dark-background-color;
-    }
-    a:after {
-      color: $dark-background-color;
-    }
+
     ul {
       a {
         color: #888;
