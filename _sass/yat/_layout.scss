@@ -212,7 +212,7 @@ html {
   font-size: $small-font-size;
   border: 1px solid;
   border-radius: 10px;
-  padding: 2px 6px 1px;
+  padding: 1px 6px;
   margin-bottom: 8px;
   &:not(:last-child) {
     margin-right: 8px;
@@ -677,7 +677,7 @@ html {
       color: $brand-color;
       font-size: 16px;
       font-weight: 400;
-      padding: 3px 10px 0;
+      padding: 1px 8px;
     }
     .post-meta {
       margin-left: 13px;
