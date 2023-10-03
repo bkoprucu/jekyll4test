@@ -98,7 +98,8 @@ html[data-theme="dark"]  {
     }
 
     .post-excerpt {
-      &:hover {
+      color: $muted-color;
+      a:hover {
         color: $bold-color;
       }
     }
@@ -193,6 +194,15 @@ html[data-theme="dark"]  {
         }
       }
     }
+  }
+
+  a .post-badges .post-badge {
+    color: $dark-background-color !important;
+  }
+
+  a:visited .post-badges .post-badge.badge-new {
+    display: none;
+    background-color: $dark-background-color;
   }
 
   #footer-social {

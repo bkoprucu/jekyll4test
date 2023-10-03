@@ -1,6 +1,6 @@
 
-{% if post.exc %}
-  {% assign return = post.exc %}
+{% if post.excerpt_text %}
+  {% assign return = post.excerpt_text %}
 {% else %}
   {% assign excerpt_size = site.excerpt_size | default: 350 %}
   {% if include.params.article %}
