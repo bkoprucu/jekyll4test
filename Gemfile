@@ -9,7 +9,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.3.2"
 
-gem "jekyll-theme-yat"
+gem "jekyll-theme-yat", "~> 1.10.0"
 
 #gem "minima", "~> 2.5.1"
 #gem "jekyll-theme-clean-blog"
