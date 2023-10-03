@@ -4,22 +4,23 @@
 
 {%- if paginator.posts.size > 0 -%}
   <div class="paginator">
-    <span class="previous">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | relative_url }}">Prev</a>
+      <a class="prev" href="{{ paginator.previous_page_path | relative_url }}">
+        <i class="fas fa-chevron-left"></i>
+        &nbsp; Prev &nbsp; </a>
     {% else %}
       <span>Prev</span>
     {% endif %}
-    </span>
 
     <span class="indicator"> {{ paginator.page }} / {{ paginator.total_pages }} </span>
 
-    <span class="next">
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+      <a class = "next" href="{{ paginator.next_page_path | relative_url }}">&nbsp; Next &nbsp;
+        <i class="fas fa-chevron-right"></i>
+      </a>
     {% else %}
       <span>Next</span>
     {% endif %}
-    </span>
   </div>
+
 {%- endif -%}

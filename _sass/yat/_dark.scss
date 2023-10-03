@@ -107,6 +107,18 @@ html[data-theme="dark"]  {
     .post-title {
       color: $muted-color;
     }
+
+    .paginator {
+      color: $muted-color;
+      a {
+        background-color: $header-background-color;
+        color: $muted-color;
+        &:hover {
+          color: $bold-color;
+          background-color: #334;
+        }
+      }
+    }
   }
 
   .post-tag:hover {

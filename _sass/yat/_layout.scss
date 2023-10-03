@@ -359,33 +359,29 @@ html {
 
   .paginator {
     text-align: center;
-
-    & > .previous:before {
-      content: ' ';
-      border: solid #777;
-      border-width: 0 2px 2px 0;
-      display: inline-block;
-      padding: 4px;
-      margin-right: 8px;
-      transform: rotate(135deg);
+    color: $muted-color;
+    a {
+      border-radius: 3px;
+      color: $muted-color;
+      background-color: $footer-background-color;
+      transition: background-color .3s;
+      padding: 3px 5px;
+      &:hover {
+        text-decoration: none;
+        color: black;
+        background-color: #ccc;
+      }
     }
 
-    & > .next:after {
-      content: ' ';
-      border: solid #777;
-      border-width: 0 2px 2px 0;
-      display: inline-block;
-      padding: 4px;
-      margin-left: 8px;
-      transform: rotate(-45deg);
+    .next a {
+        padding-left: 15px;
     }
-
-    .previous span, .next span {
-      color: #bbb;
+    .prev a {
+        padding-right: 15px;
     }
 
     .indicator {
-      padding: 0 15px;
+      padding: 0 30px;
     }
   }
 }
