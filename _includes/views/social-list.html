@@ -7,7 +7,12 @@
     {% if entry.prefix %}
         {% assign prefix = entry.prefix %}
     {% endif %}
-    {%- assign url = prefix | append: entry.url -%}   
+
+    {%- assign url = prefix | append: entry.url -%}
+    {%- if entry.type == 'rss' -%}
+        {% assign url = '/feed.xml' | relative_url %}
+    {%- endif -%}
+
     <a href="{{ url }}" aria-label="{{ entry.type }}" title="{{ entry.title }}"
     {% assign link_types = '' %}  
     {% unless entry.noblank -%}
