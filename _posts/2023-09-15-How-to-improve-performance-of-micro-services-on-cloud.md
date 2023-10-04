@@ -5,7 +5,7 @@ excerpt_image: "/assets/images/test/data_center.jpg"
 top: 1
 # published: false
 tags: [AWS, Spring]
-hidden: false
+hide: false
 categories: [Java, Test, How to improve performance]
 ---
 

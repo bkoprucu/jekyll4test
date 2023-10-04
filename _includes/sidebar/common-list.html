@@ -6,7 +6,7 @@
   {%- assign field = include.field -%}
 {%- endif -%}
 
-{%- assign unhidden = site.posts | where_exp: "item", "item.hidden != true" -%}
+{%- assign unhidden = site.posts | where_exp: "item", "item.hide != true" -%}
 <div class="common-list">
   <ul>
     <li>
