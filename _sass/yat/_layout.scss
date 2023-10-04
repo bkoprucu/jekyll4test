@@ -256,7 +256,7 @@ html {
 
 /* Pagination */
 .pagination {
-  margin-right: 70px;
+  margin-right: 55px;
   @include media-query($on-laptop) {
     margin-right: 15px;
   }
