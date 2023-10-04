@@ -147,7 +147,7 @@ hr {
 .wrapper {
   max-width: $content-width;
   margin: auto;
-  padding-right: 50px;
+  padding-right: 60px;
   padding-left: 60px;
   @extend %clearfix;
 
@@ -257,7 +257,7 @@ table {
 .pheader {
   font-size: 38px;
   font-weight: 600;
-  margin: 10px 70px 75px 0;
+  margin: 10px 50px 75px 0;
   @include media-query($on-laptop) {
     margin-right: 15px;
   }
