@@ -1,8 +1,11 @@
 ---
 author: "Berk Koprucu"
-excerpt_text: "We look at some Java code and we wonder"
+excerpt_text: "We will improve it"
+excerpt_image: "/assets/images/test/data_center.jpg"
+top: 3
 # published: false
 tags: [AWS, Spring]
+hidden: false
 categories: [Java, Test, How to improve performance]
 ---
 
