@@ -2,7 +2,6 @@
 author: "Berk Koprucu"
 excerpt_text: "We will improve it, I promise..."
 excerpt_image: "/assets/images/test/data_center.jpg"
-top: 1
 # published: false
 tags: [AWS, Spring]
 hide: false

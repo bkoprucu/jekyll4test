@@ -27,16 +27,40 @@ sidebar:
 
     {%- assign result = hidden | where_exp: "item", "item == 'navigator'" -%}
     {%- if result.size == 0 -%}
+
+    {% assign p = page.previous %}
+    {% for i in (1..50) %}
+      {% if p == nil %}
+        {% break %}
+      {% endif %}
+      {% if p.hide %}
+        {% assign p = p.previous %}
+        {% continue %}
+      {% endif %}
+      {% break %}
+    {% endfor %}
+
+    {% assign n = page.next %}
+    {% for i in (1..50) %}
+      {% if n == nil %}
+        {% break %}
+      {% endif %}
+      {% if n.hide %}
+        {% assign n = n.next %}
+        {% continue %}
+      {% endif %}
+      {% break %}
+    {% endfor %}
+
     <div class="post-nav">
-      {%- if page.previous -%}
-        <a class="previous" href="{{ page.previous.url | relative_url }}" title="{{
-          page.previous.title | escape }}">{{ page.previous.title | escape | truncatewords: 6 }}</a>
+      {%- if p -%}
+        <a class="previous" href="{{ p.url | relative_url }}" title="{{ p.title | escape }}">{{ p.title | escape | truncatewords: 7 }}</a>
       {%- else -%}
       <span></span>
       {%- endif -%}
 
-      {%- if page.next -%}
-        <a class="next" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | escape }}">{{ page.next.title | escape | truncatewords: 6 }}</a>
+      {%- if n -%}
+        <a class="next" href="{{ n.url | relative_url }}" title="{{ n.title | escape }}">{{ n.title | escape | truncatewords: 7 }}</a>
       {%- else -%}
       <span></span>
       {%- endif -%}
@@ -48,7 +72,7 @@ sidebar:
     <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        {% assign posts = site[page.collection] | sample:4 %}
+        {% assign posts = site[page.collection] | where_exp: "item", "item.hide != true" | sample:4 %}
         {%- for post in posts -%}
           {%- assign post_item_class = "" -%}
           {%- if post.top -%}

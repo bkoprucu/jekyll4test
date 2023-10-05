@@ -26,7 +26,7 @@
     <!-- Normal list item -->
     {%- assign post_item_class = "" -%}
     {%- for post in paginator.posts -%}
-      {%- if post.top or post.hide == "true" -%}
+      {%- if post.top or post.hide -%}
         {%- continue -%}
       {%- endif -%}
       {%- include views/pagination-item.html -%}
