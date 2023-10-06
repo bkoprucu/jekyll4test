@@ -491,7 +491,6 @@ html {
 }
 
 
-/* Posts misc */
 .post-nav {
   display: flex;
   justify-content: space-between;
@@ -512,26 +511,6 @@ html {
       color: black;
       background-color: #ccc;
     }
-  }
-
-  .previous:before {
-    content: ' ';
-    border: solid #888;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4px;
-    margin-right: 8px;
-    transform: rotate(135deg);
-  }
-
-  .next:after {
-    content: ' ';
-    border: solid #888;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4px;
-    margin-left: 8px;
-    transform: rotate(-45deg);
   }
 }
 

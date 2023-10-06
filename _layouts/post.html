@@ -54,13 +54,13 @@ sidebar:
 
     <div class="post-nav">
       {%- if p -%}
-        <a class="previous" href="{{ p.url | relative_url }}" title="{{ p.title | escape }}">{{ p.title | escape | truncatewords: 7 }}</a>
+        <a href="{{ p.url | relative_url }}" title="{{ p.title | escape }}"><i class="fas fa-chevron-left"></i> &nbsp; {{ p.title | escape | truncatewords: 7 }}</a>
       {%- else -%}
       <span></span>
       {%- endif -%}
 
       {%- if n -%}
-        <a class="next" href="{{ n.url | relative_url }}" title="{{ n.title | escape }}">{{ n.title | escape | truncatewords: 7 }}</a>
+        <a href="{{ n.url | relative_url }}" title="{{ n.title | escape }}">{{ n.title | escape | truncatewords: 7 }} &nbsp; <i class="fas fa-chevron-right"></i></a>
       {%- else -%}
       <span></span>
       {%- endif -%}
