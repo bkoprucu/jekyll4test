@@ -222,6 +222,10 @@ html[data-theme="dark"]  {
     background-color: $dark-background-color;
   }
 
+  img {
+    opacity: .85;
+  }
+
   #footer-social {
     a:hover {
         color: $bold-color;
