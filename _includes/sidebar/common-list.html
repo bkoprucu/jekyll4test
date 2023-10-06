@@ -1,29 +1,20 @@
 {%- if include.keys -%}
-  {%- assign keys = include.keys -%}
-{%- endif -%}
+  {% assign keys = include.keys -%}
+{% endif -%}
 
-{%- if include.field -%}
-  {%- assign field = include.field -%}
-{%- endif -%}
+{% if include.field -%}
+  {% assign field = include.field -%}
+{% endif -%}
 
 {%- assign unhidden = site.posts | where_exp: "item", "item.hide != true" -%}
 <div class="common-list">
-  <ul>
-    <li>
-      <a href="{{ '/index.html' | relative_url }}">
-        All<span>{{ unhidden.size }}</span>
-      </a>
-    </li>
-
-    {%- for key in keys -%}
-    {%- assign items = unhidden | where: field, key -%}
-    {%- if items.size > 0 -%}
-    <li>
-        <a href="{{ url }}#h-{{ key }}">
-          {{ key }} <span>{{ items | size }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- endfor -%}
-  </ul>
+<ul>
+<li><a href="{{ '/index.html' | relative_url }}">All<span>{{ unhidden.size }}</span></a></li>
+    {%- for key in keys %}
+      {%- assign items = unhidden | where: field, key %}
+      {%- if items.size > 0 %}
+<li><a href="{{ url }}#h-{{ key }}">{{ key }} <span>{{ items | size }}</span></a></li>
+      {%- endif %}
+    {%- endfor %}
+</ul>
 </div>
