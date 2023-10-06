@@ -15,7 +15,7 @@
 
 {%- assign name = 'excerpt.image_height' -%}
 {%- include functions.html func='get_value' -%}
-{%- assign image_height = return | default: '160px' -%}
+{%- assign image_height = return | default: '220px' -%}
 
 {%- assign name = 'excerpt.default_image' -%}
 {%- include functions.html func='get_value' -%}
@@ -39,13 +39,20 @@
     <span class="post-author left-vsplit"><i class="far fa-edit"></i> {{ post.author | escape }}</span>
     {%- endif -%}
     <span class="post-reading-time left-vsplit"><i class="far fa-clock"></i> {{ reading_time }}</span>
-    {% assign date1 = now %}
-    {{ date1 }}
   </div>
   <div class="post-excerpt">
     {%- if post_image -%}
+    <!--
     <a class="post-image" href="{{ post_url }}" style="flex: 0 1 {{ image_width }}">
-      <div style="background-image: url({{ post_image | relative_url }}); height: {{ image_height }}; border-radius: 4px;"></div>
+      <div style="background-image: url({{ post_image | relative_url }});
+                  height: {{ image_height }};
+                  background-position: left;
+                  background-repeat: no-repeat;
+                  border-radius: 4px;"></div>
+    </a>
+    -->
+    <a class="post-image" href="{{ post_url }}">
+      <img class="excerpt-img" style="max-width: {{ post.excerpt_image_max_width | default: '70%' }}" src="{{ post_image | relative_url }}" />
     </a>
     {%- endif -%}
     <a class="post-text" href="{{ post_url }}">

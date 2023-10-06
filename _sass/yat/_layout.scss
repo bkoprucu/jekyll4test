@@ -283,7 +283,7 @@ html {
     &.right-image-style .post-item .post-excerpt {
       flex-direction: row-reverse;
     }
-    &.post-list.top-image-style .post-item .post-excerpt {
+    &.top-image-style .post-item .post-excerpt {
       flex-direction: column;
     }
     &.z-image-style .post-item:nth-child(even) .post-excerpt {
@@ -298,6 +298,7 @@ html {
       }
     }
   }
+
 
   .post-title {
     margin-bottom: $spacing-unit * 0.2;
@@ -325,10 +326,10 @@ html {
     display: flex;
     position: relative;
     gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     transition: color .2s;
 
-    .post-image > *:first-child {
+    /* .post-image > *:first-child {
       flex: 0 1 38.2%;
       width: 100%;
       height: 100%;
@@ -336,6 +337,13 @@ html {
       background-position: center center;
       overflow: hidden;
       transition: 0.2s all ease-in-out;
+    } */
+
+    img {
+      object-fit: contain;
+      max-height: 400px;
+      border-radius: 3px;
+      margin-bottom: 25px;
     }
 
     a {
