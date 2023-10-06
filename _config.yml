@@ -12,9 +12,11 @@ copyright: "(c) {currentYear} {author}"
 description: >- # this means to ignore newlines until "baseurl:"
   Berk Köprücü Berk Koprucu - Software Engineer, Beckend, Java, Kotlin, Spring Boot, System Design, Software Architecture, Backend, Cloud Computing, Kubernetes, AWS
 about_box_desc: >-
+  <div style="text-align: center">
   Software Engineer<br>
   Consultant<br>
-  Java Expert
+  Java Expert<br>
+  </div>
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jekyll4test.pages.dev/" # the base hostname & protocol for your site, e.g. http://example.com
 # favicon: "/favicon.png"

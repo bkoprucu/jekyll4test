@@ -145,7 +145,7 @@ html[data-theme="dark"]  {
     a {
       background-color: $header-background-color;
       color: $dark-text-color;
-      transition: background-color .3s;
+      transition: background-color .25s;
       &:hover {
         color: $bold-color;
         background-color: #334;
