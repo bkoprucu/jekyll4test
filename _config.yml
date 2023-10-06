@@ -46,7 +46,7 @@ timezone: Europe/Stockholm
 
 debug: false
 
-paginate: 3
+paginate: 6
 
 # Custom color as below:
 # theme_color: "#882250"
