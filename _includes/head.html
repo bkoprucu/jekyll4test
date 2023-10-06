@@ -1,5 +1,10 @@
 <head>
   <meta charset="utf-8">
+  <!-- Page name: {{ page.name }} -->
+  <!-- Page id: -{{ page.id }}- -->
+  <!-- Page dir: -{{ page.dir }}- -->
+  <!-- Page path: -{{ page.path }}- -->
+  <!-- Page url: -{{ page.url }}- -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- if site.seo_enabled -%}
   {%- seo -%}
@@ -14,7 +19,9 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include extensions/google-analytics.html -%}
   {%- endif -%}
-  {%- include extensions/code-highlight.html -%}
-  {%- include extensions/photo-swipe.html -%}
+  {%- unless page.name == 'index.html' or page.name == 'posts.html' -%}
+    {%- include extensions/code-highlight.html -%}
+    {%- include extensions/photo-swipe.html -%}
+  {%- endunless %}
   {%- include custom-head.html -%}
 </head>
