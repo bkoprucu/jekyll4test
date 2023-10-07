@@ -173,18 +173,18 @@ html[data-theme="dark"]  {
     }
     .post-menu-content {
       ul {
-        border-left: 1px solid $muted-color;
+        border-left: 1px solid #334;
         a {
           color: $muted-color;
           &:hover {
-            color: $bold-color !important;
+            color: #ccc !important;
           }
         }
 
         .active {
           background-color: $header-background-color;
           color: $bold-color;
-          border-left: 2px solid $bold-color;
+          border-left: 2px solid $dark-text-color;
           &:hover {
             background-color: #334;
           }

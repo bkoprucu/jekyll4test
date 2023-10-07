@@ -1,5 +1,5 @@
 .common-list {
-  @include relative-font-size(.94);
+  font-size: 15px;
   min-width: 200px;
 
   ul {
@@ -8,7 +8,7 @@
   }
 
   li {
-    @include borderbo(.2);
+    @include borderbo(.25);
 
     &:last-child {
       border-bottom: none;

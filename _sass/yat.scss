@@ -52,11 +52,11 @@ $post-width:    920px;
 }
 
 @mixin borderb() {
-  border-bottom: 1px solid rgba(128, 128, 128, .33);  
+  border-bottom: 1px solid rgba(136, 136, 144, .5);
 }
 
 @mixin bordert() {
-  border-top: 1px solid rgba(128, 128, 128, .33);  
+  border-top: 1px solid rgba(136, 136, 144, .4);
 }
 
 @mixin borderbo($op) {

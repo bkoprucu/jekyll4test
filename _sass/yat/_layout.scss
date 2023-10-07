@@ -260,7 +260,7 @@ html {
     list-style: none;
 
     > li {
-      margin-bottom: $spacing-unit * 1.5;
+      margin-bottom: 60px;
       padding-bottom: 30px;
 
       &:not(:last-child) {
@@ -294,12 +294,16 @@ html {
   }
 
   .post-title {
-    margin-bottom: $spacing-unit * 0.2;
+    margin-bottom: 15px;
     transition: 0.25s all;
   }
 
   .post-meta {
-    margin-bottom: $spacing-unit * 0.5;
+    margin-bottom: 25px;
+  }
+
+  .post-tags {
+    margin-bottom: 25px;
   }
 
   .post-link {
@@ -316,14 +320,12 @@ html {
     display: flex;
     position: relative;
     gap: 15px;
-    margin-bottom: 25px;
-
+    margin-bottom: 15px;
     .excerpt-img {
       object-fit: contain;
       max-height: 400px;
       margin-bottom: 25px;
     }
-
     a {
       &:hover {
         color: #000;
@@ -564,7 +566,7 @@ html {
       }
 
       > :nth-child(2) {
-//         font-weight: lighter;
+         //font-weight: lighter;
         margin-bottom: 0.8em;
         transition: 0.2s all;
 

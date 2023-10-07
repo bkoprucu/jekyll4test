@@ -21,7 +21,7 @@
     display: none;
   }
 
-  @include media-query(1070px) {
+  @include media-query(1085px) {
     width: 40px;
     height: 40px;
     border-radius: 20px;
@@ -31,7 +31,7 @@
 }
 
 .click-to-top.show {
-  opacity: .75;
+  opacity: 1;
   transform: translateY(0);
 }
 
@@ -44,7 +44,7 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   .click-to-top {
-    background-color: #556;
+    background-color: #2a2a3a;
     color: $dark-text-color;
   }
 }
