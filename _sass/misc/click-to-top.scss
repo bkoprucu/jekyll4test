@@ -6,8 +6,8 @@
   width: 45px;
   height: 45px;
   border-radius: 25px;
-  right: 50px;
-  bottom: 40px;
+  right: 45px;
+  bottom: 55px;
   cursor: pointer;
   opacity: 0;
   transform: translateY(10px);
@@ -19,6 +19,14 @@
 
   @include media-query($on-palm) {
     display: none;
+  }
+
+  @include media-query(1070px) {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    right: 10px;
+    font-size: 20px;
   }
 }
 
