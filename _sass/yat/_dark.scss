@@ -35,7 +35,6 @@ html[data-theme="dark"]  {
     color: $muted-color;
   }
 
-
   /*  
   table {
     color: #9d9d9d;
@@ -45,32 +44,17 @@ html[data-theme="dark"]  {
     tr:nth-child(even) {
       background-color: #080808;
     }
-  }
-  */
+  } */
 
   .site-header {
     @include media-query($on-laptop) {
       .menu-icon > svg {
           fill: rgba($dark-text-color, 80%);
       }
-
       .site-nav input:checked ~ .trigger {
         background-color: #090909;
       }
     }
-  }
-
-  .svg-icon {
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(/assets/images/icon/sprite-dark.svg);
-  }
-
-  .icon-moon {
-    width: 18px;
-    height: 24px;
-    background-position: 0 0;
-    vertical-align: middle;
   }
 
   .site-footer {
@@ -84,7 +68,7 @@ html[data-theme="dark"]  {
   .page-banner {
     .page-banner-img {
       & > *:first-child {
-        opacity: 0.9;
+        opacity: 0.85;
       }
     }
   }
@@ -161,7 +145,6 @@ html[data-theme="dark"]  {
     ul {
       a {
         color: #888;
-        text-decoration: none;
         &:hover {
           color: #ddd;
         }
@@ -218,7 +201,6 @@ html[data-theme="dark"]  {
   }
 
   a:visited .post-badges .post-badge.badge-new {
-    display: none;
     background-color: $dark-background-color;
   }
 

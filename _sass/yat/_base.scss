@@ -1,13 +1,10 @@
 /* Reset some basic elements */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0;
 }
 
 
-/* Basic styling */
 body {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
@@ -26,24 +23,20 @@ body {
 
 
 /* Set `margin-bottom` to maintain vertical rhythm */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure,
 %vertical-rhythm {
   margin-bottom: calc($spacing-unit / 2);
 }
-
 
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
-
 img {
   max-width: 100%;
   vertical-align: middle;
+  border-radius: 3px;
 }
-
 
 figure > img {
   display: block;
@@ -52,7 +45,6 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
-
 
 ul, ol {
   margin-left: $spacing-unit;
@@ -74,14 +66,9 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: $brand-color;
   text-decoration: none;
+  transition: color .25s;
   &:hover {
-    text-decoration: underline;
-  }
-  .social-media-list &:hover {
     text-decoration: none;
-    .username {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -173,34 +160,10 @@ table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  // color: lighten($text-color, 5%);
   border-collapse: collapse;
   overflow: auto;
-
-  /*
-  tr { 
-    &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
-    }
-  }
-
-  th, td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
-  }
-  
-  th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
-  }
-
-  td {
-    border: 1px solid $grey-color-light;
-  }
-  */
 }
 
-/* Flex layout */
 %flex {
   display: flex;
 }
@@ -241,19 +204,6 @@ table {
 
 
 // -----------
-
-.icon-moon {
-  width: 18px;
-  height: 24px;
-  background-position: 0 0;
-  vertical-align: middle;
-}
-.svg-icon {
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-image: url(/assets/images/icon/sprite.svg);
-}
-
 .pheader {
   font-size: 38px;
   font-weight: 600;

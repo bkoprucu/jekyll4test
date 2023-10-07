@@ -1,6 +1,4 @@
-/**
- * Animation for transparent header
- */
+/* Animation for transparent header */
 html {
   &[data-header-transparent] {
     header.site-header {
@@ -55,15 +53,11 @@ html {
   width: 100%;
   transition: height 0.2s, text-shadow 0.2s, top 0.2s;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .06);
-
   a {
-    text-decoration: none;
-    transition: color .25s;
     &:hover {
       color: #fff;
     }
   }
-
   // Positioning context for the mobile navigation icon
   @include flex-sticky(0);
   z-index: 1000;
@@ -189,8 +183,6 @@ html {
     width: 300px;
     a {
       color: $footer-text-color;
-      text-decoration: none;
-      transition: color .25s;
       &:hover {
         color: $text-color;
       }
@@ -255,10 +247,6 @@ html {
   @include relative-font-size(1.75);
 }
 
-img {
-  border-radius: 3px;
-}
-
 
 /* Pagination */
 .pagination {
@@ -305,13 +293,9 @@ img {
     }
   }
 
-
   .post-title {
     margin-bottom: $spacing-unit * 0.2;
     transition: 0.25s all;
-    a {
-      text-decoration: none;
-    }
   }
 
   .post-meta {
@@ -333,15 +317,6 @@ img {
     position: relative;
     gap: 15px;
     margin-bottom: 25px;
-    /* .post-image > *:first-child {
-      flex: 0 1 38.2%;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center center;
-      overflow: hidden;
-      transition: 0.2s all ease-in-out;
-    } */
 
     img {
       object-fit: contain;
@@ -350,8 +325,6 @@ img {
     }
 
     a {
-      text-decoration: none;
-      transition: color .25s;
       &:hover {
         color: #000;
       }
@@ -405,11 +378,9 @@ img {
     margin: 50px auto 60px;
     padding: 0 0 20px;
     @include borderb();
-
     .post-title {
       margin-bottom: 6px;
     }
-
     .post-subtitle {
       font-weight: lighter;
     }
@@ -423,7 +394,6 @@ img {
 
     h2 {
       @include relative-font-size(2);
-
       @include media-query($on-laptop) {
         @include relative-font-size(1.75);
       }
@@ -431,7 +401,6 @@ img {
 
     h3 {
       @include relative-font-size(1.625);
-
       @include media-query($on-laptop) {
         @include relative-font-size(1.375);
       }
@@ -439,7 +408,6 @@ img {
 
     h4 {
       @include relative-font-size(1.25);
-
       @include media-query($on-laptop) {
         @include relative-font-size(1.125);
       }
@@ -462,6 +430,10 @@ img {
     p {
       margin-bottom: 24px;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   .post-related {
@@ -479,8 +451,6 @@ img {
       color: $muted-color;
       a {
         color: $muted-color;
-        text-decoration: none;
-        transition: color .25s;
         &:hover {
           color: #000;
         }
@@ -510,7 +480,6 @@ img {
     max-width: 50%;
     transition: color,background-color .25s;
     &:hover {
-      text-decoration: none;
       color: black;
       background-color: #ccc;
     }
@@ -518,13 +487,11 @@ img {
 }
 
 
-/* Archives page */
 .page-archives {
   .page-archives-list {
     margin-left: 0;
     list-style: none;
   }
-
   .archives-time {
     @include relative-font-size(1.5);
     &:not(:first-child) {
@@ -535,7 +502,6 @@ img {
 }
 
 
-/* Page banner */
 .page-banner {
   display: block;
   position: relative;
@@ -570,10 +536,9 @@ img {
 
   .page-banner-inner {
     @include vertical-center(relative);
-
     color: $banner-text-color;
     padding: 10px 5px;
-    text-shadow: 1px 1px 2px #33333355;
+    text-shadow: 4px 3px 2px rgba(0,0,0,.5);
 
     & > *:first-child {
       margin: 0;
@@ -591,7 +556,7 @@ img {
       }
 
       > :nth-child(2) {
-        font-weight: lighter;
+//         font-weight: lighter;
         margin-bottom: 0.8em;
         transition: 0.2s all;
 
@@ -609,7 +574,6 @@ img {
       @include relative-font-size(1.525);
       color: #ffffffcc;
       padding-right: 280px;
-
       @include media-query($on-palm) {
         padding-right: 0;
       }
@@ -696,7 +660,6 @@ img {
       margin-left: 5px;
     }
     color: #303030;
-    transition: color .25s;
     &:hover {
       color: #000;
     }
@@ -714,9 +677,7 @@ img {
   vertical-align: baseline;
 }
 
-/**
- * Post badge
- */
+
 .post-badges {
   display: inline-block;
   position: relative;

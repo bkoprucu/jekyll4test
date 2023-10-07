@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-// Define defaults for each variable.
-
 $base-font-family: Helvetica Neue, Helvetica, Arial, sans-serif, !default;
 $base-font-size: 16px !default;
 $base-font-weight: 400 !default;
@@ -15,7 +13,6 @@ $muted-color: #888 !default;
 $more-muted-color: #ccc;
 $background-color: #fff !default;
 
-
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
@@ -27,14 +24,16 @@ $table-text-align: left !default;
 $header-height: $base-line-height * $base-font-size * 2.5 !default;
 $header-text-color: #ccc; //invert($theme-color) !default;
 $header-background-color: #1a1d20 !default;
+$header-transparent: false;
 
 $footer-height: $header-height * 1.05 !default;
 $footer-text-color: lighten(invert($theme-color), 50%) !default;
 $footer-background-color: #eee !default; 
 
-$banner-height: 640px !default;
+$banner-height: 400px !default;
 $banner-text-color: lighten($white-color, 0%) !default;
-$banner-background: rgba(0,0,0,0.8) !default;
+// $banner-background: rgba(0,0,0,0.8) !default;
+$banner-background: #505050;
 
 // Width of the content area
 $content-width: 1250px !default;
@@ -69,7 +68,6 @@ $post-width:    920px;
 }
 
 @import
-  "yat/custom-variables",
   "yat/base",
   "yat/layout",
   "yat/dark",
@@ -78,6 +76,5 @@ $post-width:    920px;
   "misc/common-list",
   "misc/about-box",
   "misc/gitment",
-  "misc/click-to-top",
-  "yat/custom-styles"
+  "misc/click-to-top"
 ;
