@@ -74,11 +74,11 @@ a {
 
 
 blockquote {
-  color: $muted-color;
-  border-left: 5px solid $more-muted-color;
-  padding: 25px 5px 5px 25px;
-  margin: 25px;
-  @include relative-font-size(1.05);
+  color: #944;
+  border-left: 6px solid #b66;
+  margin: 30px 0 30px 35px;
+  padding-left: 16px;
+  font-size: 17px;
   > :last-child {
     margin-bottom: 0;
   }

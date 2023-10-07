@@ -7,9 +7,8 @@ sidebar: [category-list, about-box]
 
 {%- if site.posts.size > 0 -%}
   {%- include functions.html func='get_categories' -%}
-  {% assign categories = return %}
-  {% assign keys = categories %}
-  {% assign field = 'categories' %}
+  {%- assign categories = return %}
+  {%- assign keys = categories %}
+  {%- assign field = 'categories' %}
   {%- include views/segments.html -%}
 {%- endif -%}
-
