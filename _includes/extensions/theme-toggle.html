@@ -15,6 +15,8 @@
 
 <script>
   (function() {
+    const morning = 9;
+    const evening = 18;
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
     var nightModeOption = ('{{ night_mode }}' || 'auto').toLowerCase();
@@ -52,15 +54,15 @@
       var now = new Date();
       var toggleAt = new Date();
       var hours = now.getHours();
-      var nightShift = hours >= 19 || hours <=7;
+      var nightShift = hours >= evening || hours <= morning;
 
       if (nightShift) {
-        if (hours > 7) {
+        if (hours > morning) {
           toggleAt.setDate(toggleAt.getDate() + 1);
         }
-        toggleAt.setHours(7);
+        toggleAt.setHours(morning);
       } else {
-        toggleAt.setHours(19);
+        toggleAt.setHours(evening);
       }
 
       toggleAt.setMinutes(0);
