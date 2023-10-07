@@ -318,7 +318,7 @@ html {
     gap: 15px;
     margin-bottom: 25px;
 
-    img {
+    .excerpt-img {
       object-fit: contain;
       max-height: 400px;
       margin-bottom: 25px;
@@ -383,6 +383,14 @@ html {
     }
     .post-subtitle {
       font-weight: lighter;
+    }
+
+    .excerpt-img {
+      max-width: 72%;
+      margin: 25px 0;
+      @include media-query($on-palm) {
+        max-width: 80%;
+      }
     }
   }
 

@@ -34,7 +34,7 @@
 
   {%- if exc_img and page.excerpt_image -%}
   <div>
-    <img class="excerpt-img" style="max-width: {{ page.excerpt_image_max_width | default: '60%' }}; margin: 25px 0" src="{{ page.excerpt_image | relative_url }}" />
+    <img class="excerpt-img" src="{{ page.excerpt_image | relative_url }}" />
   </div>
   {%- endif -%}
 </header>
