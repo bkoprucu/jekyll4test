@@ -1,10 +1,10 @@
 {%- if include.keys -%}
   {% assign keys = include.keys -%}
-{% endif -%}
+{%- endif -%}
 
-{% if include.field -%}
-  {% assign field = include.field -%}
-{% endif -%}
+{%- if include.field -%}
+  {%- assign field = include.field -%}
+{%- endif -%}
 
 {%- assign unhidden = site.posts | where_exp: "item", "item.hide != true" -%}
 <div class="common-list">

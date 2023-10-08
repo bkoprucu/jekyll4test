@@ -28,29 +28,29 @@ sidebar:
     {%- assign result = hidden | where_exp: "item", "item == 'navigator'" -%}
     {%- if result.size == 0 -%}
 
-    {% assign p = page.previous %}
-    {% for i in (1..50) %}
-      {% if p == nil %}
-        {% break %}
-      {% endif %}
-      {% if p.hide %}
-        {% assign p = p.previous %}
-        {% continue %}
-      {% endif %}
-      {% break %}
-    {% endfor %}
+    {%- assign p = page.previous %}
+    {%- for i in (1..50) %}
+      {%- if p == nil %}
+        {%- break %}
+      {%- endif %}
+      {%- if p.hide %}
+        {%- assign p = p.previous %}
+        {%- continue %}
+      {%- endif %}
+      {%- break %}
+    {%- endfor %}
 
-    {% assign n = page.next %}
-    {% for i in (1..50) %}
-      {% if n == nil %}
-        {% break %}
-      {% endif %}
-      {% if n.hide %}
-        {% assign n = n.next %}
-        {% continue %}
-      {% endif %}
-      {% break %}
-    {% endfor %}
+    {%- assign n = page.next %}
+    {%- for i in (1..50) %}
+      {%- if n == nil %}
+        {%- break %}
+      {%- endif %}
+      {%- if n.hide %}
+        {%- assign n = n.next %}
+        {%- continue %}
+      {%- endif %}
+      {%- break %}
+    {%- endfor %}
 
     <div class="post-nav">
       {%- if p -%}

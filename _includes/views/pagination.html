@@ -10,9 +10,8 @@
 
 {%- if paginator.posts.size > 0 -%}
 <div class="pagination">
-  <!-- Post list links -->
   <ul class="post-list {{ image_style }}">
-    <!-- Top list item -->
+    <!-- Pinned posts -->
     {%- if paginator == site or paginator.page == 1 -%}
       {%- assign post_item_class = "top-post" -%}
       {%- assign posts = site.posts
@@ -23,7 +22,7 @@
       {%- endfor -%}
     {%- endif -%}
 
-    <!-- Normal list item -->
+    <!-- Other posts -->
     {%- assign post_item_class = "" -%}
     {%- for post in paginator.posts -%}
       {%- if post.top or post.hide -%}
@@ -33,7 +32,6 @@
     {%- endfor -%}
   </ul>
 
-  <!-- Pagination links -->
   {%- if paginator.posts.size < site.posts.size -%}
     {%- include views/paginator.html -%}
   {% endif -%}
