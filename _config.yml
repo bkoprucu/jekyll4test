@@ -1,8 +1,3 @@
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 
 title: Berk Köprücü
 email: info@berksoftware.com
@@ -11,12 +6,6 @@ copyright: "(c) {currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Berk Köprücü Berk Koprucu - Software Engineer, Beckend, Java, Kotlin, Spring Boot, System Design, Software Architecture, Backend, Cloud Computing, Kubernetes, AWS
-about_box_desc: >-
-  <div style="text-align: center">
-  Software Engineer<br>
-  Consultant<br>
-  Java Expert<br>
-  </div>
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jekyll4test.pages.dev/" # the base hostname & protocol for your site, e.g. http://example.com
 # favicon: "/favicon.png"

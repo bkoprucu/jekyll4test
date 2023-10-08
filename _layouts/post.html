@@ -9,7 +9,6 @@ sidebar:
 
 <div class="post">
   <section>
-
     {%- assign name = 'banner' -%}
     {%- include functions.html func='get_value' -%}
     {%- assign banner = return -%}
@@ -79,9 +78,7 @@ sidebar:
             {%- assign post_item_class = "top-post" -%}
           {%- endif -%}
         <li class="{{ post_item_class }}">
-          <a class="post-link"
-            href="{{ post.url | relative_url }}"
-            title="{{ post.title | escape }}">
+          <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title | escape }}">
             {{ post.title | escape | truncatewords: 12 }}
             {%- include views/post-badges.html -%}
           </a>
@@ -94,8 +91,7 @@ sidebar:
     {%- assign result = hidden | where_exp: "item", "item == 'comments'" -%}
     {%- if result.size == 0 -%}
     <div class="post-comments">
-      {%- if page.comments != false -%}
-
+    {%- if page.comments != false -%}
       {%- if site.disqus.shortname -%}
       {%- include extensions/comments/disqus.html -%}
       {%- endif -%}
@@ -107,10 +103,8 @@ sidebar:
       {%- if site.utterances.repo -%}
       {%- include extensions/comments/utterances.html -%}
       {%- endif -%}
-
-      {%- endif -%}
+    {%- endif -%}
     </div>
     {%- endif -%}
-
   </section>
 </div>

@@ -3,11 +3,10 @@ layout: default
 ---
 
 <div class="framework">
-  <section class="main">
-     {{ content }}
-  </section>
-  <section class="sidebar" style="margin-left: 35px;">
-    <!-- Get sidebar items -->
+<section class="main">
+{{ content }}
+</section>
+<section class="sidebar" style="margin-left: 35px;">
 {%- if page.sidebar -%}
   {%- assign sidebar = page.sidebar -%}
 {%- elsif site.defaults[page.layout].sidebar -%}
@@ -25,5 +24,5 @@ layout: default
   {%- assign file = 'sidebar/' | append: file -%}
   {%- include {{ file }} %}
 {%- endfor -%}
-  </section>
+</section>
 </div>
