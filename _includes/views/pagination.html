@@ -13,17 +13,13 @@
   <ul class="post-list {{ image_style }}">
     <!-- Pinned posts -->
     {%- if paginator == site or paginator.page == 1 -%}
-      {%- assign post_item_class = "top-post" -%}
-      {%- assign posts = site.posts
-        | where_exp: "item", "item.top > 0 and item.hide != true"
-        | sort: "top" -%}
+      {%- assign posts = site.posts | where_exp: "item", "item.top > 0 and item.hide != true" | sort: "top" -%}
       {%- for post in posts -%}
         {%- include views/pagination-item.html -%}
       {%- endfor -%}
     {%- endif -%}
 
     <!-- Other posts -->
-    {%- assign post_item_class = "" -%}
     {%- for post in paginator.posts -%}
       {%- if post.top or post.hide -%}
         {%- continue -%}

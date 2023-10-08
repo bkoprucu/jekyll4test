@@ -73,11 +73,7 @@ sidebar:
       <ul>
         {% assign posts = site[page.collection] | where_exp: "item", "item.hide != true" | sample:4 %}
         {%- for post in posts -%}
-          {%- assign post_item_class = "" -%}
-          {%- if post.top -%}
-            {%- assign post_item_class = "top-post" -%}
-          {%- endif -%}
-        <li class="{{ post_item_class }}">
+        <li>
           <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title | escape }}">
             {{ post.title | escape | truncatewords: 12 }}
             {%- include views/post-badges.html -%}

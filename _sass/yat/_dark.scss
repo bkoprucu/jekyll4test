@@ -197,11 +197,11 @@ html[data-theme="dark"]  {
     }
   }
 
-  a .post-badges .post-badge {
+  a .post-badge {
     color: $dark-background-color !important;
   }
 
-  a:visited .post-badges .post-badge.badge-new {
+  a:visited .badge-new {
     background-color: $dark-background-color;
   }
 
