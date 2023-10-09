@@ -9,7 +9,7 @@
 <div class="page-segments">
   <ul class="page-segments-list">
     {%- for key in keys -%}
-      {%- assign items = site.posts | where_exp: "item", "item.hide != true" | where: field, key %}
+      {%- assign items = site.posts | where_exp: "item", "item.hidden == nil or item.hidden == false" | where: field, key %}
       {%- if items.size > 0 -%}
         <h4 id="{{ key }}" class="segment-name {% if field == 'tags' %}post-tag{% endif %}">{{ key }}</h4>
       {%- endif -%}

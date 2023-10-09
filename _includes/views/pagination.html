@@ -1,19 +1,18 @@
 {%- if page.paginator -%}
-  {%- assign paginator = page.paginator -%}
-{%- elsif paginator == nil -%}
-  {%- assign paginator = site -%}
+  {%- assign paginator = page.paginator %}
+{%- elsif paginator == nil %}
+  {%- assign paginator = site %}
 {%- endif -%}
 
 {%- assign name = 'excerpt.image_style' -%}
-{%- include functions.html func='get_value' default='top' -%}
-{%- assign image_style = return | append: '-image-style' -%}
-
+{%- include functions.html func='get_value' default='top' %}
+{%- assign image_style = return | append: '-image-style' %}
 {%- if paginator.posts.size > 0 -%}
 <div class="pagination">
   <ul class="post-list {{ image_style }}">
     <!-- Pinned posts -->
     {%- if paginator == site or paginator.page == 1 -%}
-      {%- assign posts = site.posts | where_exp: "item", "item.top > 0 and item.hide != true" | sort: "top" -%}
+      {%- assign posts = site.posts | where_exp: "item", "item.top > 0" | sort: "top" -%}
       {%- for post in posts -%}
         {%- include views/pagination-item.html -%}
       {%- endfor -%}
@@ -21,15 +20,15 @@
 
     <!-- Other posts -->
     {%- for post in paginator.posts -%}
-      {%- if post.top or post.hide -%}
-        {%- continue -%}
-      {%- endif -%}
-      {%- include views/pagination-item.html -%}
+      {%- if post.top %}
+        {%- continue %}
+      {%- endif %}
+      {%- include views/pagination-item.html %}
     {%- endfor -%}
   </ul>
 
   {%- if paginator.posts.size < site.posts.size -%}
-    {%- include views/paginator.html -%}
+    {%- include views/paginator.html %}
   {% endif -%}
 </div>
 {%- endif -%}
