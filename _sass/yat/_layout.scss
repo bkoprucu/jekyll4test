@@ -268,7 +268,7 @@ html {
       }
     }
 
-    &.none-image-style .post-item .post-excerpt .post-image {
+    &.none-image-style .post-item .post-excerpt .excerpt-img {
       display: none;
     }
     &.left-image-style .post-item .post-excerpt {
@@ -323,8 +323,9 @@ html {
     margin-bottom: 15px;
     .excerpt-img {
       object-fit: contain;
-      max-height: 400px;
+      max-height: 380px;
       margin-bottom: 25px;
+      transform: width .2s;
     }
     a {
       &:hover {

@@ -15,11 +15,7 @@
 
 {%- assign name = 'excerpt.image_height' -%}
 {%- include functions.html func='get_value' -%}
-{%- assign image_height = return | default: '220px' -%}
-
-{%- assign name = 'excerpt.default_image' -%}
-{%- include functions.html func='get_value' -%}
-{%- assign default_image = return -%}
+{%- assign image_height = return | default: '120px' -%}
 
 {%- assign post_image = post.excerpt_image
   | default: post.banner.image
@@ -42,8 +38,8 @@
   </div>
   <div class="post-excerpt">
     {%- if post_image -%}
-    <a class="post-image" href="{{ post_url }}">
-      <img class="excerpt-img" style="max-width: {{ post.excerpt_image_max_width | default: '70%' }}" src="{{ post_image | relative_url }}" />
+    <a href="{{ post_url }}">
+      <img class="excerpt-img" style="max-width: {{ post.excerpt_image_max_width | default: '65%' }}" src="{{ post_image | relative_url }}" />
     </a>
     {%- endif -%}
     <a class="post-text" href="{{ post_url }}">
