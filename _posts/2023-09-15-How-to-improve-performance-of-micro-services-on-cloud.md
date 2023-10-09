@@ -4,7 +4,6 @@ excerpt_text: "We will improve it, I promise..."
 excerpt_image: "/assets/images/test/data_center.jpg"
 # published: false
 tags: [AWS, Spring]
-hide: false
 categories: [Java, Test, How to improve performance]
 ---
 

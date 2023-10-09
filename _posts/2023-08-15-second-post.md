@@ -7,6 +7,7 @@ excerpt_image: /assets/images/test/redis_1.png
 # excerpt_image_max_width: 30%
 categories: [Test, Web development]
 tags: [Java, AWS, Cloud Development long tag]
+hide: false
 ---
 
 ## Hello there
