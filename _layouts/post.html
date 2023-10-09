@@ -66,12 +66,13 @@ sidebar:
     </div>
   {%- endif -%}
 
-  {%- assign result = hidden | where_exp: "item", "item == 'related_posts'" -%}
-  {%- if result.size == 0 -%}
+  {%- assign result = hidden | where_exp: "item", "item == 'related_posts'" %}
+  {%- if result.size == 0 %}
+    {%- assign posts = site[page.collection] | where_exp: "item", "item.hide != true and item.id != page.id" | sample:4 %}
+    {%- if posts.size > 0 -%}
     <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        {% assign posts = site[page.collection] | where_exp: "item", "item.hide != true and item.id != page.id" | sample:4 %}
         {%- for post in posts -%}
           <li><a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title | escape }}">
           {{ post.title | escape | truncatewords: 12 }}
@@ -81,6 +82,7 @@ sidebar:
         {%- endfor -%}
       </ul>
     </div>
+    {%- endif -%}
   {%- endif -%}
 
   {%- assign result = hidden | where_exp: "item", "item == 'comments'" -%}
