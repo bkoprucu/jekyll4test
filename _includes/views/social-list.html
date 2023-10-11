@@ -23,5 +23,10 @@
         rel="{{ link_types }}"
     {%- endunless -%}
     >
-    <i class="{{ entry.icon }}"></i></a>{% if params.withurl %} {{ entry.url }}<br>{% endif %}
+    <i class="{{ entry.icon }}"></i>
+    {%- if params.withurl %}
+      {{ entry.url }}</a><br>
+    {% else %}
+      </a>
+    {%- endif -%}
 {%- endfor -%}

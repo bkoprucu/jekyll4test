@@ -50,9 +50,10 @@
   }
   h5 {
     font-size: 14px;
-    margin: 0 0 15px 12px;
+    margin: 0 0 14px 12px;
+    color: #888;
   }
-  padding-top: 15px;
+  padding-top: 8px;
   @include borderto(.5);
   color: $muted-color;
 }
