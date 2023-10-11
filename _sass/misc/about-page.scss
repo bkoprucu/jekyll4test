@@ -1,0 +1,17 @@
+
+.about-page {
+  a {
+    color: #44f;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .social {
+    a {
+      color: #4f4;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

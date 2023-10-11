@@ -1,0 +1,55 @@
+---
+#layout: framework
+#hide: [header, navigator, related]
+layout: about
+title: About
+permalink: /about/
+---
+
+<!--
+<style>
+.about-page {
+  .social {
+    a {
+      color: #444;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+</style>
+-->
+<div>Hi There, I'm Berk Köprücü</div>
+<p>
+<img src="/assets/images/about/berk_snow_small.jpeg" style="max-height: 300px"/>
+</p>
+
+
+
+<br>
+<p id="#description">
+
+Hi, I'm Berk Köprücü,  a seasoned software engineer, freelancer, currently living in Stockholm / Sweden.<br>
+
+I have been working on the JVM and the Java ecosystem for more than 15 years, using Java and Kotlin programming languages, driven by my passion for software engineering.<br>
+
+I am also an Oracle Certified Java Programmer (OCPJP) and Web Component Developer (OCEJWCD).
+
+I will be writing blog posts to share my knowledge and thoughts about software engineering and architecture.
+</p>
+<p id="#contact">
+    <div>
+Contact:
+</div>
+<br>
+<div>
+Feel free to reach out, if you are interested to know more about me and my work, consultancy or training:
+</div>
+<br>
+<div class="social">
+<i class="fas fa-map-marker-alt"></i>&nbsp; Stockholm - Sweden<br>
+{%- include views/social-list.html withurl=true skip='rss' -%}
+</div>
+<br>
+Environment: {{ jekyll.environment }}

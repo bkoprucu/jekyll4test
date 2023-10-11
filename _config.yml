@@ -21,9 +21,9 @@ theme: jekyll-theme-yat
 #sitemap: true
 header_pages:
   - index.html
+  - about.html
   - categories.html
   - tags.html
-  - about.md
   - archives.html
 
 yat:
