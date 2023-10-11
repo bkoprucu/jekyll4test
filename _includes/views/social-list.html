@@ -3,28 +3,25 @@
     {%- if entry.type == params.skip %}
         {%- continue %}
     {%- endif %}
-    {%- assign prefix = 'https://' -%}
-    {%- if entry.prefix -%}
-        {%- assign prefix = entry.prefix -%}
+    {%- assign prefix = 'https://' %}
+    {%- if entry.prefix %}
+        {%- assign prefix = entry.prefix %}
     {%- endif -%}
 
     {%- assign url = prefix | append: entry.url -%}
-    {%- if entry.type == 'rss' -%}
+    {%- if entry.type == 'rss' %}
         {%- assign url = '/feed.xml' | relative_url %}
     {%- endif -%}
 
+    {%- assign link_types = '' -%}
     <a href="{{ url }}" aria-label="{{ entry.type }}" title="{{ entry.title }}"
-    {%- assign link_types = '' %}
-    {%- unless entry.noblank %}
+    {% unless entry.noblank %}
         target="_blank"
-        {% assign link_types = 'noopener noreferrer' %}
+        {% assign link_types = 'noopener noreferrer' -%}
     {%- endunless %}
     {%- unless link_types == '' %}
         rel="{{ link_types }}"
     {%- endunless -%}
     >
-    <i class="{{ entry.icon }}"></i></a>
-    {%- if params.withurl -%}
-        {{ entry.url }}<br>
-    {%- endif -%}
+    <i class="{{ entry.icon }}"></i></a>{% if params.withurl %} {{ entry.url }}<br>{% endif %}
 {%- endfor -%}
