@@ -137,7 +137,7 @@ hr {
   padding-right: 60px;
   padding-left: 60px;
   @extend %clearfix;
-
+  transition: margin .3s, padding .3s;
   @include media-query($on-palm) {
     margin: 0 10px;
     padding: 0 10px;
