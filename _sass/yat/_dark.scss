@@ -217,13 +217,15 @@ html[data-theme="dark"]  {
 
   .about-box {
     color: $muted-color;
-    a {
-      &:hover {
+    a:hover {
         color: $bold-color;
-      }
     }
   }
-  #about-box-desc {
-    color: $muted-color;
+
+
+  .common-list-header {
+    a:hover {
+      color: $bold-color;
+    }
   }
 }

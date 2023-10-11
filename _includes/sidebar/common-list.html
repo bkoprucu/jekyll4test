@@ -8,13 +8,21 @@
 
 {%- assign unhidden = site.posts | where_exp: "item", "item.hidden == nil or item.hidden == false" -%}
 <div class="common-list">
+{%- if include.header -%}
+<div class="common-list-header">
+  <a href="{{ url }}"><h5>{{ include.header }}</h5></a>
+</div>
+{%- endif -%}
+
 <ul>
+{%- if include.all -%}
 <li><a href="{{ '/index.html' | relative_url }}">All<span>{{ unhidden.size }}</span></a></li>
-  {%- for key in keys %}
-    {%- assign items = unhidden | where: field, key %}
-    {%- if items.size > 0 %}
+{%- endif -%}
+{%- for key in keys %}
+  {%- assign items = unhidden | where: field, key %}
+  {%- if items.size > 0 %}
 <li><a href="{{ url }}#h-{{ key }}">{{ key }} <span>{{ items | size }}</span></a></li>
-    {%- endif %}
-  {%- endfor %}
+  {%- endif %}
+{%- endfor %}
 </ul>
 </div>

@@ -2,19 +2,10 @@
 .about-box {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-  padding-top: 15px;
+  margin-bottom: 40px;
   color: $muted-color;
-
-  @include borderb();
-  @include bordert();
-  h5 {
-    margin: 0 0 15px 12px;
-  }
   a {
-    text-decoration: none;
     color: $muted-color;
-    transition: color .25s;
     &:hover {
       color: #000;
     }
@@ -28,13 +19,13 @@
     max-width: 240px;
     font-size: 14px;      
   }
-}
 
-#about-box-social {
-  font-size: 20px;
-  display: flex;
-  align-self: center;
-  width: 180px;
-  padding: 6px 0;
-  justify-content: space-evenly;
+  .social {
+    font-size: 20px;
+    display: flex;
+    align-self: center;
+    width: 180px;
+    padding: 6px 0;
+    justify-content: space-evenly;
+  }
 }

@@ -1,12 +1,12 @@
 ---
 layout: framework
-sidebar: [category-list, about-box]
+sidebar: [category-list-w-header, about-box]
 ---
 
 <div class="articles">
-  {% if page.banner == nil %}
-    {% assign banner = page.title %}
-  {% endif %}
+  {%- if page.banner == nil -%}
+    {%- assign banner = page.title %}
+  {%- endif -%}
 
   {{ content }}
 
