@@ -83,11 +83,10 @@ html {
   margin-right: 50px;
 
   .site-brand-inner {
-    @include relative-font-size(1.4);
+    font-size: 21px;
     font-weight: 600;
-    transition: 0.1s filter color;
     color: $header-text-color;
-
+    padding: 15px 0;
     .site-favicon {
       display: inline-block;
       height: calc($header-height / 1.5);
@@ -114,12 +113,11 @@ html {
   .page-link {
     line-height: $base-line-height;
     color: $header-text-color;
-    transition: 0.1s ease-in-out;
-    text-decoration: none;
-
+    padding: 15px 0 15px 7px;
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: 24px;
+      margin-right: 10px;
+      padding-right: 7px;
     }
   }
 
@@ -631,7 +629,6 @@ html {
   .sidebar {
     padding-left: 8px;
     transition: top 0.2s;
-    @include borderb();
     @include flex-sticky($header-height + 20px);
     @include media-query($on-laptop) {
       display: none;
