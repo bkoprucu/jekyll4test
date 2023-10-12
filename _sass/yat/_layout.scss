@@ -321,7 +321,7 @@ html {
     margin-bottom: 15px;
     .excerpt-img {
       object-fit: contain;
-      max-height: 380px;
+      max-height: 350px;
       margin-bottom: 25px;
       transform: width .2s;
     }
@@ -387,10 +387,10 @@ html {
     }
 
     .excerpt-img {
-      max-width: 72%;
+      max-width: 60%;
       margin: 25px 0;
       @include media-query($on-palm) {
-        max-width: 80%;
+        max-width: 75%;
       }
     }
   }

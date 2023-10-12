@@ -228,4 +228,16 @@ html[data-theme="dark"]  {
       color: $bold-color;
     }
   }
+
+  .about {
+
+    .social-link-td {
+      a:hover {
+        color: #fff;
+      }
+      a {
+        color: #bbb;
+      }
+    }
+  }
 }

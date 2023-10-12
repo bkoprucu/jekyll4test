@@ -14,19 +14,19 @@
     {%- endif -%}
 
     {%- assign link_types = '' -%}
+    {%- capture link_str -%}
     <a href="{{ url }}" aria-label="{{ entry.type }}" title="{{ entry.title }}"
     {% unless entry.noblank %}
         target="_blank"
-        {% assign link_types = 'noopener noreferrer' -%}
+        {%- assign link_types = 'noopener noreferrer' -%}
     {%- endunless %}
-    {%- unless link_types == '' %}
-        rel="{{ link_types }}"
-    {%- endunless -%}
+    {%- unless link_types == '' %} rel="{{ link_types }}"{% endunless -%}
     >
-    <i class="{{ entry.icon }}"></i>
-    {%- if params.withurl %}
-      {{ entry.url }}</a><br>
-    {% else %}
-      </a>
+    {%- endcapture -%}
+    {%- if params.withurl -%}
+    <tr><td class="social-icon-td"><i class="{{ entry.icon }}"></i></td><td class="social-link-td">{{ link_str }}{{ entry.url }}</a></td></tr>
+    {%- else -%}
+        {{ link_str }}<i class="{{ entry.icon }}"></i></a>
     {%- endif -%}
-{%- endfor -%}
+
+{% endfor -%}

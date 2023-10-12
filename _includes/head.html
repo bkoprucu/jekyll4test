@@ -14,9 +14,9 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include extensions/google-analytics.html -%}
   {%- endif -%}
-  {%- unless page.name == 'index.html' or page.name == 'posts.html' -%}
+  {%- if page.layout == 'post' -%}
     {%- include extensions/code-highlight.html -%}
     {%- include extensions/photo-swipe.html -%}
-  {%- endunless %}
+  {%- endif %}
   {%- include custom-head.html -%}
 </head>
