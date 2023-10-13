@@ -2,7 +2,7 @@
   {% assign paginator = include.paginator %}
 {%- endif -%}
 
-{%- if paginator.posts.size > 0 -%}
+{%- if paginator.next_page or paginator.previous_page -%}
   <div class="paginator">
     <span class="prevnext">
     {%- if paginator.previous_page -%}
