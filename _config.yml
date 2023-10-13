@@ -114,7 +114,7 @@ defaults:
       path: ""
     values:
       layout: "post"
-      author: "Berk Köprücü"
+      author: "Berk"
 
 
 exclude:

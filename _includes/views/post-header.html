@@ -1,7 +1,9 @@
 <header class="post-header">
   <h1 class="post-title p-name" itemprop="name headline">{{ heading | default: page.title | escape }}</h1>
+  {%- assign stitle = subheading | default: page.subtitle | escape %}
+  {%- if stitle %}
   <h2 class="post-subtitle">{{ subheading | default: page.subtitle | escape }}</h2>
-
+  {%- endif %}
   <div class="post-meta">
     <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
       {%- assign date_format = site.yat.date_format | default: "%b %-d, %Y" -%}
@@ -33,7 +35,7 @@
 
   {%- if exc_img and page.excerpt_image -%}
   <div>
-    <img class="excerpt-img" src="{{ page.excerpt_image | relative_url }}" />
+    <img class="excerpt-img" src="{{ page.excerpt_image | relative_url }}" style="{{ page.excerpt_image_page_style }}" />
   </div>
   {%- endif -%}
 </header>

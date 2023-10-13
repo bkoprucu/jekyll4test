@@ -196,7 +196,8 @@ html {
 .post-meta {
   font-size: $small-font-size;
   color: $muted-color;
-  margin-bottom: $spacing-unit * 0.5;
+  margin: 15px 2px;
+  margin-left: 2px;
 }
 
 .post-tag {
@@ -376,21 +377,21 @@ html {
   @extend %post-header;
   max-width: $post-width;
   .post-header {
-    margin: 50px auto 60px;
-    padding: 0 0 20px;
+    margin: 50px auto 40px;
+    padding: 0 0 40px;
     @include borderb();
     .post-title {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .post-subtitle {
       font-weight: lighter;
     }
 
     .excerpt-img {
-      max-width: 60%;
-      margin: 25px 0;
+      max-height: 320px;
+      margin: 25px 0 0;
       @include media-query($on-palm) {
-        max-width: 75%;
+        max-height: 260px;
       }
     }
   }
