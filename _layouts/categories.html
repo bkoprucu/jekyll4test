@@ -1,0 +1,14 @@
+---
+layout: framework
+sidebar: [category-list, about-box]
+---
+
+<div class="pheader">Categories</div>
+
+{%- if site.posts.size > 0 -%}
+  {%- include functions.html func='get_categories' -%}
+  {%- assign categories = return %}
+  {%- assign keys = categories %}
+  {%- assign field = 'categories' %}
+  {%- include views/segments.html -%}
+{%- endif -%}

@@ -1,26 +1,21 @@
 $dark-background-color: #0e0e0e !default;
 $dark-text-color: #bbb !default;
-$text-color: $dark-text-color;
+$footer-background-color: $header-background-color;
+$muted-color: #777;
+$bold-color: #ddd;
 
 html[data-theme="dark"]  {
-  // &[data-scroll-status='top'] {
-  //   header.site-header-transparent {
-  //     &.site-header {
-  //       @include media-query($on-laptop) {
-  //         .page-link {
-  //           color: #f8f8f8;
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   footer.site-footer {
-  //     .site-footer-inner {
-  //       border-top: solid 1px #2f2f2f !important;
-  //       transition: 0s;
-  //     }
-  //   }
-  // }
+  /* &[data-scroll-status='top'] {
+    header.site-header-transparent {
+      &.site-header {
+        @include media-query($on-laptop) {
+          .page-link {
+            color: #f8f8f8;
+          }
+        }
+      }
+    }
+  }*/
 
   body {
     color: $dark-text-color;
@@ -33,7 +28,12 @@ html[data-theme="dark"]  {
   }
 
   blockquote {
-    border-left: 4px solid #484848;
+    border-left-color: #830;
+    color: #944;
+  }
+
+  .post-meta {
+    color: $muted-color;
   }
 
   /*  
@@ -45,146 +45,125 @@ html[data-theme="dark"]  {
     tr:nth-child(even) {
       background-color: #080808;
     }
-  }
-  */
+  } */
 
   .site-header {
-    .ct-language-dropdown {
-      color: #f8f8f8;
-      background-color: $dark-background-color;
-      box-shadow: 0 0 3px 1px #0000005b;
-    }
-
-    .ct-language-selected, .ct-language-dropdown li:hover {
-      background-color: #222 !important;
-    }
-
     @include media-query($on-laptop) {
       .menu-icon > svg {
           fill: rgba($dark-text-color, 80%);
       }
-
       .site-nav input:checked ~ .trigger {
         background-color: #090909;
       }
     }
   }
 
-  .svg-icon {
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(/assets/images/icon/sprite-dark.svg);
-  }
-
-  .icon-moon {
-    width: 18px;
-    height: 24px;
-    background-position: 0 0;
-    vertical-align: middle;
-  }
-
   .site-footer {
-    background-color: $header-background-color;
+    background-color: $footer-background-color;
   }
 
   .left-vsplit:before {
     background-color: #9a9a9a;
   }
 
-/*.page-banner {
+  .page-banner {
     .page-banner-img {
       & > *:first-child {
-        opacity: 0.718;
+        opacity: 0.85;
       }
     }
-  } */
+  }
 
   .pagination {
     .post-link {
       color: $dark-text-color;
+      &:hover {
+        color: $bold-color;
+      }
+    }
+
+    .post-excerpt {
+      color: $muted-color;
+      a:hover {
+        color: $bold-color;
+      }
     }
 
     .post-title {
-      a:visited:after {
-        background-color: $dark-background-color;
-      }
-
-      a:after {
-        color: $dark-background-color;
-      }
+      color: $muted-color;
     }
 
-    .post-list {
-      & > li:not(:last-child) {
-        border-bottom: 1px solid #545454;
+    .paginator {
+      color: $muted-color;
+      a {
+        background-color: $header-background-color;
+        color: $muted-color;
+        &:hover {
+          color: $bold-color;
+          background-color: #334;
+        }
+      }
+      .prevnext {
+        span {
+          color: #555;
+        }
       }
     }
+  }
 
-    .post-tags .post-tag:hover {
-      color: #ddd;
-    }
+  .post-tag:hover {
+    color: $bold-color;
   }
 
   .page-segments {
     li {
       a {
-        color: #ddd;
-      }
-
-      a:visited:after {
-        background-color: $dark-background-color;
-      }
-
-      a:after {
-        color: $dark-background-color;
+        color: $dark-text-color;
+        &:hover {
+          color: $bold-color;
+        }
       }
     }
   }
 
-  .post {
-    .post-header {
-      border-bottom: 1px solid #555;
-    }
-
-    .post-content {
-      img:not(.emoji):not([raw]) {
-        background-color: #ffffff33;
+  .post-nav {
+    a {
+      background-color: $header-background-color;
+      color: $dark-text-color;
+      transition: background-color .25s;
+      &:hover {
+        color: $bold-color;
+        background-color: #334;
       }
     }
   }
 
   .post-related {
     & > *:first-child {
-      color: #d7d7d7;
+      color: $dark-text-color;
     }
 
-    a:visited:after {
-      background-color: $dark-background-color;
-    }
-
-    a:after {
-      color: $dark-background-color;
-    }
-
-    a:hover {
-      color: #aaa;
+    ul {
+      a {
+        color: #888;
+        &:hover {
+          color: #ddd;
+        }
+      }
     }
   }
 
   .common-list {
     li {
-      border-bottom: solid 1px #40404088;
-
       a {
-        color: #aaa;
+        color: $muted-color;
+        &:hover {
+          color: $bold-color;
+          background-color: $header-background-color;
+        }
       }
-
-      a:hover {
-        background-color: #272727;
-      }
-
       span {
-        background-color: #333;
+        color: $dark-background-color;
       }
     }
   }
@@ -193,37 +172,72 @@ html[data-theme="dark"]  {
     .post-menu-title {
       color: $dark-text-color;
     }
-
     .post-menu-content {
       ul {
-        border-left: 1px solid #666;
-
+        border-left: 1px solid #334;
         a {
-          color: #777;
+          color: $muted-color;
           &:hover {
-            color: #ddd !important;
+            color: #ccc !important;
           }
         }
 
         .active {
-          background-color: $dark-background-color;
-          color: #ccc;
-          border-left: 2px solid #ccc;
+          background-color: $header-background-color;
+          color: $bold-color;
+          border-left: 2px solid $dark-text-color;
           &:hover {
-            background-color: #444;
+            background-color: #334;
           }
           a {
-            color: #ccc;
+            color: $bold-color;
           }
         }
       }
     }
   }
 
+  a .post-badge {
+    color: $dark-background-color !important;
+  }
+
+  a:visited .badge-new {
+    background-color: $dark-background-color;
+  }
+
+  img {
+    opacity: .85;
+  }
+
   #footer-social {
     a:hover {
-        color: #ccc;
+        color: $bold-color;
     }
   }
 
+  .about-box {
+    color: $muted-color;
+    a:hover {
+        color: $bold-color;
+    }
+  }
+
+
+  .common-list-header {
+    a:hover {
+      color: $bold-color;
+    }
+  }
+
+  .about {
+
+    .social-link-td {
+      a:hover {
+        color: #fff;
+      }
+      a {
+        color: #bbb;
+      }
+    }
+  }
 }

@@ -1,0 +1,13 @@
+---
+layout: framework
+sidebar: [tag-list, about-box]
+---
+
+<div class="pheader">Tags</div>
+
+{%- if site.posts.size > 0 -%}
+  {%- include functions.html func='get_tags' -%}
+  {%- assign keys = return -%}
+  {%- assign field = 'tags' -%}
+  {%- include views/segments.html -%}
+{%- endif -%}

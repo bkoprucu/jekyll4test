@@ -1,0 +1,28 @@
+---
+#layout: framework
+#hide: [header, navigator, related]
+layout: about
+title: About
+permalink: /about/
+---
+
+<!-- Env: {{ jekyll.environment }} -->
+
+<div id="div-img">
+<img id="img-me" src="/assets/images/about/berk_snow_small.jpeg" />
+</div>
+
+<div id="div-desc">
+<h3>Hi, I'm Berk.</h3>
+
+<p>I am a a freelance software engineer / architect.</p>
+<p>For more than 15 years, I've been designing and developing scalable systems on JVM ecosystem, using Java and Kotlin programming languages.</p>
+<p>I am also an Oracle Certified Java Programmer (OCPJP) and Web Component Developer (OCEJWCD).</p>
+<p>I enjoy learning intricacies and challenges of software engineering, as well as sharing knowledge and exploring innovative strategies for successful teamwork in agile teams.</p>
+<p id="p-contact">Feel free to reach out, if you're interested in collaboration, consultancy, or training:</p>
+
+<table>
+{%- include views/social-list.html withurl=true skip='rss' -%}
+<tr><td class="social-icon-td"><i class="fas fa-map-marker-alt" style="padding-left: 3px"></i></td><td>Stockholm - Sweden</td></tr>
+</table>
+</div>

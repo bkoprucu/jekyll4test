@@ -1,0 +1,41 @@
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">{{ heading | default: page.title | escape }}</h1>
+  {%- assign stitle = subheading | default: page.subtitle | escape %}
+  {%- if stitle %}
+  <h2 class="post-subtitle">{{ subheading | default: page.subtitle | escape }}</h2>
+  {%- endif %}
+  <div class="post-meta">
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {%- assign date_format = site.yat.date_format | default: "%b %-d, %Y" -%}
+      <i class="far fa-calendar"></i> {{ page.date | date: date_format }}
+    </time>
+
+    {%- if page.author -%}
+    <span class="post-author left-vsplit"><i class="far fa-edit"></i> {{ page.author | escape }}</span>
+    {%- endif -%}
+    {%- assign article = page.content -%}
+    {%- assign lang = page.lang -%}
+    {%- include functions.html func='get_reading_time' -%}
+    {%- assign reading_time = return -%}
+    <span class="post-reading-time left-vsplit"><i class="far fa-clock"></i> {{ reading_time }}</span>
+  </div>
+
+  {%- if page.tags.size > 0 -%}
+  <div class="post-tags">
+    {%- for tag in page.tags -%}
+    <a class="post-tag" href="{{ '/tags.html ' | relative_url }}#{{tag}}">{{tag}}</a>
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
+
+  {%- assign exc_img = true -%}
+  {%- if page.excerpt_image_on_page == false -%}
+    {%- assign exc_img = false -%}
+  {%- endif -%}
+
+  {%- if exc_img and page.excerpt_image -%}
+  <div>
+    <img class="excerpt-img" src="{{ page.excerpt_image | relative_url }}" style="{{ page.excerpt_image_page_style }}" />
+  </div>
+  {%- endif -%}
+</header>

@@ -1,0 +1,25 @@
+{%- if include.paginator -%}
+  {% assign paginator = include.paginator %}
+{%- endif -%}
+
+{%- if paginator.next_page or paginator.previous_page -%}
+  <div class="paginator">
+    <span class="prevnext">
+    {%- if paginator.previous_page -%}
+      <a class="prev" href="{{ paginator.previous_page_path | relative_url }}"><i class="fas fa-chevron-left"></i> &nbsp; Prev &nbsp;</a>
+    {% else %}
+      <span><i class="fas fa-chevron-left"></i> &nbsp; Prev &nbsp;</span>
+    {%- endif -%}
+    </span>
+
+    <span class="prevnext">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+
+    <span class="prevnext">
+    {%- if paginator.next_page %}
+      <a class = "next" href="{{ paginator.next_page_path | relative_url }}"> &nbsp; Next &nbsp; <i class="fas fa-chevron-right"></i></a>
+    {%- else %}
+      <span> &nbsp; Next &nbsp; <i class="fas fa-chevron-right"></i></span>
+    {%- endif -%}
+    </span>
+  </div>
+{%- endif -%}

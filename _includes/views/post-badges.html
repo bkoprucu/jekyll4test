@@ -1,0 +1,8 @@
+{%- if post.top or site.badge_new_enabled -%}
+<span class="post-badges">
+  <span class="post-badge">Pinned</span>
+  {%- if site.badge_new_enabled -%}
+  <span class="post-badge badge-new">NEW</span>
+  {%- endif -%}
+</span>
+{%- endif -%}

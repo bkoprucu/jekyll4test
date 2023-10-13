@@ -1,13 +1,12 @@
 .theme-toggle {
   position: relative;
-  width: $base-font-size * 7.65;
-  margin-top: 10px;
+  width: $base-font-size * 6.4;
+  margin-top: 12px;
   margin-right: 60px;
   margin-left: auto;
-  transition: .3s cubic-bezier(.4,.03,0,1);
 
   label, .toggle {
-    border-radius: 5px;
+    border-radius: 4px;
   }
 
   label {
@@ -26,10 +25,9 @@
   }
 
   .names {
-    font-size: 1em;
-    font-weight: bolder;
+    font-size: $small-font-size;
     width: 76%;
-    margin-left: 11%;
+    margin-left: 12%;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -38,27 +36,26 @@
 
   .names p {
     margin-bottom: 0;
-    line-height: 24px;
-    opacity: .5;
+    margin-bottom: 1px;
+    line-height: 21px;
+    opacity: .6;
   }
 
   label .light {
-    color: #868686;
-    margin-left: -0.2em;
+    color: #777;
   }
 
   label .dark {
-    color: #b9b9b9;
+    color: #777;
   }
 
   [type="checkbox"] {
     display: none;
   }
 
-  /* Toggle */
   [type="checkbox"]:checked ~ label .toggle {
     transform: translateX(100%);
-    background-color: #34323D;
+    background-color: #30323D;
   }
 
   [type="checkbox"]:checked ~ label .dark {
@@ -69,14 +66,10 @@
     color: #ccc;
   }
 
-  @include media-query(1024px) {
-    margin-right: 35px;
-  }
-
+  transition: margin .3s;
   @include media-query($on-palm) {
     width: $base-font-size * 6.65;
     margin-right: 20px;
-
     .names {
       font-size: .85em;
     }

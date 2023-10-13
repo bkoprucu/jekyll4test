@@ -1,40 +1,16 @@
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
   <div class="site-footer-inner">
-        {%- assign currentYear = 'now' | date: "%Y" -%}
-        {%- assign copyright = site.copyright
-            | replace: '{currentYear}', currentYear
-            | replace: '{author}', site.author
-            | replace: '(c)', '&copy;'
-            | replace: '(p)', '℗'
-            | replace: '(cleft)', '<span class="copyleft">&copy;</span>'
-        -%}
-      
-    <div id="footer-social">
-      {% for entry in site.data.contact %}
-        {% if entry.type == 'rss' %}
-          {% assign url = '/feed.xml' | relative_url %}
-        {% else %}
-          {% assign url = entry.url %}
-        {% endif %}
-        &nbsp;
-        <a href="{{ url }}" aria-label="{{ entry.type }}" title="{{ entry.title }}"
-            {% assign link_types = '' %}  
-            {% unless entry.noblank %}
-              target="_blank"
-              {% assign link_types = 'noopener noreferrer' %}
-            {% endunless %}
-            {% unless link_types == empty %}
-              rel="{{ link_types }}"
-            {% endunless %}
-          >
-            <i class="{{ entry.icon }}"></i>
-          </a>
-          &nbsp;    
-      {% endfor %}
+    {%- assign currentYear = 'now' | date: "%Y" -%}
+    {%- assign copyright = site.copyright
+        | replace: '{currentYear}', currentYear
+        | replace: '{author}', site.author
+        | replace: '(c)', '&copy;' -%}
+    <div style="display: flex; justify-content: center;" >
+      <div id="footer-social">
+      {%- include views/social-list.html -%}
+      </div>
     </div>
-
     <div style="padding-top: 2rem;">{{ copyright }}</div>
-
   </div>
 </footer>

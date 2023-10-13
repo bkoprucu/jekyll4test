@@ -1,0 +1,108 @@
+---
+layout: framework
+banner:
+banner_html: post-header.html
+hide: []
+sidebar:
+  - article-menu
+---
+
+<div class="post">
+<section>
+  {%- assign name = 'banner' -%}
+  {%- include functions.html func='get_value' -%}
+  {%- assign banner = return -%}
+
+  {%- assign name = 'hide' -%}
+  {%- include functions.html func='get_value' -%}
+  {%- assign hide = return -%}
+
+  {%- unless hide contains 'header' -%}
+  {%- if banner == nil %}
+    {%- include views/post-header.html %}
+  {%- endif %}
+  {%- endunless -%}
+
+  {%- include views/article.html -%}
+
+
+  {%- unless hide contains 'navigator' -%}
+    {%- assign p = page.previous %}
+    {%- for i in (1..20) %}
+      {%- if p == nil %}
+        {%- break %}
+      {%- endif %}
+      {%- if p.hidden %}
+        {%- assign p = p.previous %}
+        {%- continue %}
+      {%- endif %}
+      {%- break %}
+    {%- endfor %}
+
+    {%- assign n = page.next %}
+    {%- for i in (1..20) %}
+      {%- if n == nil %}
+        {%- break %}
+      {%- endif %}
+      {%- if n.hidden %}
+        {%- assign n = n.next %}
+        {%- continue %}
+      {%- endif %}
+      {%- break %}
+    {%- endfor %}
+
+    <div class="post-nav">
+      {%- if p -%}
+      <a href="{{ p.url | relative_url }}" title="{{ p.title | escape }}"><i class="fas fa-chevron-left"></i> &nbsp; {{ p.title | truncatewords: 7 | escape }}</a>
+      {%- else -%}
+      <span></span>
+      {%- endif -%}
+
+      {%- if n -%}
+      <a href="{{ n.url | relative_url }}" title="{{ n.title | escape }}">{{ n.title | truncatewords: 7 | escape }} &nbsp; <i class="fas fa-chevron-right"></i></a>
+      {%- else -%}
+      <span></span>
+      {%- endif -%}
+    </div>
+  {%- endunless -%}
+
+
+  {%- unless hide contains 'related' -%}
+    {%- assign posts = site[page.collection] | where_exp: "item", "item.hidden == nil or item.hidden == false"
+                                             | where_exp: "item", "item.id != page.id" | sample:4 -%}
+    {%- if posts.size > 0 -%}
+    <div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        {%- for post in posts -%}
+          <li><a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title | escape }}">
+          {{ post.title | escape | truncatewords: 12 }}
+          {%- include views/post-badges.html -%}
+          </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    {%- endif -%}
+  {%- endunless -%}
+
+
+  {%- unless hide contains 'comments' -%}
+    <div class="post-comments">
+    {%- if page.comments != false -%}
+      {%- if site.disqus.shortname %}
+      {%- include extensions/comments/disqus.html %}
+      {%- endif -%}
+
+      {%- if site.gitment.username -%}
+      {%- include extensions/comments/gitment.html %}
+      {%- endif -%}
+
+      {%- if site.utterances.repo -%}
+      {%- include extensions/comments/utterances.html %}
+      {%- endif %}
+    {%- endif -%}
+    </div>
+  {%- endunless -%}
+</section>
+</div>
