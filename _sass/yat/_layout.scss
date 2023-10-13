@@ -84,9 +84,9 @@ html {
 
   .site-brand-inner {
     font-size: 21px;
-    font-weight: 600;
     color: $header-text-color;
-    padding: 15px 0;
+    padding: 17px 0;
+    letter-spacing: 1px;
     .site-favicon {
       display: inline-block;
       height: calc($header-height / 1.5);
@@ -113,11 +113,11 @@ html {
   .page-link {
     line-height: $base-line-height;
     color: $header-text-color;
-    padding: 15px 0 15px 7px;
+    padding: 17px 0 17px 7px;
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: 10px;
-      padding-right: 7px;
+      margin-right: 5px;
+      padding-right: 10px;
     }
   }
 
@@ -544,6 +544,12 @@ html {
     }
   }
 
+  .page-banner-subheading {
+    font-weight: 200;
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+
   .wrapper {
     height: 100%;
   }
@@ -551,7 +557,6 @@ html {
   .page-banner-inner {
     @include vertical-center(relative);
     color: $banner-text-color;
-    padding: 10px 5px;
     text-shadow: 4px 3px 2px rgba(0,0,0,.5);
 
     & > *:first-child {
@@ -570,7 +575,6 @@ html {
       }
 
       > :nth-child(2) {
-         //font-weight: lighter;
         margin-bottom: 0.8em;
         transition: 0.2s all;
 
