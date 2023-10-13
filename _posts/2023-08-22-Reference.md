@@ -1,5 +1,6 @@
 ---
 author: "Berk Koprucu"
+title: "Parameter reference"
 excerpt_text: "Front matter reference" # Custom excerpt text
 excerpt_image: /assets/images/test/diagram_1.png
 #banner: /assets/images/test/berk_logo_funny.png
@@ -19,6 +20,7 @@ Front matter reference
 
 ```
 author: "Berk Koprucu"
+title: "Parameter reference"
 excerpt_text: "Front matter reference" # Custom excerpt text
 excerpt_image: /assets/images/test/berk_logo_funny_2.png
 #banner: /assets/images/test/berk_logo_funny.png
