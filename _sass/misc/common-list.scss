@@ -1,5 +1,5 @@
 .common-list {
-  font-size: 15px;
+  font-size: $small-font-size;
   min-width: 200px;
   margin-bottom: 40px;
   ul {
@@ -29,12 +29,12 @@
     }
 
     span {
-      @include relative-font-size(0.8);
+      font-size: $small-font-size;
       display: inline-block;
-      border-radius: 11px;
+      border-radius: 14px;
       align-self: center;
       background: #777;
-      padding: 1px 8px;
+      padding: 0 8px;
       margin-left: 20px;
       color: $background-color;
     }
@@ -49,8 +49,8 @@
     }
   }
   h5 {
-    font-size: 14px;
-    margin: 0 0 14px 12px;
+    font-size: $small-font-size;
+    margin: 0 0 15px 13px;
     color: #888;
   }
   padding-top: 8px;

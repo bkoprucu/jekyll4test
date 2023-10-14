@@ -376,14 +376,18 @@ html {
   @extend %post-header;
   max-width: $post-width;
   .post-header {
-    margin: 50px auto 40px;
-    padding: 0 0 40px;
+    margin: 50px auto 70px;
+    padding: 0 0 30px;
     @include borderb();
     .post-title {
       margin-bottom: 8px;
     }
     .post-subtitle {
       font-weight: lighter;
+    }
+
+    .post-tags {
+      padding-bottom: 10px;
     }
 
     .excerpt-img {
@@ -635,7 +639,8 @@ html {
   }
 
   .sidebar {
-    padding-left: 8px;
+    margin-left: 40px;
+    width: 250px;
     transition: top 0.2s;
     @include flex-sticky($header-height + 20px);
     @include media-query($on-laptop) {
@@ -720,7 +725,7 @@ html {
   display: inline-block;
   background-color: $brand-color;
   color: #fff;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   border-radius: 2px;
   transition-duration: .25s;
