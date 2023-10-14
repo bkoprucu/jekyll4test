@@ -53,7 +53,7 @@ google_analytics: false
 
 seo_enabled: true
 
-excerpt_size: 300
+excerpt_size: 200
 badge_new_enabled: false
 
 markdown: kramdown

@@ -23,8 +23,8 @@ author: "Berk Koprucu"
 title: "Parameter reference"
 excerpt_text: "Front matter reference" # Custom excerpt text
 excerpt_image: /assets/images/test/berk_logo_funny_2.png
-#banner: /assets/images/test/berk_logo_funny.png
 excerpt_image_on_page: false # Don't show except image on the pag, only on listing
+#banner: /assets/images/test/berk_logo_funny.png
 categories: [Test]
 tags: [AWS, Spring]
 hide: [related, navigator] # Can be header, navigator, related, comments. Implementation in post.html

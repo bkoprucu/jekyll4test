@@ -322,9 +322,8 @@ html {
     margin-bottom: 15px;
     .excerpt-img {
       object-fit: contain;
-      max-height: 350px;
+      max-height: 320px;
       margin-bottom: 25px;
-      transform: width .2s;
     }
     a {
       &:hover {
