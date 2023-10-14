@@ -31,4 +31,5 @@ hide: [related, navigator] # Can be header, navigator, related, comments. Implem
 hidden: 1 # Hide from listing
 permalink: "/reference.html"  # Custom url
 sidebar: [about-box] # about-box, article-menu, category-list, tag-list, archive-list
+# top: 1 # Pinned post 
 ```
