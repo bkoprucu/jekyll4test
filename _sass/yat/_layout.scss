@@ -376,14 +376,18 @@ html {
   @extend %post-header;
   max-width: $post-width;
   .post-header {
-    margin: 50px auto 40px;
-    padding: 0 0 40px;
+    margin: 50px auto 70px;
+    padding: 0 0 30px;
     @include borderb();
     .post-title {
       margin-bottom: 8px;
     }
     .post-subtitle {
       font-weight: lighter;
+    }
+
+    .post-tags {
+      padding-bottom: 10px;
     }
 
     .excerpt-img {
