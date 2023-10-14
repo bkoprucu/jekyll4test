@@ -1,13 +1,13 @@
 
 title: Berk Köprücü
-email: info@berksoftware.com
+email: berk@berksoftware.com
 author: 'Berk Köprücü'
 copyright: "(c) {currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Berk Köprücü Berk Koprucu - Software Engineer, Beckend, Java, Kotlin, Spring Boot, System Design, Software Architecture, Backend, Cloud Computing, Kubernetes, AWS
+  Berk Köprücü, Berk Koprucu - Software Engineer, Backend, Java, Kotlin, Spring Boot, System Design, Software Architect, Cloud Computing, Kubernetes, AWS, Docker, Agile
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jekyll4test.pages.dev/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://berksoftware.com/" # the base hostname & protocol for your site, e.g. http://example.com
 # favicon: "/favicon.png"
 favicon: "/favicon.svg"
 
@@ -41,9 +41,7 @@ paginate: 6
 
 # Custom color as below:
 # theme_color: "#882250"
-
 # night_mode: "auto"
-
 
 google_analytics: false
 # Google analytics - GA4
@@ -53,13 +51,12 @@ google_analytics: false
 # If you want to generate website sitemap, you can set true
 # sitemap: false
 
-seo_enabled: false
+seo_enabled: true
 
-excerpt_size: 350
+excerpt_size: 200
 badge_new_enabled: false
 
 markdown: kramdown
-
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
@@ -123,4 +120,3 @@ exclude:
   - .idea/
   - .gitignore
   - .github/
-

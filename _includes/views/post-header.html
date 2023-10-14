@@ -1,4 +1,10 @@
-<header class="post-header">
+{%- assign exc_img = page.excerpt_image -%}
+{%- if page.excerpt_image_on_page == false -%}
+  {%- assign exc_img = false -%}
+{%- endif -%}
+
+
+<header class="post-header" {% if exc_img %}style="border-bottom: none; padding: 0 0 0"{% endif %}>
   <h1 class="post-title p-name" itemprop="name headline">{{ heading | default: page.title | escape }}</h1>
   {%- assign stitle = subheading | default: page.subtitle | escape %}
   {%- if stitle %}
@@ -28,12 +34,7 @@
   </div>
   {%- endif -%}
 
-  {%- assign exc_img = true -%}
-  {%- if page.excerpt_image_on_page == false -%}
-    {%- assign exc_img = false -%}
-  {%- endif -%}
-
-  {%- if exc_img and page.excerpt_image -%}
+  {%- if exc_img -%}
   <div>
     <img class="excerpt-img" src="{{ page.excerpt_image | relative_url }}" style="{{ page.excerpt_image_page_style }}" />
   </div>

@@ -4,6 +4,9 @@
   flex-direction: column;
   margin-bottom: 40px;
   color: $muted-color;
+
+  @include borderb();
+
   a {
     color: $muted-color;
     &:hover {
