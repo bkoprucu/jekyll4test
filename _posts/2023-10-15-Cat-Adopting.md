@@ -9,8 +9,6 @@ permalink: "/other/cats/tips.html"
 sidebar: [article-menu]
 ---
 
-[//]: # (## Tips For Adopting and Taking Care of Cats)
-
 After years of living with cats, rescuing them, and learning about them, I'll shortly summarize what I know about cat care, and living with them in a harmony.
 
 ![](//www.youtube.com/watch?v=3rFeQmSMXKY?width=700&height=400)
