@@ -98,6 +98,7 @@ Two cats will:
 - Will be happier overall and do funny things together for you to watch.
 
 ![pamuk and_kucuk](/assets/images/posts/cat-adopting/pamuk_kucuk_hug.jpeg)
+
 ## Entertaining
 
 ### Playing
