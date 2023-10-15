@@ -95,7 +95,7 @@ Share one box between two cats for morning, one for evening. So you'll consume t
 - To clean, take the whole thing to bathroom, take away the top part and shovel off the stuff in the bottom tray to toilet bowl
 - You may add one or two fistful of litter after a week
 
-## Amenties
+## Apartment
 
 ### Wifi
 BR_5 / Zqdsa836
