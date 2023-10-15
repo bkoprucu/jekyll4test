@@ -46,7 +46,9 @@ Petting may get overstimulating to a cat, and purring may follow a sudden slap, 
 
 Initially ['base'](#calm-base) should be not far from litter box, especially for kittens. You may put the cat on the litter box and leave him so he'll go back to his base, knowing where the litter box is. Kittens may need a stair (build with a book) to climb to the box.
 
-#### Litter Box
+Shortly after you may want to put the box away from eating place, maybe in the bathroom.
+
+#### Litter Box Material
 
 Silica crystal and parfumed litter is not healthy for cat or you. You wouldn't want to breathe its dust. 
 For kittens I'd recommend "natural" litter for the first couple months.
