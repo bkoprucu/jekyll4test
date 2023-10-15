@@ -98,13 +98,13 @@ Two cats will:
 - Will be happier overall and do funny things together for you to watch.
 
 ![pamuk and_kucuk](/assets/images/posts/cat-adopting/pamuk_kucuk_hug.jpeg)
-## Fun
+
+## Entertaining
 
 ### Playing
 Unless you have a second cat, regular playing with a cat is a necessity. Most effective toy to play with is probably a "cat wand":
 
-![Cat Wand](https://m.media-amazon.com/images/I/61pYLohyY6L.jpg)
-
+<img src="https://m.media-amazon.com/images/I/61pYLohyY6L.jpg" width="300px" />
 
 I also play 'wrestling' after I wear on an old sock like a glove.
 
