@@ -49,7 +49,7 @@ google_analytics: false
 # enableDNT: "false"
 
 # If you want to generate website sitemap, you can set true
-# sitemap: false
+#sitemap: false
 
 seo_enabled: true
 
