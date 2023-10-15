@@ -382,9 +382,6 @@ html {
     .post-title {
       margin-bottom: 8px;
     }
-    .post-subtitle {
-      font-weight: lighter;
-    }
 
     .post-tags {
       padding-bottom: 10px;
@@ -407,22 +404,22 @@ html {
 
     h2 {
       @include relative-font-size(2);
-      @include media-query($on-laptop) {
+      @include media-query($on-palm) {
         @include relative-font-size(1.75);
       }
     }
 
     h3 {
-      @include relative-font-size(1.625);
-      @include media-query($on-laptop) {
-        @include relative-font-size(1.375);
+      @include relative-font-size(1.5);
+      @include media-query($on-palm) {
+        @include relative-font-size(1.35);
       }
     }
 
     h4 {
-      @include relative-font-size(1.25);
-      @include media-query($on-laptop) {
-        @include relative-font-size(1.125);
+      @include relative-font-size(1.12);
+      @include media-query($on-palm) {
+        @include relative-font-size(1.08);
       }
     }
 

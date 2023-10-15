@@ -40,7 +40,7 @@ $banner-background: #505050;
 // Width of the content area
 $content-width: 1250px !default;
 $on-palm:        700px !default;
-$on-laptop:     1200px !default;
+$on-laptop:     1100px !default;
 $post-width:    920px;
 
 @mixin media-query($device) {
