@@ -1,7 +1,7 @@
 {%- if post.excerpt_text %}
   {%- assign return = post.excerpt_text %}
 {%- else %}
-  {%- assign excerpt_size = site.excerpt_size | default: 350 %}
+  {%- assign excerpt_size = post.excerpt_size | default: site.excerpt_size | default: 170 %}
   {%- if include.params.article %}
     {%- assign article = include.params.article %}
   {%- endif %}
