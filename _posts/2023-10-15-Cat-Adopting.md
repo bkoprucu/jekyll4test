@@ -1,6 +1,7 @@
 ---
 title: "Cat Care Tips"
 subtitle: "Tips For Adopting and Taking Care of Cats"
+seo_enabled: true
 categories: [Other]
 tags: [Cats]
 hide: [related, comments]
@@ -56,6 +57,17 @@ Switching to wood pellets and mesh box, is cleaner and requires much less work.
 I use [PeeWee:](https://peewee.se)
 
 <a href="https://peewee.se"><img src="https://x5c8r8d7.rocketcdn.me/wp-content/uploads/2022/09/hotspot_image_short.jpg" height="350px" /></a>
+
+
+#### Teaching to Use Toliet Bowl
+
+I have successfully taught my cat to use the toilet bowl in the past. But I was ignorant of the problems it introduces:
+
+- It may be a safety hazard, they may fall, lid may close on them
+- Not natural for the cats, making urinating a stressful thing
+- Their litter box, and its smell marks their territory. They'll feel stressed without that
+- It'll be more dangerous for the cat, when they age
+- You'll have to keep the lid open
 
 ### Food and Water
 
@@ -171,23 +183,32 @@ Here is a good guide: [https://cat-world.com/trim-cats-claws-including-photos/](
 - Long haired cats need "sanitary trim".
 
 ## Preventing Unwanted Behavior
+
+Punishment, including spraying water doesn't work with cats. They tend to associate the punishment with you, rather than their behavior.
+
+Consistent behavior by owners side is important.  
+
 ### Furniture Damage
 
-Best way to reduce damage is having scratching posts around home. Best is to prepare them before bringinf the cat to home.
+Best way to reduce damage is having scratching posts around home, before the cats arrival.
 
 After cat has developed a habit of scratching a furniture, you may try fixing two sided tape on the furniture, applying watered down lemon on two sided tape etc. I don't have first hand experience with this.
 
-Another solution is wathing "Fight Club" again, ignoring the damage, or seeing it as a trace of a living soul, which may have a sentimental value, after the cat passed away.
+I choose to see the damage they cause  as their trace, memory. For me, they'll have a sentimental value, after my cats pass away.
 
+### Biting and Scracthing
+
+If you have more than one cat, they'll teach each other that is hurts. 
+If you have one, you may "bite" their ears with your finger nails a bit. This shouldn't be too hard but enough to mimic how it'd feel it another were to bite them.
+for kittens it may take a year to learn not to bite or scratch.
 
 ## More
+
 I plan to write about following topics:
 - Other unwanted behaviors
 - Medication, vet. visits
 - Other resources
-
-I don't have time today.... I'll go on a trip...
-
+ 
 
 
 

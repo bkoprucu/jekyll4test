@@ -3,7 +3,7 @@ title: "Taking Care of Pamuk and Küçük"
 subtitle: "Tips For Taking Care of Pamuk and Küçük"
 categories: [Other]
 tags: [Cats]
-hide: [related, comments]
+hide: [related, comments, navigator]
 hidden: 1
 permalink: "/other/cats/sitting.html"
 sidebar: [article-menu]
@@ -113,7 +113,6 @@ You should book T26A or T32A.
 
 You can use the Ikea bags in the wardrobe, I use them to carry clean laundry. For dirty, I use the gray box in the bathroom.
 
-
 ### Lights
 
 ![](/assets/images/posts/cat-sitting/remote.jpeg)
@@ -123,3 +122,10 @@ Use the top buttons on the remote to turn on / off the reading light in main roo
 All the other lights have three stages brightness. Turn off - on to change their brightness.
 
 
+### Dishwasher Soap
+
+Dishwasher soap is in the cabinet, on hte left of vacuum.<br>
+- **The package doesn't melt in the dishwasher you have to open it**
+- **Don't change the location of the box**
+
+![](/assets/images/posts/cat-sitting/dishwasher_soap.jpeg)
