@@ -12,7 +12,7 @@ sidebar: [article-menu]
 
 After years of living with cats, rescuing them, and learning about them, I'll shortly summarize what I know about cat care, and living with them in a harmony.
 
-![](//www.youtube.com/watch?v=3rFeQmSMXKY?width=700&height=400)
+![youtube](//www.youtube.com/watch?v=3rFeQmSMXKY?width=700&height=400)
 
 ## First Needs
 
@@ -38,8 +38,7 @@ Cats like stroked around their head, usually not their belly or tail. After they
 
 Petting may get overstimulating to a cat, and purring may follow a sudden slap, bite or scratching. In cats world, this is usually not aggressive, but just communicating that it is enough. I recommend petting little bit less than what they want, and adjusting it over time. When the trust has been built over years, you can do whatever you want and communication becomes meowing, rather than biting.
 
-![](//www.youtube.com/watch?v=qllER5PRU3c?width=700&height=400)
-
+![youtube](//www.youtube.com/watch?v=qllER5PRU3c?width=700&height=400)
 
 ### Toilet
 
@@ -56,7 +55,7 @@ Switching to wood pellets and mesh box, is cleaner and requires much less work.
 
 I use [PeeWee:](https://peewee.se)
 
-<a href="https://peewee.se"><img src="https://x5c8r8d7.rocketcdn.me/wp-content/uploads/2022/09/hotspot_image_short.jpg" height="350px" /></a>
+<a href="https://peewee.se"><img src="/assets/images/posts/cat-adopting/peewee.webp" height="350px" /></a>
 
 
 #### Teaching to Use Toliet Bowl
