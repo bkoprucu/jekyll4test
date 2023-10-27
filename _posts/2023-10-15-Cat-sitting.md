@@ -13,18 +13,22 @@ Here is quick info for how to take care of Pamuk and Kucuk:
 
 
 ### Pamuk
-![pamuk](/assets/images/posts/cat-sitting/pamuk.jpeg)
+![Pamuk](/assets/images/posts/cat-sitting/pamuk.webp)
+
 Male. Aware of everything. Only likes to be petted by me. Likes eating, going out.
 
 ### Küçük
-![kucuk](/assets/images/posts/cat-sitting/kucuk.jpeg)
+![Kucuk](/assets/images/posts/cat-sitting/kucuk.webp "Küçük")
+
 Female, shy, never gets aggressive. Likes dry food, affection, brushing.
 
 ## Dangers
  
 ### Blankets
 
-Kucuk sleeps under blankets. Sitting or laying on them without checking can be fatal
+Küçük sleeps under blankets. Sitting or laying on them without checking can be fatal.
+
+{%- include image.html url="/assets/images/posts/cat-sitting/kucuk_duvet.webp" description="For most of the time, paws won't be visible" height="350px" -%}
 
 ### Stove
 
@@ -32,7 +36,7 @@ They jump on it and may accidentally turn it on or burn their paws.
 
 Place the pan handle so that it block the turn on switch:
 
-![stove](/assets/images/posts/cat-sitting/stove.jpeg)
+{%- include image.html url="/assets/images/posts/cat-sitting/stove.webp" description="Handle blocking the switches" height="350px" -%}
 
 ### Being Locked Outside
 
@@ -47,16 +51,16 @@ If they're home, close the windows.
 
 If you let them out, they'll show up after some time by the window. Keep the kitchen window open, they will come back.
 
-Put the half ball to the corner:
+Place the half ball on the corner:
 
-![window](/assets/images/posts/cat-sitting/window.jpeg)
+![window](/assets/images/posts/cat-sitting/window.webp)
 
 
 Adjust the lever, to make sure window won't be closed by a drift:
 
 ![](//www.youtube.com/watch?v=1iZoru6Wl-g?width=700&height=400)
 
-To stop  cold, you may half - close the kitchen door, so they can push it open when they come back.
+To stop  cold, you may push the kitchen door, so they can push it open when they come back.
 
 ![door](/assets/images/posts/cat-sitting/door.jpeg)
 
@@ -98,7 +102,7 @@ Share one box between two cats for morning, one for evening. So you'll consume t
 ## Apartment
 
 ### Wifi
-BR_5 / Zqdsa836
+BR_5 / XXXXX (Ask me)
 
 ### Laundry Room
 Rule: You have to take the room in one hour after booking time, otherwise the booking will be dropped.
@@ -107,7 +111,7 @@ Use following address to book it:
 [https://brfhs.asuscomm.com/](https://brfhs.asuscomm.com/)
 
 Username: 01551050<br>
-Password: 1111<br>
+Password: XXXX (ask me)<br>
 
 You should book T26A or T32A.
 

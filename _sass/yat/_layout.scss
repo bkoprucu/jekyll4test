@@ -428,6 +428,10 @@ html {
       margin-right: auto;
     }
 
+    img {
+      margin: 50px auto 10px auto;
+    }
+
     img:not(.emoji), svg, iframe {
       display: block;
       max-height: 50vh;
@@ -500,6 +504,11 @@ html {
   }
 }
 
+
+.imginc {
+  text-align: center;
+  font-size: 14px;
+}
 
 .page-archives {
   .page-archives-list {
