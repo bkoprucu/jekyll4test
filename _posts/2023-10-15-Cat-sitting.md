@@ -20,7 +20,7 @@ Male. Aware of everything. Only likes to be petted by me. Likes eating, going ou
 ### Küçük
 ![Kucuk](/assets/images/posts/cat-sitting/kucuk.webp "Küçük")
 
-Female, shy, never gets aggressive. Likes dry food, affection, brushing.
+Female, shy, never gets aggressive. Likes dry food, affection, getting brushed.
 
 ## Dangers
  
@@ -77,11 +77,12 @@ You may let them out before going to sleep.
 For wet food, You may use flat plate instead of their bowl, to avoid cleaning.
 However, Pamuk will spill some food to the floor, put napkins under the plate.
 
-Kucuk is shy, and Pamuk eats his food. To prevent this:
+Kucuk is shy, so Pamuk eats her food. To prevent this:
 
 - Put Pamuk's food under kitchen table first.
-- While he is eating put Kucuk's food in bedroom, under the chair close the door and leave her alone.
-- Pamuk will wait at her door, leave her 5 minutes to eat, then open the door.
+- While he is eating, put Kucuk's food in bedroom, under the chair.
+- Close the door and leave her alone.
+- Pamuk will wait at her door, demanding opening the door. Don't open, give Kucuk at least 5 minutes to eat, after which you may open the door.
 - After 10 minutes or so, they'll want dry food, esp. Kucuk. Give them some.
 
 Food in the pouch box will be over after three days. You can continue with the food in small boxes:
@@ -123,12 +124,12 @@ You can use the Ikea bags in the wardrobe, I use them to carry clean laundry. Fo
 
 Use the top buttons on the remote to turn on / off the reading light in main room.
 
-All the other lights have three stages brightness. Turn off - on to change their brightness.
+All the other lights have three stages brightness. Turn off - on to switch between brightness levels.
 
 
 ### Dishwasher Soap
 
-Dishwasher soap is in the cabinet, on hte left of vacuum.<br>
+Dishwasher soap is in the cabinet, on the left side of vacuum.<br>
 - **The package doesn't melt in the dishwasher you have to open it**
 - **Don't change the location of the box**
 
