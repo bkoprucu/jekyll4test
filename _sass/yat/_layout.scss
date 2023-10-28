@@ -646,9 +646,8 @@ html {
 
   .sidebar {
     margin-left: 40px;
-    width: 250px;
-    transition: top 0.2s;
-    @include flex-sticky($header-height + 20px);
+    transition: top 0.3s;
+    @include flex-sticky($header-height + 30px);
     @include media-query($on-laptop) {
       display: none;
     }
@@ -739,4 +738,8 @@ html {
 
 a:visited .badge-new {
   display: none;
+}
+
+.media {
+  border-radius: 5px;
 }

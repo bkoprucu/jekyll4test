@@ -13,7 +13,6 @@ body {
   line-height: #{$base-line-height};
   color: $text-color;
   background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
