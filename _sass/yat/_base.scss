@@ -13,7 +13,6 @@ body {
   line-height: #{$base-line-height};
   color: $text-color;
   background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
@@ -35,7 +34,7 @@ main {
 img {
   max-width: 100%;
   vertical-align: middle;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 figure > img {
@@ -97,7 +96,7 @@ code {
 
 *:not(pre) > code {
   padding: 3px 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: #eee;
   margin: 0 5px;
 }
