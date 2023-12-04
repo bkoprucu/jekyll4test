@@ -508,6 +508,7 @@ html {
 .imginc {
   text-align: center;
   font-size: 14px;
+  margin-bottom: 50px;
 }
 
 .page-archives {
@@ -744,3 +745,44 @@ a:visited .badge-new {
   border-radius: 11px;
   border: 1px solid rgba(96, 96, 96, .1)
 }
+
+div.headless-table {
+   + table {
+    max-width: 600px;
+    thead { display: none; }
+  }
+}
+
+div.narrow-table {
+  + table {
+    width: max-content;
+    th {
+      padding-bottom: 5px;
+      border-bottom: 1px solid #888;
+    }
+    margin-bottom: 5px;
+    border-bottom: 1px solid #888;
+  }
+}
+
+div.center-table {
+   + table {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+div.table600 {
+  + table {
+    max-width: 600px;
+    th {
+      padding-bottom: 5px;
+      border-bottom: 1px solid #888;
+    }
+    margin-bottom: 5px;
+    margin-top: 50px;
+    border-bottom: 1px solid #888;
+  }
+}
+
