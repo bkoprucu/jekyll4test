@@ -20,6 +20,9 @@ html[data-theme="dark"]  {
   body {
     color: $dark-text-color;
     background-color: $dark-background-color;
+    strong {
+      color: $bold-color;
+    }
   }
 
   *:not(pre) > code {
