@@ -8,14 +8,14 @@ tags: [Java, DevOps, JVM, Monitoring]
 
 ## The effect of -Xss JVM option, and a potential JVM bug
 
-The default JVM stack size, which is [documented as 1024k](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#extra-options-for-java), appears wasteful for many applications.
+The default JVM stack size is [known to be 1024 KB](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#extra-options-for-java), appears wasteful for many applications.
 
 I conducted tests to answer following questions:
 
 - **Can scalability be improved by adjusting JVM stack size?**
 - **What does -Xss JVM argument actually do? How does it affect the memory usage?**
 
-In the course of these tests, I encountered JVM anomalies on MacOS.
+In the course of these tests, I encountered [memory allocation problem on MacOS.](#conclusion)
 
 
 ## What is a thread stack?
@@ -27,7 +27,7 @@ In the course of these tests, I encountered JVM anomalies on MacOS.
 
 **Heap** is the "main" memory section, where all the objects, including primitives and references defined in the objects are stored. It is shared among the threads.  
 
-This is an overly simplified explanation of two main memory areas. After all, memory allocation is a deep topic.
+Memory allocation is a deep topic, so this is an overly simplified explanation of the two main memory areas.
   
 
 ## Default JVM stack size
@@ -40,8 +40,10 @@ $ java -XX:+PrintFlagsFinal -version | grep -i threadstack
      intx ThreadStackSize                          = 2048
      intx VMThreadStackSize                        = 2048
 ```
+**ThreadStackSize** is the stack size used by Java applications, which can be set with '-Xss' JVM option.
+**VMThreadStackSize** is the [native method stack size](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-2.html#jvms-2.5.6). It can be set with `-XX:VMThreadStackSize` JVM option.
 
-Default stack size, [known as 1024 KB](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#extra-options-for-java), is around double of that on ARM64 architecture: 
+Here is the output of execution above on some Java / Os / architecture combinations: 
 <div class="table600 center-table"></div>
 
 |                         | **8.0.397** | **11.0.21** | **17.0.9** | **21.0.1** |
@@ -52,14 +54,12 @@ Default stack size, [known as 1024 KB](https://docs.oracle.com/en/java/javase/17
 
 <div class="imginc">Default stack size of major Java versions (in KB)</div>
 
-**VMThreadStackSize** is the [native method stack size](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-2.html#jvms-2.5.6). It can be set with JVM option `-XX:VMThreadStackSize`.
-
 
 ## What does the -Xss JVM option do?
 
 Neither the [Java Tool Documentation](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#extra-options-for-java), nor the [JVM Specification](https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-2.html#jvms-2.5.2) specifies whether stack memory is allocated dynamically or not, leaving this and the behavior of the **-Xss** option to vendor implementation.  
 
-Tests below show that it is mostly allocated dynamically, [with unusual behavior on MacOS.](#odd-jvm-behavior-on-macos--docker)  
+Tests below show that it is mostly allocated dynamically, [with unusual behavior on MacOS.](#macos-anomaly)  
 
 
 ## Testing
@@ -124,11 +124,11 @@ public void spawnThreads(int threadCount, int heapPerThread, int frameCount) {
 
 We will start with Java 17 on MacOS on ARM64 architecture.
 
-Our testing parameters include a 1536 MB heap limit, 1000 threads, each handling approximately 100 KB-sized objects in heap, and a JVM stack size set to 2048 KB.
+Our testing parameters include a 1536 MB heap limit, 1000 threads, each handling approximately 100 KB-sized objects in heap, and a JVM stack size of 2048 KB.
 
 To assess memory usage, we'll compare scenarios with 0 and 1000 stack depth, employing both native memory tracking and the 'ps' command.
 
-**Stack depth 0:**
+**Zero stack depth**
 
 ```plaintext
 $ java -Xint -Xmx1536m -Xss2048k -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary com.berksoftware.article.jvmstack.MemoryFiller 1000 100 0
@@ -156,6 +156,8 @@ Total: reserved=4981866KB, committed=2731770KB
 ...
 ```
 
+Memory usage seen by the operating system:
+
 ```plaintext
 $ ps -o rss,command -p 62972
 RSS COMMAND
@@ -171,6 +173,7 @@ Spawning 1000 threads, each consuming ~100 KB heap, 1000 stack frames
 1000 threads created
 PID: 63571
 ```
+
 Native memory tracking report doesn't show a meaningful difference in stack memory usage:
 
 ```plaintext
@@ -247,6 +250,7 @@ $ ps -o rss,comm -p 8309
 ```plaintext
 $ java -Xint -Xmx1536m -Xss512k -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary com.berksoftware.article.jvmstack.MemoryFiller 1000 100 250
 ```
+Total committed memory appears less than half of 2048 KB stack size:
 
 ```plaintext
 Native Memory Tracking:
@@ -266,6 +270,8 @@ Total: reserved=3432025KB, committed=1181993KB
 ...
 ```
 
+Memory usage on the OS is more or less the same:
+
 ```plaintext
 $ ps -o rss,comm -p 8530
    RSS COMM
@@ -274,15 +280,17 @@ $ ps -o rss,comm -p 8530
 
 #### Results
 
-Although the Native Memory Tracking report indicates a connection between committed memory and provided stack size, the resident set size on the operating system remains constant, at around 307 MB.
+ - Although the Native Memory Tracking report indicates a connection between committed memory and provided stack size, the resident set size on the operating system remains constant, at around 307 MB.
 
-This means that stack memory is allocated dynamically and the JVM stack size option **-Xss** only sets the limit of how much it can grow. 
+ - This means that stack memory is allocated dynamically and the JVM stack size option **-Xss** only sets the limit of how much it can grow. 
 
-On MacOS / ARM64, Java 8 utilized around 80% more memory, 558 MB.
+ - **Java 8 and 11 utilizes memory less efficiently on MacOS:**
 
-Similarly, on MacOS, for both ARM and x86 architectures, Java 11 utilized around 20% more memory.
+   - On MacOS / ARM64, Java 8 utilized around 80% more memory, 558 MB.
 
-NMT reports for Java versions 8, 11, and 17 are available at [this repository](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports)
+   - Again on MacOS, for both ARM and x86 architectures, Java 11 utilized around 20% more memory.
+
+NMT reports for MacOs - Java versions 8, 11, and 17 are available at [this repository](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports)
 
 
 #### Testing in a container
@@ -307,7 +315,8 @@ $ docker run -m 2g --memory-swap 2g --rm -d -e JAVA_OPTS="-Xss2040k -XX:MaxRAMPe
 $ docker run -m 2g --memory-swap 2g --rm -d -e JAVA_OPTS="-Xss1024k -XX:MaxRAMPercentage=75" --name J17_1024k memoryfiller:java17 1000 100 250
 $ docker run -m 2g --memory-swap 2g --rm -d -e JAVA_OPTS="-Xss512k  -XX:MaxRAMPercentage=75" --name J17_512k  memoryfiller:java17 1000 100 250
 ```
- 
+
+Docker arguments used: 
 <div class="headless-table"></div>
 
 |                                    |    |                                           |
@@ -317,7 +326,9 @@ $ docker run -m 2g --memory-swap 2g --rm -d -e JAVA_OPTS="-Xss512k  -XX:MaxRAMPe
 |          `-XX:MaxRAMPercentage=75` | \: | Limit JVM heap to 75% of container memory |
 
 
-'docker stats' reports an unexpectedly high memory usage on container with 2040 KB stack size:
+### MacOs anomaly:
+
+We see an abnormally high memory usage reported by 'docker stats' on container with 2040 KB stack size:
 
 ```plaintext
   NAME        CPU %     MEM USAGE / LIMIT    MEM %       PIDS
@@ -357,6 +368,7 @@ Like the former test, this behavior only occurs on MacOS, with LTS Java versions
 
 - The default stack size on ARM64 architecture is either [2040 or 2048 KB](#default-jvm-stack-size). This results in Macs with Apple Silicon encountering the mentioned issue with the default JVM configuration. 
 
-- **Java 8 on MacOS allocates memory less efficiently than Java 11 and newer versions, difference can exceed 80%.** You may check native memory tracking reports [here](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports).  
+- **Java 8 and Java 17 on MacOS allocates memory less efficiently than Java 17 and 21, [the difference is much bigger on Java 8](#results)** You may check native memory tracking reports [here](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports).  
 
 
+This will mainly affect the development environment, as MacOS is seldom used on servers. Only a few services require more than 1024 KB of stack, with Elasticsearch being one of them. Utilizing Java 21 or applying `-Xss1024k` argument to Java will lower the memory consumption of containers.
