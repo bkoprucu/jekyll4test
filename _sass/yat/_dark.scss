@@ -1,5 +1,5 @@
 $dark-background-color: #0e0e0e !default;
-$dark-text-color: #bbb !default;
+$dark-text-color: #aaa !default;
 $footer-background-color: $header-background-color;
 $muted-color: #777;
 $bold-color: #ddd;
@@ -21,7 +21,7 @@ html[data-theme="dark"]  {
     color: $dark-text-color;
     background-color: $dark-background-color;
     strong {
-      color: $bold-color;
+      color: #ccc;
     }
   }
 
@@ -243,4 +243,9 @@ html[data-theme="dark"]  {
       }
     }
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #ccc;
+  }
+
 }
