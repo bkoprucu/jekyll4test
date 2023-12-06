@@ -297,7 +297,7 @@ NMT reports for MacOs - Java versions 8, 11, and 17 are available at [this repos
 
 The comparison will focus on the container's memory usage as reported by Docker under various stack size configurations.
 
-[The implementation](https://github.com/bkoprucu/article-jvm-stack/tree/main) can be used to create images tagged with current Java version on Maven install phase.
+[The implementation](https://github.com/bkoprucu/article-jvm-stack/) can be used to create images tagged with current Java version on Maven install phase.
 
 **Test parameters:**
 - Container memory limit: 2GB                                               
