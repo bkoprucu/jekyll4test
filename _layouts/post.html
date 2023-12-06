@@ -72,7 +72,7 @@ sidebar:
                                              | where_exp: "item", "item.id != page.id" | sample:4 -%}
     {%- if posts.size > 0 -%}
     <div class="post-related">
-      <div>Related Articles</div>
+      <div>More Articles</div>
       <ul>
         {%- for post in posts -%}
           <li><a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title | escape }}">
