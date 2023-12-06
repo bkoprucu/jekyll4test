@@ -106,12 +106,16 @@ plugins:
   - jekyll-paginate
   - jekyll-spaceship
 
+
+permalink: "/:short_year/:i_month/:title"
+
 defaults:
   - scope:
       path: ""
+      type: "posts"
     values:
       layout: "post"
-      author: "Berk"
+      author: "Berk Köprücü"
 
 
 exclude:
