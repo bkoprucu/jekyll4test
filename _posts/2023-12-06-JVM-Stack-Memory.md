@@ -328,7 +328,7 @@ Docker arguments used:
 |          `-XX:MaxRAMPercentage=75` | \: | Limit JVM heap to 75% of container memory |
 
 
-### MacOs anomaly:
+### Excessing memory usage on MacOS:
 
 We see an abnormally high memory usage reported by 'docker stats' on container with 2040 KB stack size:
 
