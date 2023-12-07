@@ -1,6 +1,7 @@
 ---
 title: "Can we optimize JVM stack size?"
 #subtitle: 
+seo_enabled: true
 excerpt_text: "The effect of -Xss JVM option, and a potential bug in JVM"
 categories: [DevOps]
 tags: [Java, DevOps, JVM, Monitoring]
