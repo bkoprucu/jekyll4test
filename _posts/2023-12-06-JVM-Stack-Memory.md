@@ -61,7 +61,7 @@ Here is the output of execution above on some Java / Os / architecture combinati
 
 Neither the [Java Tool Documentation](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#extra-options-for-java), nor the [JVM Specification](https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-2.html#jvms-2.5.2) specifies whether stack memory is allocated dynamically or not, leaving this and the behavior of the **-Xss** option to vendor implementation.  
 
-Tests below show that it is mostly allocated dynamically, [with unusual behavior on MacOS.](#macos-anomaly)  
+Tests below show that it is mostly allocated dynamically, [but exhibiting an unusual behavior on MacOS.](#excessive-memory-usage-on-macos)  
 
 
 ## Testing
@@ -121,8 +121,9 @@ public void spawnThreads(int threadCount, int heapPerThread, int frameCount) {
 }
 ```
 
+### Testing on the host
 
-### Changing stack depth
+#### Changing the stack depth
 
 We will start with Java 17 on MacOS on ARM64 architecture.
 
@@ -130,7 +131,7 @@ Our testing parameters include a 1536 MB heap limit, 1000 threads, each handling
 
 To assess memory usage, we'll compare scenarios with 0 and 1000 stack depth, employing both native memory tracking and the 'ps' command.
 
-**Zero stack depth**
+**Stack depth 0:**
 
 ```plaintext
 $ java -Xint -Xmx1536m -Xss2048k -XX:+UnlockDiagnosticVMOptions -XX:NativeMemoryTracking=summary com.berksoftware.article.jvmstack.MemoryFiller 1000 100 0
@@ -207,7 +208,7 @@ Other OS / platform / Java versions behave similarly.
 Thread stack seems to be dynamically allocated. 
 
 
-### Changing JVM stack size
+#### Changing JVM stack size
 
 We'll analyze memory usage under the effects of 2048KB and 512KB JVM stack size configurations.
 
@@ -295,7 +296,7 @@ $ ps -o rss,comm -p 8530
 NMT reports for MacOs - Java versions 8, 11, and 17 are available at [this repository](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports)
 
 
-#### Testing in a container
+### Testing in a container
 
 The comparison will focus on the container's memory usage as reported by Docker under various stack size configurations.
 
@@ -328,7 +329,7 @@ Docker arguments used:
 |          `-XX:MaxRAMPercentage=75` | \: | Limit JVM heap to 75% of container memory |
 
 
-### Excessing memory usage on MacOS:
+#### Excessive memory usage on MacOS
 
 We see an abnormally high memory usage reported by 'docker stats' on container with 2040 KB stack size:
 
