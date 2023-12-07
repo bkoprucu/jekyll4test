@@ -10,46 +10,47 @@ permalink: "/other/cats/tips.html"
 sidebar: [article-menu]
 ---
 
-After years of living with cats, rescuing them, and learning about them, I'll shortly summarize what I know about cat care, and living with them in a harmony.
+After years of living with, rescuing, and learning about cats, here's a brief summary of what I know about caring for cats and living in harmony with them.
 
 ![youtube](//www.youtube.com/watch?v=3rFeQmSMXKY?width=700&height=400)
 
-## First Needs
+## First needs
 
-I tried to list what cats need upon arrival, ordered in priority.
+I'll try to list what cats will need upon arrival, in order of priority.
 
-### Calm 'Base'
+### Calm 'base'
 
-Cats are psychologically sensitive animals. They can get overwhelmed and depressed easily. Changes in their environment, noise, any changes in their routine puts them under great stress.
+Cats are psychologically fragile animals. They can easily become overwhelmed and depressed. Changes in their environment, noise, any change in their routine puts them under great stress.
 
-They need a safe / quiet place where they won't be bothered. This is both important on first days and during the lifetime of the cat.
+They need a safe / quiet place where they won't be disturbed. This is important in the first few days and throughout their lives.
 
-They may hide under the bed or behind the couch for that reason.
+They may hide under the bed or behind the couch for this reason.
 
-This may be a cardboard box laying on side, and a cloth or pillow underneath. Top should be covered to help them feel safe.
+This can be a cardboard box on the side with a blanket or pillow underneath. The top should be covered to help them feel safe.
 
-### Other People, Petting
+### Other people, petting
 
 It is best to not to disturb the cat for the first day, esp. for first couple hours. They may be quite scared and confused. Leaving them in their previously arranged ['Base'](#calm-base) is a good idea. Guests, to much noise, many people showing attention is for them stressful. 
 
 Later on, petting should be done by first allowing the cat to smell your hand, by slowly approaching from the chin, basically surrendering yourself, letting the cat decide whether they want to be petted or not.
 
-Cats like stroked around their head, usually not their belly or tail. After they grow up, you may stroke their belly as well, but some cats may never like it.
+Cats like to be stroked around the head, usually not the belly or tail. As they grow, you may be able to pet their bellies as well, but some cats may never like it.
 
-Petting may get overstimulating to a cat, and purring may follow a sudden slap, bite or scratching. In cats world, this is usually not aggressive, but just communicating that it is enough. I recommend petting little bit less than what they want, and adjusting it over time. When the trust has been built over years, you can do whatever you want and communication becomes meowing, rather than biting.
+Petting can be overstimulating for a cat, and purring may follow a sudden slap, bite, or scratch. In cat's world, this is usually not aggressive, but just communicating that it is enough. I recommend petting a little less than  they want, and adjusting over time. When the trust has been built up over years, you can do whatever you want and the communication becomes meowing, rather than biting.
 
 ![youtube](//www.youtube.com/watch?v=qllER5PRU3c?width=700&height=400)
 
 ### Toilet
 
-Initially ['base'](#calm-base) should be not far from litter box, especially for kittens. You may put the cat on the litter box and leave him so he'll go back to his base, knowing where the litter box is. Kittens may need a stair (build with a book) to climb to the box.
+Initially ['base'](#calm-base) should be not be far from the litter box, especially for kittens. You can put the cat on the litter box and leave him so he'll go back to his base and know where the litter box is. Kittens may need a staircase (built with a book etc.) to get to the litter box.
 
-Shortly after you may want to put the box away from eating place, maybe in the bathroom.
+Soon after, you may want to put the box away from the food source, perhaps to the bathroom.
 
-#### Litter Box Material
 
-Silica crystal and parfumed litter is not healthy for cat or you. You wouldn't want to breathe its dust. 
-For kittens I'd recommend "natural" litter for the first couple months.
+#### Litter box material
+
+Silica crystal and scented litter are not healthy for the cat or you. You wouldn't want to inhale their dust. 
+For kittens I'd recommend "natural" litter for the first few months.
 
 Switching to wood pellets and mesh box, is cleaner and requires much less work. 
 
@@ -58,39 +59,44 @@ I use [PeeWee:](https://peewee.se)
 <a href="https://peewee.se"><img src="/assets/images/posts/cat-adopting/peewee.webp" height="350px" /></a>
 
 
-#### Teaching to Use Toliet Bowl
+Cats may resist new litter material. To help them, mix it with their previous litter, not a fresh one, so the new litter has some of their previous texture and smell.  
 
-I have successfully taught my cat to use the toilet bowl in the past. But I was ignorant of the problems it introduces:
+#### Teaching your cat to use the toilet bowl
 
-- It may be a safety hazard, they may fall, lid may close on them
-- Not natural for the cats, making urinating a stressful thing
-- Their litter box, and its smell marks their territory. They'll feel stressed without that
-- It'll be more dangerous for the cat, when they age
-- You'll have to keep the lid open
+I have successfully taught my cat to use the toilet bowl in the past. But I was unaware of the problems involved:
 
-### Food and Water
+- It can be a safety hazard, they can fall, the lid can close on them.
+- Not natural for the cats, making urination stressful.
+- Their litter box, and its smell mark their territory. They'll feel stressed without it.
+- As they get older, it bacomes dangerous for them, because they may have difficulty balancing on the edge of the toilet bowl.
+- You'll have to keep the lid open.
+
+### Food and water
 
 #### Food
-- Dry food (kibble) is suspected to cause cancer and urinal traction in long term. It is however practical and trains their jaw, and teeth. I'll recommend giving them less and good quality one.
-- Wet food is much preferable.
-- Clean bowl is important. Bowl is not needed for wet food. I use regular (small) and flat plates, which I put in the dishwasher afterwards.
-- Feeding should be in the same place, 2-3 times a day for adult cats, much more for kittens, this depending on their age.
-- Feeding place should be away from their litter box, not in bathroom.
+
+- Dry food (kibble) is suspected to cause cancer and unirary tract infections in the long term. However, it is convenient and trains their jaws and teeth. I recommend giving them less and good quality.
+- Wet food is much better.
+- A clean bowl is important. A bowl is not needed for wet food. I use regular (small) flat plates that I put in the dishwasher afterwards.
+- Feeding should be in the same place, 2-3 times a day for adult cats, much more for kittens, depending on their age.
+- The feeding place should be away from their litter box, not in the bathroom.
 
 #### Water
-Cats tend to drink not enough and develop kidney and urinal problems over the years. 
+
+Cats tend to not drink enough and develop kidney and urinary problems over the years. 
 I recommend:
-- Glass drinking bowl, which won't cause a smell.
-- Replacing the water every day.
-- Having more than one bowl in multiple places.
+- Glass water bowls that don't cause smell.
+- Changing the water daily,
+- Have more than one bowl in different places.
 
 
-### Scratching Post, Cat Tree
-Important need for a cat. Having this ready before cats arrival will also save you [furniture damage](#furniture-damage).
+### Scratching post, cat tree
 
-Many scratching posts in the market is too small for cats to stretch their body and get a satisfying scratching.
+Important need for a cat. Having it ready before the cat arrives will also save you from [furniture damage](#furniture-damage).
 
-I use this one, which can be fixed on the side of a wardrobe:
+Many scratching posts on the market are too small for cats to stretch their bodies and get a satisfying scratch.
+
+I use this one, which can be attached to the side of a cabinet:
 
 <a href="https://www.zooplus.se/shop/katt/klostrad_klosmobler/klosprylar_sisalleksaker/klosbrador/315064">
 <img src="https://shop-cdn-m.mediazs.com/bilder/trixie/sisalklsbrda/7/800/10630_sisalkratzbrett_03_2011_7.jpg" width="300px" />
@@ -99,36 +105,39 @@ I use this one, which can be fixed on the side of a wardrobe:
 You can make a climbing surface by fixing couple of them, which can be a good training and playing place as well.
 
 
-### Second Cat
+### Second cat
 
-Known fact: Adopting  second cat makes everything easier. I was surprised when I first experienced this.
+Adopting a second cat makes everything easier.
 
 Two cats will:
 - Play with each other, release their energy, not annoy you much.
-- Will teach each other that biting and scratching hurts.
-- Will be happier overall and do funny things together for you to watch.
+- Teach each other that biting and scratching hurts.
+- Be happier overall and do fun things together for you to watch.
 
 ![pamuk and_kucuk](/assets/images/posts/cat-adopting/pamuk_kucuk_hug.jpeg)
+
 
 ## Entertaining
 
 ### Playing
-Unless you have a second cat, regular playing with a cat is a necessity. Most effective toy to play with is probably a "cat wand":
+Unless you have a second cat, regular play with a cat is a necessity.The most effective toy to play with is probably a "cat wand":
 
 <img src="https://m.media-amazon.com/images/I/61pYLohyY6L.jpg" width="300px" />
 
-I also play 'wrestling' after I wear on an old sock like a glove.
+Wearing a sock like a glove and playing "wrestling" is also a good one.
+
 
 ### Box
 
-My cats have two boxes, one shoe box, one bigger cardbox. Cats get happy inside boxes.
+My cats have two boxes, one shoe box, and a larger cardboard box.
 
 
 ![pamuk in box](/assets/images/posts/cat-adopting/pamuk_box.jpeg)
 
 
 ### Observing
-Something like this, or a cat tree by the window keeps them entertained:
+
+Something like this, or a cat tree by the window will keep them entertained:
 
 <img src="https://i.etsystatic.com/19173210/r/il/9061fb/2798301549/il_fullxfull.2798301549_rxil.jpg" width="600px" />
 
@@ -136,39 +145,43 @@ Or a cat tree, like mine:
 
 ![cat tree](/assets/images/posts/cat-adopting/pamuk_kucuk_watching.jpeg)
 
-**Climbing on a tree is great training for them**
+**Climbing on a tree is great exercise for them**
 
-Cat entertainment videos on Youtube may work too:
+Cat entertainment videos on Youtube may also work:
 
 ![](//www.youtube.com/watch?v=6pbreU5ChmA?width=700&height=400)
 
 
-### Letting Out
+### Letting them out
 
-#### Preventing Loss
+#### Prevent them from getting lost
+
 I let my cats out regularly, they have been lost twice in 6 years.
 
-They tend to go inside strange places, where they get trapped. Solution is to use a tracking device, fixed on their collar. I am using a radio device, instead of GPS. It has a low range but is small and works indoors. I have mediocre results with Airtags.
+They tend to go inside strange places, where they get trapped. The solution is to use a tracking device attached to their collar. I use a radio type, instead of GPS. It has a short range, but it is small and works indoors. I have had mediocre results with Airtags.
 
 ![tracker](https://m.media-amazon.com/images/I/41DYkMFhFiL._AC_.jpg)
 
 
-#### Preventing Hunting
+#### Preventing hunting
 
-They kill mouse and small birds. Which not only is sad for those animals, also a health risk. Salmonella from sparrows, for instance, may spread both to your cat and you.
+They kill mice and small birds. This is not only is sad for the animals, but also a health risk. Salmonella from sparrows, for example, can spread to both your cat and you.
 
-Solution is having a bell on their collar:
+The solution is to put a bell on their collar:
 
 ![collar](https://shop-cdn-m.mediazs.com/bilder/hunter/flashlight/katthalsband/1/400/19218_PLA_Hunter_Katzenhalsband_Flashlights_1.jpg)
 
 
 ## Care
+
 ### Brushing
-Daily brushing is necessary for their health. Long heired cats need it more. I get the best results with non-rounded wire type.
+Daily brushing is a necessity for their health. Longhaired cats need it more. I get the best results with a non-rounded wire type brush.
 
-### Claw Trimming
+### Claw trimming
 
-Claw trimming doesn't always prevent the cat from scratching furniture. Excess length will be problematic, therefore, I trim them monthly.
+Trimming the claws doesn't always stop the cat from scratching the furniture. 
+
+Excess length is a problem for them and for you. So I trim them monthly.
 
 It is important to not to cut too deep:
 
@@ -176,39 +189,40 @@ It is important to not to cut too deep:
 
 Here is a good guide: [https://cat-world.com/trim-cats-claws-including-photos/](https://cat-world.com/trim-cats-claws-including-photos/)
 
-### Hair Trimming
 
-- I'd advise to not to bring a cat to a coiffour or get cats hair trimmed.
-- Long haired cats need "sanitary trim".
+### Hair trimming
 
-## Preventing Unwanted Behavior
+- I don't recommend taking a cat to the groomer or having a cat's hair trimmed.
+- Longhaired cats need a "sanitary trim".
 
-Punishment, including spraying water doesn't work with cats. They tend to associate the punishment with you, rather than their behavior.
 
-Consistent behavior by owners side is important.  
+## Preventing unwanted behavior
 
-### Furniture Damage
+Punishment, including water spraying, doesn't work with cats. They tend to associate the punishment with you rather than their behavior.
 
-Best way to reduce damage is having scratching posts around home, before the cats arrival.
+Consistent behavior on the part of the owner is important.
 
-After cat has developed a habit of scratching a furniture, you may try fixing two sided tape on the furniture, applying watered down lemon on two sided tape etc. I don't have first hand experience with this.
 
-I choose to see the damage they cause  as their trace, memory. For me, they'll have a sentimental value, after my cats pass away.
+### Furniture damage
 
-### Biting and Scracthing
+The best way to reduce damage is to have scratching posts around the house before the cats arrive.
 
-If you have more than one cat, they'll teach each other that is hurts. 
-If you have one, you may "bite" their ears with your finger nails a bit. This shouldn't be too hard but enough to mimic how it'd feel it another were to bite them.
-for kittens it may take a year to learn not to bite or scratch.
+After the cat has developed a habit of scratching furniture, you can try fixing the furniture with double-sided tape, applying watered-down lemon to double-sided tape, etc. Although I have no first-hand experience with this.
+
+I choose to see the damage they cause as their trace, their memory. For me, they'll have sentimental value after my cats are gone.
+
+
+### Biting and scratching
+
+If you have more than one cat, they'll teach each other that biting and scratching hurts.
+
+If you have one cat, you can "bite" her ears a little with your fingernails. This should be just hard enough to mimic how it would feel if another cat were to bite it.
+It may take a year for kittens to learn not to bite or scratch. They also need a chewing stick to exercise their teeth as they grow.
+
 
 ## More
 
-I plan to write about following topics:
-- Other unwanted behaviors
-- Medication, vet. visits
-- Other resources
- 
-
-
-
-
+I plan to write about the following topics:
+- Other unwanted behaviors.
+- Medication, vet. visits.
+- More resources.
