@@ -2,7 +2,7 @@
 title: "Can we optimize JVM stack size?"
 #subtitle: 
 seo_enabled: true
-excerpt_text: "The effect of -Xss JVM option, and a potential bug in JVM"
+excerpt_text: "The effect of -Xss JVM option, and inefficient memory allocation on MacOS"
 categories: [DevOps]
 tags: [Java, DevOps, JVM, Monitoring]
 hide: [related]
@@ -10,9 +10,9 @@ hide: [related]
 
 ## The effect of -Xss JVM option, and a potential JVM bug
 
-The default JVM stack size is [known to be 1024 KB](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#extra-options-for-java), appears wasteful for many applications.
+The default JVM stack size, which is known to be 1024 KB, seems wasteful for many applications.
 
-I conducted tests to answer following questions:
+So I conducted tests to answer following questions:
 
 - **Can scalability be improved by adjusting JVM stack size?**
 - **What does -Xss JVM argument actually do? How does it affect the memory usage?**
@@ -29,7 +29,7 @@ In the course of these tests, I encountered [memory allocation problem on MacOS.
 
 **Heap** is the "main" memory section, where all the objects, including primitives and references defined in the objects are stored. It is shared among the threads.  
 
-Memory allocation is a deep topic, so this is an overly simplified explanation of the two main memory areas.
+Memory allocation is a deep topic, This is an overly simplified explanation of the two main memory areas.
   
 
 ## Default JVM stack size
@@ -45,7 +45,7 @@ $ java -XX:+PrintFlagsFinal -version | grep -i threadstack
 **ThreadStackSize** is the stack size used by Java applications, which can be set with '-Xss' JVM option.
 **VMThreadStackSize** is the [native method stack size](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-2.html#jvms-2.5.6). It can be set with `-XX:VMThreadStackSize` JVM option.
 
-Here is the output of execution above on some Java / Os / architecture combinations: 
+Below is the output of execution above on some Java / Os / architecture combinations: 
 <div class="table600 center-table"></div>
 
 |                         | **8.0.397** | **11.0.21** | **17.0.9** | **21.0.1** |
@@ -285,13 +285,13 @@ $ ps -o rss,comm -p 8530
 
  - Although the Native Memory Tracking report indicates a connection between committed memory and provided stack size, the resident set size on the operating system remains constant, at around 307 MB.
 
- - This means that stack memory is allocated dynamically and the JVM stack size option **-Xss** only sets the limit of how much it can grow. 
+ - So the stack is allocated dynamically and the JVM stack size option **-Xss** sets the limit on how much it can grow. 
 
  - **Java 8 and 11 utilizes memory less efficiently on MacOS:**
 
    - On MacOS / ARM64, Java 8 utilized around 80% more memory, 558 MB.
 
-   - Again on MacOS, for both ARM and x86 architectures, Java 11 utilized around 20% more memory.
+   - On MacOS, for both ARM and x86 architectures, Java 11 utilized around 20% more memory.
 
 NMT reports for MacOs - Java versions 8, 11, and 17 are available at [this repository](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports)
 
@@ -356,11 +356,11 @@ Lastly, we will find the maximum number of threads that can be run in a containe
 docker run -m 2g --memory-swap 2g --rm -d -e JAVA_OPTS="-Xss1024k -XX:MaxRAMPercentage=75" --name J17_2040k memoryfiller:java17 7000 100 250
 ```
 
-On MacOS with default stack size (2040 KB), container can run ~1050 threads, after which it is killed by container manager.
+On MacOS with default stack size (2040 KB), container can run ~1050 threads, after which it is killed by container manager (Docker),
 
-With a decreased JVM stack size of 1024 KB (-Xss1024k option), number of threads the container can run reaches ~7100 threads. Further reducing the stack size does not have an impact.
+With a decreased JVM stack size of 1024 KB (-Xss1024k option), the container can run ~7100 threads. Further reducing the stack size does not have an impact.
 
-Like the former test, this behavior only occurs on MacOS, with LTS Java versions 17 and below. 
+Like the previous test, this behavior only occurs on MacOS, with LTS Java versions 17 and below. 
 
 
 ## Conclusion
