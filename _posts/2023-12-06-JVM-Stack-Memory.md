@@ -8,7 +8,7 @@ tags: [Java, DevOps, JVM, Monitoring]
 hide: [related]
 ---
 
-## The effect of -Xss JVM option, and a potential JVM bug
+## The effect of -Xss JVM option, and inefficient memory allocation on MacOS
 
 The default JVM stack size, which is known to be 1024 KB, seems wasteful for many applications.
 
