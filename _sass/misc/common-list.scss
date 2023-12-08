@@ -42,18 +42,16 @@
 }
 
 .common-list-header {
+  padding-top: 8px;
+  @include borderto(.5);
+  color: #888;
+  font-size: $small-font-size;
+  font-weight: 600;
+  margin: 0 0 15px 13px;
   a {
-    color: $muted-color;
+    color: #888;
     &:hover {
       color: #000;
     }
   }
-  h5 {
-    font-size: $small-font-size;
-    margin: 0 0 15px 13px;
-    color: #888;
-  }
-  padding-top: 8px;
-  @include borderto(.5);
-  color: $muted-color;
 }

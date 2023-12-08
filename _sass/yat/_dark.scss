@@ -1,8 +1,8 @@
-$dark-background-color: #0e0e0e !default;
-$dark-text-color: #aaa !default;
+$dark-background-color: #090909 !default;
+$dark-text-color: #999 !default;
 $footer-background-color: $header-background-color;
-$muted-color: #777;
-$bold-color: #ddd;
+$muted-color: #666;
+$bold-color: #ccc;
 
 html[data-theme="dark"]  {
   /* &[data-scroll-status='top'] {
@@ -66,7 +66,7 @@ html[data-theme="dark"]  {
   }
 
   .left-vsplit:before {
-    background-color: #9a9a9a;
+    background-color: #999;
   }
 
   .page-banner {
@@ -219,12 +219,11 @@ html[data-theme="dark"]  {
   }
 
   .about-box {
-    color: $muted-color;
+    color: $muted_color;
     a:hover {
-        color: $bold-color;
+        color: $bold_color;
     }
   }
-
 
   .common-list-header {
     a:hover {
@@ -233,19 +232,20 @@ html[data-theme="dark"]  {
   }
 
   .about {
-
     .social-link-td {
       a:hover {
-        color: #fff;
+        color: #eee;
       }
       a {
-        color: #bbb;
+        color: #aaa;
       }
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: #ccc;
+  .post .post-content {
+    h1, h2, h3, h4, h5, h6 {
+      color: #aaa;
+    }
   }
 
 }
