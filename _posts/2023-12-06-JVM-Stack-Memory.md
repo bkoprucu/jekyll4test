@@ -1,11 +1,9 @@
 ---
 title: "Can we optimize JVM stack size?"
-#subtitle: 
 seo_enabled: true
 excerpt_text: "The effect of -Xss JVM option, and inefficient memory allocation on MacOS"
 categories: [DevOps]
-tags: [Java, DevOps, JVM, Monitoring]
-#hide: [related]
+tags: [Java, DevOps, JVM]
 ---
 
 ## The effect of -Xss JVM option, and inefficient memory allocation on MacOS
@@ -38,9 +36,9 @@ We can get the stack size configuration of current JVM by executing:
 
 ```text
 $ java -XX:+PrintFlagsFinal -version | grep -i threadstack
-     intx CompilerThreadStackSize                  = 2048
-     intx ThreadStackSize                          = 2048
-     intx VMThreadStackSize                        = 2048
+     intx CompilerThreadStackSize             = 2048
+     intx ThreadStackSize                     = 2048
+     intx VMThreadStackSize                   = 2048
 ```
 **ThreadStackSize** is the stack size used by Java applications, which can be set with '-Xss' JVM option.
 **VMThreadStackSize** is the [native method stack size](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-2.html#jvms-2.5.6). It can be set with `-XX:VMThreadStackSize` JVM option.

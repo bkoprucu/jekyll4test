@@ -28,7 +28,8 @@ excerpt_size: 100 # Custom excerpt size
 excerpt_image: /assets/images/test/berk_logo_funny_2.png
 excerpt_image_on_page: false # Don't show except image on the pag, only on listing
 excerpt_image_page_style: 'max-height: 150px' # Apply CSS to excerpt image
-#banner: /assets/images/test/berk_logo_funny.png
+banner: /assets/images/test/berk_logo_funny.png
+banner_credit: 'Photo by Casey Horner' 
 categories: [Test]
 tags: [AWS, Spring]
 sidebar: [about-box] # On of: 'about-box', 'article-menu', 'category-list', 'tag-list', 'archive-list'
