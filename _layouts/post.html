@@ -69,6 +69,7 @@ sidebar:
 
   {%- unless hide contains 'related' -%}
     {%- assign posts = site[page.collection] | where_exp: "item", "item.hidden == nil or item.hidden == false"
+                                             | where_exp: "item", "item.hide_from_related == nil or item.hide_from_related == false"
                                              | where_exp: "item", "item.id != page.id" | sample:4 -%}
     {%- if posts.size > 0 -%}
     <div class="post-related">
