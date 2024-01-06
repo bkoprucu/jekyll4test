@@ -36,4 +36,7 @@ hide: [related, navigator] # Can be 'header', 'navigator', 'related' or 'comment
 hidden: 1 # Hide from listing
 permalink: "/reference.html"  # Custom url
 # top: 1 # Pinned post 
+
+`bundle update`
+
 ```
