@@ -564,6 +564,14 @@ html {
     height: 100%;
   }
 
+  .page-banner-credit {
+    color: rgba(230, 230, 230, .5);
+    position: relative;
+    text-align: right;
+    font-size: 12px;
+    top: 72%;
+  }
+
   .page-banner-inner {
     @include vertical-center(relative);
     color: $banner-text-color;
