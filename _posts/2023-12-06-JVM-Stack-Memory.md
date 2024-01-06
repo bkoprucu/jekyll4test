@@ -5,7 +5,7 @@ seo_enabled: true
 excerpt_text: "The effect of -Xss JVM option, and inefficient memory allocation on MacOS"
 categories: [DevOps]
 tags: [Java, DevOps, JVM, Monitoring]
-hide: [related]
+#hide: [related]
 ---
 
 ## The effect of -Xss JVM option, and inefficient memory allocation on MacOS
