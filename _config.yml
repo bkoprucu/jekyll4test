@@ -5,7 +5,7 @@ author: 'Berk Köprücü'
 copyright: "(c) {currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Berk Köprücü, Berk Koprucu - Software Engineer, Backend, Java, Kotlin, Spring Boot, System Design, Software Architect, Cloud Computing, Kubernetes, AWS, Docker, Agile
+  Berk Köprücü / Berk Koprucu. Backend software engineer, freelancer. Expert on Java, Kotlin, micro services, Spring Boot, system design, software architecture, cloud computing, Kubernetes, AWS, Docker, agile methodologies. Located in Germany or Sweden.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://berksoftware.com/" # the base hostname & protocol for your site, e.g. http://example.com
 # favicon: "/favicon.png"
