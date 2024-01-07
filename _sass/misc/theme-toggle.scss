@@ -66,11 +66,4 @@
   }
 
   transition: margin .3s;
-  @include media-query($on-palm) {
-    width: $base-font-size * 6.65;
-    margin-right: 20px;
-    .names {
-      font-size: .85em;
-    }
-  }
 }
