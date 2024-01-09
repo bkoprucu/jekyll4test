@@ -33,7 +33,7 @@ public static void main(String[] args) {
 }
 ```
 
-Execution is blocked at line 8 and waits for the termination signal, after which the shutdown hook should be triggered before exiting the application.
+Execution will block and wait for the termination signal, after which the shutdown hook should be triggered before exiting the application.
 
 We will run this using a shell script:
 

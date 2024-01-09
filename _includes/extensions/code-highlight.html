@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>-->
 
 {%- assign name = 'code_badge.enabled' -%}
 {%- include functions.html func='get_value' default='true' -%}
@@ -20,28 +20,10 @@
 
 <script>
   hljs.configure({
-    languages: [ "java","kotlin","yaml","json","xml","plaintext","bash","shell","sql","javascript","graphql","markdown","c","cpp","csharp","css","scss","diff","go"],
+    languages: [ "java","kotlin","yaml","json","xml","plaintext","bash","shell","sql","javascript","graphql","markdown","c","cpp","csharp","css","scss","go"],
     ignoreUnescapedHTML: true
   });  
   hljs.highlightAll();
-  hljs.initLineNumbersOnLoad();
+// hljs.initLineNumbersOnLoad();
 </script>
 
-<style>
-  td.hljs-ln-numbers {
-    text-align: left;
-    font-size: 83%;
-    color: #666;
-    border-right: none;
-    vertical-align: center;
-    padding-right: 0px;
-    user-select: none;
-  }
-  td.hljs-ln-code {
-    padding-left: 10px;
-  }
-  code {
-    white-space: pre-wrap;
-    /* overflow: auto; */
-  }
-</style>
