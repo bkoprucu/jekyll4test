@@ -1,8 +1,8 @@
 ---
 title: "Avoiding missing signal on container shutdown"
-subtitle: "Importance of PID 1"
+#subtitle: "Importance of PID 1"
 seo_enabled: true
-excerpt_text: "A misconfigured Docker file/shell script can cause the process in the container to miss the SIGTERM signal"
+excerpt_text: "Missing 'exec' command on dockerfile / shell script may cause the containerized process to miss the SIGTERM signal"
 categories: [DevOps]
 tags: [Kubernetes, Docker, DevOps, Java, Spring Boot]
 #hide: [related]
@@ -10,9 +10,9 @@ tags: [Kubernetes, Docker, DevOps, Java, Spring Boot]
 #hidden: 1
 ---
 
-### How shutdown signal can be missed by the container
+### How shutdown signal can be missed by the container 
 
-A misconfigured Docker file/shell script can cause the process in the container to miss the SIGTERM signal sent by Kubernetes or another container manager.
+Missing 'exec' command on dockerfile / shell script may cause the containerized process to miss the SIGTERM signal sent by the container manager.
 
 In this case the process gets stopped with the SIGKILL signal, without properly releasing the resources. This can leave the system in an inconsistent state.
 
@@ -37,7 +37,7 @@ Execution is blocked at line 8 and waits for the termination signal, after which
 
 We will run this using a shell script:
 
-```text
+```console
 #!/bin/sh
 # docker-entrypoint.sh
 java -jar app.jar
@@ -56,7 +56,7 @@ ENTRYPOINT ["./docker-entrypoint.sh"]
 
 We run the container:
 
-```text
+```console
 $ docker build -t shutdowndemo .
 ...
 $ docker run --name demo shutdowndemo
@@ -65,7 +65,7 @@ PID: 5
 
 Note that the PID is not 1. 
 
-```text
+```console
 $ docker stop demo
 $ _
 ```
@@ -75,20 +75,17 @@ The reason is that instead of our application, the shell script `docker-entrypoi
 
 Sending the following command to the container will confirm this (we read the contents from `/proc`, since the `ps` command is missing in the container):
 
-```text
+```console
 $ docker exec demo cat /proc/1/cmdline
 /bin/sh./docker-entrypoint.sh
 ```
 
 After a timeout, container manager kills the container, killing the application process without releasing the resources.
+Since the application starts successfully, the problem may go unnoticed.
 
-**Since the application starts successfully, the problem may go unnoticed.**
+### Fix: Adding the 'exec' command
 
-### Solution
-
-Adding the `exec` command to `docker-entrypoint.sh`, fixes the problem: 
-
-```text
+```bash
 #!/bin/sh
 
 # docker-entrypoint.sh
@@ -100,7 +97,7 @@ exec java $JAVA_OPTS -jar app.jar "$@"
 
 Updated container triggers the hook on exit:
 
-```text
+```console
 $ docker run --rm --name sdemo shutdowndemo
 PID: 1
  
@@ -108,11 +105,9 @@ Clean shutdown
 $ _
 ```
 
-### Without the shell script
+#### Without the shell script
 
-In this example the shell script `docker-netrypoint.sh` is not doing anything useful.
-
-We should add the `exec` command to the `Dockerfile`, after the `ENTRYPOINT`, to ensure proper signal handling:
+The `exec` command should be added to `Dockerfile` if no shell script is used: 
 
 ```dockerfile
 FROM azul/zulu-openjdk-alpine:17-jre
@@ -123,16 +118,14 @@ ENTRYPOINT exec java -jar app.jar
 ```
 
 
-#### Isn't PID 1 the init process?
+>#### Isn't PID 1 the init process?
+>Linux provides namespaces for various system resources, including PID, which is used for virtualization.
 
-Linux provides namespaces for various system resources, which are used by virtualization. Containers use the PID namespace. 
-Since containers don't have a real operating system running for them, PID 1 is available and expected to be used by the user process.
-
-### Failing fast
+### Preventative measure / failing fast
 
 To be more safe, we can check the PID at startup and send a warning, or abort the startup.  
 
-Here is an example for Spring Boot, which aborts the startup if the profile is 'kubernetes' or 'docker' and PID is not 1:
+Here is a Spring Boot example for aborting the startup if PID is not 1 for profiles 'kubernetes' and 'docker':
 
 ```java
 @Component
@@ -149,7 +142,8 @@ public class PidChecker {
     @PostConstruct
     void onStart() {
         if(Stream.of(context.getEnvironment().getActiveProfiles())
-                 .anyMatch(profile -> List.of("kubernetes", "docker").contains(profile))
+                 .anyMatch(profile -> 
+                       List.of("kubernetes", "docker").contains(profile))
                 && ManagementFactory.getRuntimeMXBean().getPid() != 1) {
             log.error("PID is not 1 for containerized profile, shutting down");
             context.close();
