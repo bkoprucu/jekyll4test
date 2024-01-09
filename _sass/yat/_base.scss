@@ -91,8 +91,8 @@ big-font {
 /* Code formatting */
 pre,
 code {
-  @include relative-font-size(0.79);
-  color: $text-color;
+  font-size: 13.5px;
+//   white-space: pre-wrap;
 }
 
 *:not(pre) > code {
@@ -110,20 +110,34 @@ pre {
 
   > code {
     display: inline-block;
-    padding: 20px!important;
+    padding: 16px 22px !important;
     background-color: transparent;
     border: 0;
+    //overflow: auto;
+
+    .hljs-ln-numbers {
+       text-align: left;
+       font-size: 10px;
+       color: #666;
+       border-right: none;
+       vertical-align: center;
+       padding-right: 0px;
+       user-select: none;
+    }
+    .hljs-ln-code {
+       padding-left: 10px;
+    }
   }
 
   table, pre {
     margin-bottom: 0;
-
     .gutter, .code {
       padding: 5px;
       border: none;
     }
   }
 }
+
 
 hr {
   @include bordert();
