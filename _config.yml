@@ -1,11 +1,11 @@
 
-title: Berk Köprücü
+title: 'Berk Köprücü'
 email: berk@berksoftware.com
 author: 'Berk Köprücü'
 copyright: "(c) {currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Berk Köprücü / Berk Koprucu. Backend software engineer, freelancer. Expert on Java, Kotlin, micro services, Spring Boot, system design, software architecture, cloud computing, Kubernetes, AWS, Docker, agile methodologies. Located in Germany or Sweden.
+  Distributed computing with Java and Kotlin
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://berksoftware.com/" # the base hostname & protocol for your site, e.g. http://example.com
 # favicon: "/favicon.png"

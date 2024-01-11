@@ -19,11 +19,11 @@
  {%- assign badge_text_transform = return -%}
 
 <script>
-  hljs.configure({
-    languages: [ "java","kotlin","yaml","json","xml","plaintext","bash","shell","sql","javascript","graphql","markdown","c","cpp","csharp","css","scss","go"],
-    ignoreUnescapedHTML: true
-  });  
-  hljs.highlightAll();
+hljs.configure({
+  languages: [ "java","kotlin","yaml","json","xml","dockerfile","plaintext","console"],
+  ignoreUnescapedHTML: true
+});
+hljs.highlightAll();
 // hljs.initLineNumbersOnLoad();
 </script>
 
