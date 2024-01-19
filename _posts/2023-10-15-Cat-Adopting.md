@@ -30,7 +30,7 @@ This can be a cardboard box on the side with a blanket or pillow underneath. The
 
 ### Other people, petting
 
-It is best to not to disturb the cat for the first day, esp. for first couple hours. They may be quite scared and confused. Leaving them in their previously arranged ['Base'](#calm-base) is a good idea. Guests, to much noise, many people showing attention is for them stressful. 
+It is best to not disturb the cat for the first day, esp. for first couple hours. They may be quite scared and confused. Leaving them in their previously arranged ['Base'](#calm-base) is a good idea. Guests, to much noise, many people showing attention is for them stressful. 
 
 Later on, petting should be done by first allowing the cat to smell your hand, by slowly approaching from the chin, basically surrendering yourself, letting the cat decide whether they want to be petted or not.
 
@@ -42,7 +42,7 @@ Petting can be overstimulating for a cat, and purring may follow a sudden slap, 
 
 ### Toilet
 
-Initially ['base'](#calm-base) should be not be far from the litter box, especially for kittens. You can put the cat on the litter box and leave him so he'll go back to his base and know where the litter box is. Kittens may need a staircase (built with a book etc.) to get to the litter box.
+Initially ['base'](#calm-base) should be not far from the litter box, especially for kittens. You can put the cat on the litter box and leave him so he'll go back to his base and know where the litter box is. Kittens may need a staircase (built with a book etc.) to get to the litter box.
 
 Soon after, you may want to put the box away from the food source, perhaps to the bathroom.
 
@@ -50,7 +50,7 @@ Soon after, you may want to put the box away from the food source, perhaps to th
 #### Litter box material
 
 Silica crystal and scented litter are not healthy for the cat or you. You wouldn't want to inhale their dust. 
-For kittens I'd recommend "natural" litter for the first few months.
+For kittens, I'd recommend "natural" litter for the first few months.
 
 Switching to wood pellets and mesh box, is cleaner and requires much less work. 
 
@@ -68,7 +68,7 @@ I have successfully taught my cat to use the toilet bowl in the past. But I was 
 - It can be a safety hazard, they can fall, the lid can close on them.
 - Not natural for the cats, making urination stressful.
 - Their litter box, and its smell mark their territory. They'll feel stressed without it.
-- As they get older, it bacomes dangerous for them, because they may have difficulty balancing on the edge of the toilet bowl.
+- As they get older, it becomes dangerous for them, because they may have difficulty balancing on the edge of the toilet bowl.
 - You'll have to keep the lid open.
 
 ### Food and water
@@ -102,7 +102,7 @@ I use this one, which can be attached to the side of a cabinet:
 <img src="https://shop-cdn-m.mediazs.com/bilder/trixie/sisalklsbrda/7/800/10630_sisalkratzbrett_03_2011_7.jpg" width="300px" />
 </a>
 
-You can make a climbing surface by fixing couple of them, which can be a good training and playing place as well.
+You can make a climbing surface by fixing a couple of them, which can be a good training and playing place as well.
 
 
 ### Second cat
@@ -147,7 +147,7 @@ Or a cat tree, like mine:
 
 **Climbing on a tree is great exercise for them**
 
-Cat entertainment videos on Youtube may also work:
+Cat entertainment videos may also work:
 
 ![](//www.youtube.com/watch?v=6pbreU5ChmA?width=700&height=400)
 
@@ -183,7 +183,7 @@ Trimming the claws doesn't always stop the cat from scratching the furniture.
 
 Excess length is a problem for them and for you. So I trim them monthly.
 
-It is important to not to cut too deep:
+It is important to not cut too deep:
 
 ![claw trimming](/assets/images/posts/cat-adopting/claw_trimming.jpg)
 
