@@ -176,5 +176,5 @@ Virtual threads should be used for operations prone to blocking.
 | Scheduled by the OS, preemptively        | Scheduled by JVM. when blocked                                         |
 | Can have different priority than normal  | Priority is fixed to normal                                            |
 | Can be daemon, not daemon by default     | Always daemon                                                          |
-| Has auto-generated name by default       | No default name(empty string)                                          |
+| Has auto-generated name by default       | No default name (empty string)                                         |
 
