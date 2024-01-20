@@ -45,7 +45,7 @@ $ java -XX:+PrintFlagsFinal -version | grep -i threadstack
 **VMThreadStackSize** is the [native method stack size](https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-2.html#jvms-2.5.6). It can be set with `-XX:VMThreadStackSize` JVM option.
 
 Below is the output of execution above on some Java / Os / architecture combinations: 
-<div class="table600 center-table"></div>
+<div class="table600 bordered-table center-table"></div>
 
 |                         | **8.0.397** | **11.0.21** | **17.0.9** | **21.0.1** |
 |:------------------------|:-----------:|:-----------:|:----------:|:----------:|
