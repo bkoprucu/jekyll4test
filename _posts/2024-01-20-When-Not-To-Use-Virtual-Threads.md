@@ -43,8 +43,6 @@ Virtual threads are queued tasks. Unlike platform threads, their scheduling and 
 4. We have response from the external service, so VT1 can be scheduled. What actually happens here is that operating system notifies the JVM and the message is forwarded to the scheduler, which removes the blocked status of VT1 (changes it from 'parked' to 'runnable'). VT1 cannot be scheduled right away, because all the carrier threads are busy.
 5. When VT3 is finished, carrier thread T1 becomes available. VT1 gets mounted and executed. 
 
-This is how virtual threads improve scalability by executing multiple tasks defined in virtual threads by a single platform thread.
-
 
 ### Culprit: Delayed execution with CPU intensive operations
 
