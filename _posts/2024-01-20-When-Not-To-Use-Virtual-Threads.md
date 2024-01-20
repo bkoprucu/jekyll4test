@@ -22,13 +22,13 @@ This way, more active threads than CPU cores can run concurrently, and the execu
 
 This also makes it possible to control the priority of threads, by giving some threads more CPU time.
 
-When a thread is blocked, it is removed from the scheduling loop, until it becomes unblocked.
+A blocked thread is removed from the scheduling loop, until it becomes unblocked.
 
 Many service application threads spend a good amount of time being blocked, while waiting for a response from another service call or database operation etc., causing an inefficient use of threads:
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/platform_thread_sleep.png" description="Platform thread idling on blocking operation" -%}
 
-When no threads are available, the application comes to a halt, despite CPU usage being low.    
+When no threads are available, the application will come to a halt, despite CPU usage being low.    
 
 
 ### Scheduling of virtual threads
@@ -37,11 +37,13 @@ Virtual threads are queued tasks. Unlike platform threads, their scheduling and 
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/vt_scheduling2.png" description="Scheduling of virtual threads" -%}
 
+Here we see T1 is used as a carrier thread (a platform thread in schedulers pool for executing virtual threads), and it runs virtual threads VT2 and VT3 while waiting for VT1 to get unblocked. Note the uneven scheduling periods of the threads.
+
 1. Virtual thread (or task) is taken from the queue, and mounted onto one of the available platform threads of scheduler. Here VT1 mounted on T1.
-2. It gets executed until it is blocked or finished. VT1 is blocked by making external service call, it gets unmounted, meaning it's stack is saved to heap, its status is set to 'parked' (blocked) and put in the schedulers queue.
-3. Scheduler takes virtual thread VT2 from the queue, mounts on T1 and executes. This happens during the time, which T1 would be waiting to get unblocked, if virtual threads were not used. After VT2 is finished, T1 starts working on VT3. Note the uneven scheduling periods of the threads. 
-4. We have response from the external service, so VT1 can be scheduled. What actually happens here is that operating system notifies the JVM and the message is forwarded to the scheduler, which removes the blocked status of VT1 (changes it from 'parked' to 'runnable'). VT1 cannot be scheduled right away, because all the carrier threads are busy.
-5. When VT3 is finished, carrier thread T1 becomes available. VT1 gets mounted and executed. 
+2. It gets executed until it is blocked or finished. VT1 is blocked by making an external service call, it gets unmounted, meaning it's stack is saved to heap, its status is set to 'parked' (blocked) and put in the schedulers queue.
+3. Scheduler takes virtual thread VT2 from the queue, runs using T1. After VT2 is finished, it does the same for VT3. 
+4. Response from the external service is received, VT1 can be scheduled. What actually happens here is that operating system notifies the JVM about I/O resource being ready. The message is forwarded to the scheduler, which removes the blocked status of VT1 ('parked' -> 'runnable'). But VT1 cannot be scheduled right away, because all the carrier threads are busy.
+5. When VT3 is finished, carrier thread T1 becomes available. Scheduler runs it on T1. 
 
 
 ### Culprit: Delayed execution with CPU intensive operations
@@ -51,11 +53,9 @@ The scheduler does not have a control over when a virtual thread will be schedul
 
 #### Demonstrating delayed execution of a virtual thread
 
-To demonstrate this easily, we will allow JVM to use two CPU cores only, by running it with the argument `-XX:ActiveProcessorCount=2`. Limiting the scheduler threads with `jdk.virtualThreadScheduler.parallelism` will also work, but it'll make it difficult to compare the case without virtual threads.
+To demonstrate this easily, we will allow JVM to use two CPU cores, with JVM argument `-XX:ActiveProcessorCount=2`.
 
-We start two virtual threads and give them CPU heavy tasks. 
-
-When we start a third virtual thread, it won’t get scheduled until one of the first two is completed:
+We start two virtual threads and give them CPU heavy tasks, and a third one doing less work:
 
 ```java
 
@@ -93,6 +93,7 @@ public static void main(String[] args) throws InterruptedException {
 
 ```
 
+Third virtual thread won’t get scheduled until one of the first two is completed:
 ```console
 $ java -XX:ActiveProcessorCount=2 VirtualDelayDemo.class
 thread 1 started
@@ -105,26 +106,7 @@ done
 $ _
 ```
 
-They all will get scheduled without a delay, when we switch "Thread 3" or all of them to platform threads:
-```java
-public static void main(String[] args) throws InterruptedException {
-    Thread t1 = Thread.ofPlatform()
-                      .name("thread 1")
-                      .start(() -> findPrimeNumbers(1, 200_000));
-    Thread t2 = Thread.ofPlatform()
-                      .name("thread 2")
-                      .start(() -> findPrimeNumbers(1, 200_000));
-    Thread t3 = Thread.ofPlatform()
-                      .name("thread 3")
-                      .start(() -> findPrimeNumbers(1, 50));
-
-    t1.join();
-    t2.join();
-    t3.join();
-    System.out.println("done");
-}
-```
-
+If we switch the third thread (or all of them), to platform thread, they'll start executing right away:
 ```console
 $ java -XX:ActiveProcessorCount=2 VirtualDelayDemo.class
 thread 3 started
@@ -142,9 +124,9 @@ $ _
 Sending the CPU intensive part to the specific executor and blocking the virtual thread will do the trick:
 ```java
 ...
-    // Send CPU intensive task to its specific executor
+    // Send CPU intensive task to executor with platform threads
     Future<List<Long>> future = cpuIntensiveExecutor.submit(() -> findPrimeNumbers(1, 1000));
-    // Blocking the virtual thread
+    // Block the virtual thread
     List<Long> result = future.get();
 ...
 ```
@@ -171,8 +153,7 @@ A good strategy for low latency or CPU intensive tasks is to use a separate thre
 
 | : **Platform**                         : | : **Virtual**                                                        : |
 |------------------------------------------|------------------------------------------------------------------------|
-| Scheduled by the OS, preemptively        | Scheduled by JVM. when blocked                                         |
+| Scheduled by the OS, preemptively        | Scheduled by JVM, when blocked or finished                             |
 | Can have different priority than normal  | Priority is fixed to normal                                            |
 | Can be daemon, not daemon by default     | Always daemon                                                          |
-| Has auto-generated name by default       | No default name (empty string)                                         |
-
+| Has auto-generated name by default       | Default name is empty string                                           |
