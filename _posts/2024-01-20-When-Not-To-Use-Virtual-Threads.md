@@ -164,7 +164,7 @@ Sending the CPU intensive part to the specific executor and blocking the virtual
 
 Both CPU intensive and low latency / high priority operations should be run in platform threads. This is why JVM runs garbage collector and compiler threads as platform threads, even though they may be idle from time to time. They should not get in the queue behind virtual threads.
 
-Virtual threads should be used for operations prone to blocking.
+A good strategy for low latency or CPU intensive tasks is to use a separate thread pool to run them. 
 
 #### Other differences between platform and virtual threads
 <div class="center-table table800 bordered-table"></div>
