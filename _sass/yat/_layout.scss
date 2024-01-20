@@ -786,16 +786,27 @@ div.center-table {
   }
 }
 
-div.table600 {
-  + table {
-    max-width: 600px;
+div.bordered-table {
+   + table {
+    font-size: $small-font-size;
     th {
-      padding-bottom: 5px;
-      border-bottom: 1px solid #888;
+       border-bottom: 1px solid #888;
     }
     margin-bottom: 5px;
     margin-top: 50px;
     border-bottom: 1px solid #888;
   }
+}
+
+div.table800 {
+  + table {
+    max-width: 800px;
+    }
+}
+
+div.table600 {
+  + table {
+    max-width: 600px;
+    }
 }
 
