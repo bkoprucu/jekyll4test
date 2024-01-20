@@ -1,13 +1,10 @@
 ---
 title: "Avoiding missing signal on container shutdown"
-#subtitle: "Importance of PID 1"
+excerpt_image: assets/images/posts/2024-01-06-Avoiding-Missing-Signal-On-Container-Shutdown/Shipwreck_Concept_c.webp
 seo_enabled: true
 excerpt_text: "Missing 'exec' command on dockerfile / shell script may cause the containerized process to miss the SIGTERM signal"
 categories: [DevOps]
 tags: [Kubernetes, Docker, DevOps, Java, Spring Boot]
-#hide: [related]
-#published: false
-#hidden: 1
 ---
 
 ### How shutdown signal can be missed by the container 
