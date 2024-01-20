@@ -110,13 +110,13 @@ $ _
 They all will get scheduled without a delay, when we switch "Thread 3" or all of them to platform threads:
 ```java
 public static void main(String[] args) throws InterruptedException {
-    Thread t1 = Thread.ofVirtual()
+    Thread t1 = Thread.ofPlatform()
                       .name("thread 1")
                       .start(() -> findPrimeNumbers(1, 200_000));
-    Thread t2 = Thread.ofVirtual()
+    Thread t2 = Thread.ofPlatform()
                       .name("thread 2")
                       .start(() -> findPrimeNumbers(1, 200_000));
-    Thread t3 = Thread.ofVirtual()
+    Thread t3 = Thread.ofPlatform()
                       .name("thread 3")
                       .start(() -> findPrimeNumbers(1, 50));
 
