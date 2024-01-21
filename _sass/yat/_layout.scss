@@ -791,6 +791,11 @@ div.bordered-table {
     font-size: $small-font-size;
     th {
        border-bottom: 1px solid #888;
+       padding-bottom: 4px;
+    }
+    td {
+      padding-top: 2px;
+      padding-bottom: 2px;
     }
     margin-bottom: 5px;
     margin-top: 50px;
