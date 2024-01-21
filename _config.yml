@@ -9,7 +9,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://berksoftware.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
-favicon: "/favicon_b3.png"
+favicon: "/favicon.ico"
 
 #twitter_username: jekyllrb
 #github_username:  jekyll
