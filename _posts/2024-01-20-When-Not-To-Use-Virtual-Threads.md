@@ -18,11 +18,9 @@ Platform threads are scheduled by the operating system. Active threads are distr
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/platform_thread_scheduling.png" description="Scheduling of platform threads under heavy load.<br>Note the even distribution of CPU time among the threads" -%}
 
-This way, more active threads than CPU cores can run concurrently, and the execution of the scheduled threads start without much delay.
+This way, more active threads than CPU cores runs concurrently, and the execution of the scheduled threads starts without much delay.
 
 This also enables the control of thread priority by allocating more CPU time to certain threads.
-
-A blocked thread is removed from the scheduling loop, until it becomes unblocked.
 
 Service application threads often experience significant blocking while waiting for responses from other service calls or database operations, leading to inefficient thread usage.
 
@@ -49,9 +47,6 @@ Here we see T1 is used as a carrier thread (a platform thread in schedulers pool
 ### Culprit: Delayed execution with CPU intensive operations
 
 The scheduler does not have a control over when a virtual thread will be scheduled or how much CPU time it will get. Scheduling only occurs when a running virtual thread gets blocked or finished. Therefore, the waiting time for the virtual threads in the queue can be long and unpredictable.
-
-
-#### Demonstrating delayed execution of a virtual thread
 
 To demonstrate this easily, we will allow JVM to use two CPU cores, with JVM argument `-XX:ActiveProcessorCount=2`.
 
@@ -106,7 +101,7 @@ done
 $ _
 ```
 
-If we switch the third thread (or all of them), to platform thread, they all start executing right away:
+If we switch the third thread (or all of them), to a platform thread, they all start executing right away:
 ```console
 $ java -XX:ActiveProcessorCount=2 VirtualDelayDemo.class
 thread 3 started
