@@ -18,13 +18,13 @@ Platform threads are scheduled by the operating system. Active threads are distr
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/platform_thread_scheduling.png" description="Scheduling of platform threads under heavy load.<br>Note the even distribution of CPU time among the threads" -%}
 
-This way, more active threads than CPU cores can run concurrently, and the execution of the scheduling thread starts without much delay.
+This way, more active threads than CPU cores can run concurrently, and the execution of the scheduled threads start without much delay.
 
-This also makes it possible to control the priority of threads, by giving some threads more CPU time.
+This also enables the control of thread priority by allocating more CPU time to certain threads.
 
 A blocked thread is removed from the scheduling loop, until it becomes unblocked.
 
-Many service application threads spend a good amount of time being blocked, while waiting for a response from another service call or database operation etc., causing an inefficient use of threads:
+Service application threads often experience significant blocking while waiting for responses from other service calls or database operations, leading to inefficient thread usage.
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/platform_thread_sleep.png" description="Platform thread idling on blocking operation" -%}
 
@@ -106,7 +106,7 @@ done
 $ _
 ```
 
-If we switch the third thread (or all of them), to platform thread, they'll start executing right away:
+If we switch the third thread (or all of them), to platform thread, they all start executing right away:
 ```console
 $ java -XX:ActiveProcessorCount=2 VirtualDelayDemo.class
 thread 3 started
@@ -133,10 +133,13 @@ Sending the CPU intensive part to the specific executor and blocking the virtual
 
 ### Conclusion
 
+CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU intensive and low latency / high priority tasks should be run on platform threads (in a separate thread pool). This is why JVM runs garbage collector and compiler threads on platform threads, even though they may be idle from time to time. They should not get in the queue behind virtual threads.
+
+
 **Virtual threads are good for tasks which,**
- - May get blocked / will be I/ O or lock bounded
- - Are plenty
+ - May get blocked 
  - Don’t have critical latency requirements
+ - Are plenty
 
 **Platform threads are good for tasks which,**
  - Are CPU bound
@@ -144,16 +147,12 @@ Sending the CPU intensive part to the specific executor and blocking the virtual
  - Are comparatively few in numbers
 
 
-Both CPU intensive and low latency / high priority operations should be run in platform threads. This is why JVM runs garbage collector and compiler threads as platform threads, even though they may be idle from time to time. They should not get in the queue behind virtual threads.
-
-A good strategy for low latency or CPU intensive tasks is to use a separate thread pool to run them. 
-
-#### Other differences between platform and virtual threads
+#### Other differences
 <div class="center-table table800 bordered-table"></div>
 
-| : **Platform**                         : | : **Virtual**                                                        : |
-|------------------------------------------|------------------------------------------------------------------------|
-| Scheduled by the OS, preemptively        | Scheduled by JVM, when blocked or finished                             |
-| Can have different priority than normal  | Priority is fixed to normal                                            |
-| Can be daemon, not daemon by default     | Always daemon                                                          |
-| Has auto-generated name by default       | Default name is empty string                                           |
+| **Platform**                            | **Virtual**                                |
+|-----------------------------------------|--------------------------------------------|
+| Scheduled by the OS, preemptively       | Scheduled by JVM, when blocked or finished |
+| Can have different priority than normal | Priority is fixed to normal                |
+| Can be daemon, not daemon by default    | Always daemon                              |
+| Has auto-generated name by default      | Default name is empty string               |
