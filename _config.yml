@@ -8,15 +8,15 @@ description: >- # this means to ignore newlines until "baseurl:"
   Distributed computing with Java and Kotlin
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://berksoftware.com/" # the base hostname & protocol for your site, e.g. http://example.com
-# favicon: "/favicon.png"
-favicon: "/favicon.svg"
+
+favicon: "/favicon_b3.png"
 
 #twitter_username: jekyllrb
 #github_username:  jekyll
 
 # Build settings
 #theme: jekyll-theme-clean-blog
-theme: jekyll-theme-yat
+#theme: jekyll-theme-yat
 
 #sitemap: true
 header_pages:
