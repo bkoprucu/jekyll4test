@@ -1,6 +1,7 @@
 ---
 title: "Avoiding missing signal on container shutdown"
 excerpt_image: assets/images/posts/2024-01-06-Avoiding-Missing-Signal-On-Container-Shutdown/Shipwreck_Concept_c.webp
+excerpt_image_copyright: 'Rust concept art'
 seo_enabled: true
 excerpt_text: "Missing 'exec' command on dockerfile / shell script may cause the containerized process to miss the SIGTERM signal"
 categories: [DevOps]
