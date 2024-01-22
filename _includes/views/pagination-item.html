@@ -38,8 +38,11 @@
   </div>
   <div class="post-excerpt">
     {%- if post_image -%}
-    <a href="{{ post_url }}">
-      <img class="excerpt-img" style="max-width: {{ post.excerpt_image_max_width | default: '75%' }}" src="{{ post_image | relative_url }}" />
+    <a style="margin-bottom: 25px;" href="{{ post_url }}">
+        <img src="{{ post_image | relative_url }}" class="excerpt-img" style="max-width: {{ post.excerpt_image_max_width | default: '75%' }}" />
+      {%- if post.excerpt_image_copyright -%}
+      <div class="excerpt-img-copyright">{{ post.excerpt_image_copyright }}</div>
+      {%- endif -%}
     </a>
     {%- endif -%}
     <a class="post-text" href="{{ post_url }}">
