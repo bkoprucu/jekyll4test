@@ -35,8 +35,11 @@
   {%- endif -%}
 
   {%- if exc_img -%}
-  <div>
+    <div>
     <img class="excerpt-img" src="{{ page.excerpt_image | relative_url }}" style="{{ page.excerpt_image_page_style }}" />
-  </div>
+      {%- if page.excerpt_image_copyright -%}
+      <div class="excerpt-img-copyright">{{ page.excerpt_image_copyright }}</div>
+      {%- endif -%}
+    </div>
   {%- endif -%}
 </header>

@@ -26,7 +26,8 @@ seo_enabled: true # Force seo for a hidden page
 excerpt_text: "Front matter reference" # Custom excerpt text
 excerpt_size: 100 # Custom excerpt size
 excerpt_image: /assets/images/test/berk_logo_funny_2.png
-excerpt_image_on_page: false # Don't show except image on the pag, only on listing
+excerpt_image_copyright: 'Image by Blabla'
+excerpt_image_on_page: false # Don't show except image on post page, only on listing
 excerpt_image_page_style: 'max-height: 150px' # Apply CSS to excerpt image
 banner: /assets/images/test/berk_logo_funny.png
 banner_credit: 'Photo by Casey Horner' 
