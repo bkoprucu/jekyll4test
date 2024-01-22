@@ -57,12 +57,11 @@ We start two virtual threads and give them CPU heavy tasks, and a third one doin
 // CPU intensive method, not tested for correct functionality
 static List<Long> findPrimeNumbers(long from, long to) {
     System.out.println(Thread.currentThread().getName() + " started");
-    if (from < 0 || to < from)
+    if (to < from || to < 3)
         return Collections.emptyList();
-    List<Long> list = LongStream.rangeClosed(from, to)
-             .filter(i -> i == 1 || i == 2 ||
-                     LongStream.range(2, i)
-                               .noneMatch(j -> i % j == 0))
+    List<Long> list = LongStream.rangeClosed(from < 3 ? 3 : from, to)
+             .filter(i -> LongStream.range(2, i)
+                                    .noneMatch(j -> i % j == 0))
              .boxed()
              .toList();
     System.out.println(Thread.currentThread().getName() + " done");
@@ -119,10 +118,10 @@ $ _
 Sending the CPU intensive part to the specific executor and blocking the virtual thread will do the trick:
 ```java
 ...
-    // Send CPU intensive task to executor with platform threads
-    Future<List<Long>> future = cpuIntensiveExecutor.submit(() -> findPrimeNumbers(1, 1000));
-    // Block the virtual thread
-    List<Long> result = future.get();
+// Send CPU intensive task to executor with platform threads
+Future<List<Long>> future = cpuIntensiveExecutor.submit(() -> findPrimeNumbers(1, 1000));
+// Block the virtual thread
+List<Long> result = future.get();
 ...
 ```
 
@@ -138,7 +137,7 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
 
 **Platform threads are good for tasks which,**
  - Are CPU bound
- - Have low latency / predictive scheduling requirements
+ - Have low latency or predictive scheduling requirements
  - Are comparatively few in numbers
 
 
