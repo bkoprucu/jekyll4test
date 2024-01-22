@@ -3,7 +3,7 @@ title: "Can we optimize JVM stack size?"
 seo_enabled: true
 excerpt_text: "The effect of -Xss JVM option, and inefficient memory allocation on MacOS"
 excerpt_image: assets/images/posts/2023-12-06-JVM-Stack-Memory/ajda-zinber-book-stack-cr2.webp
-excerpt_image_copyright: Cropped from photo by Ajda Zinber https://unsplash.com/@azinber
+excerpt_image_copyright: Photo by unsplash.com/@azinber
 categories: [DevOps]
 tags: [Java, DevOps, JVM]
 ---
