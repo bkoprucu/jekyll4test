@@ -34,12 +34,12 @@ Virtual threads are queued tasks. Unlike platform threads, their scheduling and 
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/vt_scheduling2.png" description="Scheduling of virtual threads" -%}
 
-Here we see T1 is used as a carrier thread (a platform thread in schedulers pool for executing virtual threads), and it runs virtual threads VT2 and VT3 while waiting for VT1 to get unblocked. Note the uneven scheduling periods of the threads.
+Here we see T1 is used as a carrier thread (a platform thread in schedulers pool for executing virtual threads), running virtual threads VT2 and VT3 while waiting for VT1 to get unblocked. Note the uneven scheduling periods of the threads.
 
 1. Virtual thread (or task) is taken from the queue, and mounted onto one of the available platform threads of scheduler. Here VT1 mounted on T1.
-2. VT1 gets executed, then it is blocked by making an external service call. It gett unmounted, meaning, its stack is saved to the heap and its status is set to 'parked' (blocked) and put in the schedulers queue.
+2. VT1 gets executed, then it is blocked by making an external service call. It gets unmounted; its stack is saved to the heap and its status is set to 'parked' (blocked) and put in the schedulers queue.
 3. Scheduler takes virtual thread VT2 from the queue, runs using T1. After VT2 is finished, it does the same for VT3. 
-4. Response from the external service is received, VT1 can be scheduled. What actually happens here is that operating system notifies the JVM about I/O resource being ready. The message is forwarded to the scheduler, which removes the blocked status of VT1 ('parked' -> 'runnable'). But VT1 cannot be scheduled right away, because all the carrier threads are busy.
+4. Response from the external service is received, VT1 can be scheduled. What actually happens here is that operating system notifies the JVM about I/O resource being ready. The message is forwarded to the scheduler, which removes the blocked status of VT1 ('parked' -> 'runnable'). But VT1 cannot be scheduled right away, because no carrier thread is available at the moment.
 5. When VT3 is finished, carrier thread T1 becomes available. Scheduler runs it on T1. 
 
 
@@ -87,6 +87,7 @@ public static void main(String[] args) throws InterruptedException {
 ```
 
 Third virtual thread won’t get scheduled until one of the first two is completed:
+
 ```console
 $ java -XX:ActiveProcessorCount=2 VirtualDelayDemo.class
 thread 1 started
@@ -100,6 +101,7 @@ $ _
 ```
 
 If we switch the third thread (or all of them), to a platform thread, they all start executing right away:
+
 ```console
 $ java -XX:ActiveProcessorCount=2 VirtualDelayDemo.class
 thread 3 started
@@ -136,17 +138,23 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
 
 **Platform threads are good for tasks which,**
  - Are CPU bound
- - Have low latency or predictive scheduling requirements
+ - Have low latency or predictable scheduling requirements
  - Are comparatively few in numbers
 
 
 #### Summary of differences
-<div class="center-table table800 bordered-table"></div>
+<div class="table800 bordered-table"></div>
 
-| **Platform**                            | **Virtual**                                                                  |
-|-----------------------------------------|------------------------------------------------------------------------------|
-| Expensive to create, finite resource    | Cheap to create, uses much less (around 1/30th)<br/>memory than a platform thread |
-| Scheduled by the OS, preemptively       | Scheduled by JVM, when blocked or finished                                   |
-| Can have different priority than normal | Priority is fixed to normal                                                  |
-| Can be daemon, not daemon by default    | Always daemon                                                                |
-| Has auto-generated name by default      | Default name is empty string                                                 |
+| **Platform**                            | **Virtual**                                        |
+|-----------------------------------------|----------------------------------------------------|
+| Expensive to create, finite             | Cheap to create, uses much less memory<sup>*</sup> |
+| Scheduled by the OS, preemptively       | Scheduled by the JVM, when blocked or finished     |
+| Can have different priority than normal | Priority is fixed to normal                        |
+| Can be daemon, not daemon by default    | Always daemon                                      |
+| Has auto-generated name by default      | Default name is empty string                       |
+
+<div class="imginc"></div>
+
+<div style="font-size: 15"><sup>*</sup>A quick look indicates that platform threads initialize at around 64KB, virtual threads at 2KB.</div>
+
+
