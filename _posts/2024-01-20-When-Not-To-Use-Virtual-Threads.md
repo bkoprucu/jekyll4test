@@ -3,7 +3,6 @@ title: "When not to use virtual threads in Java"
 seo_enabled: true
 excerpt_text: "We'll take a look at how platform and virtual threads are scheduled, demonstrate the consequences of using the wrong type of thread, and outline"
 excerpt_image: /assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/vt_vs_pt_meme-edit-s.webp
-excerpt_image_max_width: '65%'
 categories: [Programming]
 tags: [Java, Virtual threads]
 ---
