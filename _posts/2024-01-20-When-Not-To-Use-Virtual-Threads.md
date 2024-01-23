@@ -23,7 +23,7 @@ This also enables the control of thread priority by allocating more CPU time to 
 
 Service application threads often experience significant blocking while waiting for responses from other service calls or database operations, leading to inefficient thread usage.
 
-{%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/platform_thread_sleep.png" description="Platform thread idling on blocking operation" -%}
+{%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/platform_thread_sleep.png" description="Platform thread idling on a blocking operation" -%}
 
 When no threads are available, the application will come to a halt, despite CPU usage being low.    
 
