@@ -39,7 +39,7 @@
   <div class="post-excerpt">
     {%- if post_image -%}
     <a style="margin-bottom: 25px;" href="{{ post_url }}">
-        <img src="{{ post_image | relative_url }}" class="excerpt-img" style="max-width: {{ post.excerpt_image_max_width | default: '75%' }}" />
+        <img src="{{ post_image | relative_url }}" class="excerpt-img" />
       {%- if post.excerpt_image_copyright -%}
       <div class="excerpt-img-copyright">{{ post.excerpt_image_copyright }}</div>
       {%- endif -%}

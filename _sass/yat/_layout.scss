@@ -317,6 +317,10 @@ html {
     .excerpt-img {
       object-fit: contain;
       max-height: 310px;
+      max-width: 600px;
+      @include media-query($on-palm) {
+        max-width: 90%;
+      }
     }
     a {
       &:hover {
