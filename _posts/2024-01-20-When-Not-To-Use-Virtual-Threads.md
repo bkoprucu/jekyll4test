@@ -37,7 +37,7 @@ Virtual threads are queued tasks. Unlike platform threads, their scheduling and 
 Here we see T1 is used as a carrier thread (a platform thread in schedulers pool for executing virtual threads), and it runs virtual threads VT2 and VT3 while waiting for VT1 to get unblocked. Note the uneven scheduling periods of the threads.
 
 1. Virtual thread (or task) is taken from the queue, and mounted onto one of the available platform threads of scheduler. Here VT1 mounted on T1.
-2. It gets executed until it is blocked or finished. VT1 is blocked by making an external service call, it gets unmounted, meaning it's stack is saved to heap, its status is set to 'parked' (blocked) and put in the schedulers queue.
+2. VT1 gets executed, then it is blocked by making an external service call. It gett unmounted, meaning, its stack is saved to the heap and its status is set to 'parked' (blocked) and put in the schedulers queue.
 3. Scheduler takes virtual thread VT2 from the queue, runs using T1. After VT2 is finished, it does the same for VT3. 
 4. Response from the external service is received, VT1 can be scheduled. What actually happens here is that operating system notifies the JVM about I/O resource being ready. The message is forwarded to the scheduler, which removes the blocked status of VT1 ('parked' -> 'runnable'). But VT1 cannot be scheduled right away, because all the carrier threads are busy.
 5. When VT3 is finished, carrier thread T1 becomes available. Scheduler runs it on T1. 
@@ -140,12 +140,13 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
  - Are comparatively few in numbers
 
 
-#### Other differences
+#### Summary of differences
 <div class="center-table table800 bordered-table"></div>
 
-| **Platform**                            | **Virtual**                                |
-|-----------------------------------------|--------------------------------------------|
-| Scheduled by the OS, preemptively       | Scheduled by JVM, when blocked or finished |
-| Can have different priority than normal | Priority is fixed to normal                |
-| Can be daemon, not daemon by default    | Always daemon                              |
-| Has auto-generated name by default      | Default name is empty string               |
+| **Platform**                            | **Virtual**                                                                  |
+|-----------------------------------------|------------------------------------------------------------------------------|
+| Expensive to create, finite resource    | Cheap to create, uses much less (around 1/30th)<br/>memory than a platform thread |
+| Scheduled by the OS, preemptively       | Scheduled by JVM, when blocked or finished                                   |
+| Can have different priority than normal | Priority is fixed to normal                                                  |
+| Can be daemon, not daemon by default    | Always daemon                                                                |
+| Has auto-generated name by default      | Default name is empty string                                                 |
