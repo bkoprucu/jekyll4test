@@ -468,6 +468,7 @@ html {
 
     ul {
       margin-left: 15px;
+      line-height: 32px;
       .post-link {
         @include relative-font-size(1.075);
       }
