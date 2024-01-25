@@ -141,6 +141,16 @@ html[data-theme="dark"]  {
     }
   }
 
+  .sharelinks {
+    color: #777;
+    span {
+      &:hover {
+        color: #ddd;
+      }
+    }
+  }
+
+
   .post-related {
     & > *:first-child {
       color: $dark-text-color;
