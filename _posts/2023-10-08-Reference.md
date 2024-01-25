@@ -34,7 +34,7 @@ banner_credit: 'Photo by Casey Horner'
 categories: [Test]
 tags: [AWS, Spring]
 sidebar: [about-box] # On of: 'about-box', 'article-menu', 'category-list', 'tag-list', 'archive-list'
-hide: [related, navigator] # Can be 'header', 'navigator', 'related' or 'comments'. Implementation in post.html
+hide: [related, navigator] # Can be 'header', 'navigator', 'related', 'comments', 'share'. Implementation in post.html
 hidden: 1 # Hide from listing
 hide_from_related: 1   # Don't appear in "More Articles"
 permalink: "/reference.html"  # Custom url
