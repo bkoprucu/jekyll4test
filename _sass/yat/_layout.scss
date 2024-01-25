@@ -489,10 +489,11 @@ html {
 
 .sharelinks {
   text-align: right;
-  font-size: 15px;
+  font-size: $small-font-size;
   color: $muted-color;
   transition: color .25s;
   span {
+    margin: 0 8px;
     transition: color .25s;
     cursor: pointer;
     text-decoration: underline;

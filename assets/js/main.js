@@ -56,20 +56,23 @@ function smoothScrollTo(y, time) {
   }
 }
 
-function copyUrlToClipboard() {
+function copyUrl() {
+  copyUrlToClipboard(window.location.href);
+}
+
+function copyUrlToClipboard(shareUrl) {
   var urlField = document.createElement('textarea');
-  urlField.value = window.location.href;
+  urlField.value = shareUrl;
   document.body.appendChild(urlField);
   urlField.select();
   document.execCommand('copy');
   document.body.removeChild(urlField);
-  alert('URL copied');
+  alert('URL Copied');
 }
 
 
-function shareOnLinkedIn() {
+function shareOnLinkedIn(shareUrl) {
   var shareText = document.title;
-  var shareUrl = window.location.href;
   window.open(
     'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareText),
     'linkedin-share-dialog',
