@@ -1,39 +1,13 @@
-// Fix DOM matches function
-if (!Element.prototype.matches) {
-  Element.prototype.matches =
-    Element.prototype.matchesSelector ||
-    Element.prototype.mozMatchesSelector ||
-    Element.prototype.msMatchesSelector ||
-    Element.prototype.oMatchesSelector ||
-    Element.prototype.webkitMatchesSelector ||
-    function(s) {
-      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-        i = matches.length;
-      while (--i >= 0 && matches.item(i) !== this) {}
-      return i > -1;
-    };
-}
-
-// Get Scroll position
-function getScrollPos() {
-  var supportPageOffset = window.pageXOffset !== undefined;
-  var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-
-  var x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
-  var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-
-  return { x: x, y: y };
-}
 
 var _scrollTimer = [];
 
-// Smooth scroll
 function smoothScrollTo(y, time) {
   time = time == undefined ? 500 : time;
 
-  var scrollPos = getScrollPos();
+  var scrollPosY = Math.round(window.scrollY);
+  var scrollPosX = Math.round(window.scrollX);
   var count = 60;
-  var length = (y - scrollPos.y);
+  var length = (y - scrollPosY);
 
   function easeInOut(k) {
     return .5 * (Math.sin((k - .5) * Math.PI) + 1);
@@ -47,34 +21,9 @@ function smoothScrollTo(y, time) {
     (function() {
       var cur = i;
       _scrollTimer[cur] = setTimeout(function() {
-        window.scrollTo(
-          scrollPos.x,
-          scrollPos.y + length * easeInOut(cur/count)
-        );
+        window.scrollTo(scrollPosX, scrollPosY + length * easeInOut(cur/count));
       }, (time / count) * cur);
     })();
   }
 }
 
-function copyUrl() {
-  copyUrlToClipboard(window.location.href);
-}
-
-function copyUrlToClipboard(shareUrl) {
-  var urlField = document.createElement('textarea');
-  urlField.value = shareUrl;
-  document.body.appendChild(urlField);
-  urlField.select();
-  document.execCommand('copy');
-  document.body.removeChild(urlField);
-  alert('URL Copied');
-}
-
-
-function shareOnLinkedIn(shareUrl) {
-  var shareText = document.title;
-  window.open(
-    'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(shareText),
-    'linkedin-share-dialog',
-    'width=626,height=436');
-}

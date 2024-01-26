@@ -57,11 +57,11 @@
 
 <script>
   function initHeader() {
-    var lastScrollY = getScrollPos().y;
+    var lastScrollY = Math.round(window.scrollY);
     var documentElement = document.documentElement;
 
     function storeScrollData() {
-      var y = getScrollPos().y;
+      var y = Math.round(window.scrollY);
 
       {%- if banner and header_transparent -%}
       documentElement.setAttribute("data-header-transparent", "");

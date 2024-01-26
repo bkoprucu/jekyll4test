@@ -12,10 +12,10 @@
     var headerRect = header.getBoundingClientRect();
     var headerTop = Math.floor(headerRect.top);
     var headerHeight = Math.floor(headerRect.height);
-    var scrollPos = getScrollPos();
-    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+    var scrollPos = Math.round(window.scrollY);
+    var offsetY = element.offsetTop - (headerTop + headerHeight);
 
-    if (offsetY == scrollPos.y) {
+    if (offsetY == scrollPos) {
       return;
     }
 
