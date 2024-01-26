@@ -11,7 +11,7 @@
 {%- if include.params.speed %}
   {%- assign speed = include.params.speed %}
 {%- else %}
-  {%- assign speed = 160 %}
+  {%- assign speed = 165 %}
 {%- endif -%}
 
 {%- assign words = article | number_of_words -%}
@@ -19,7 +19,7 @@
 {%- assign hours = total_mins | divided_by: 60 %}
 {%- assign mins = total_mins | modulo: 60 -%}
 
-{%- assign return = "About" -%}
+{%- assign return = "" -%}
 
 {%- if hours > 0 %}
   {%- assign unit = "hour" %}
