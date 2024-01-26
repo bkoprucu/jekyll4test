@@ -13,18 +13,17 @@
     var headerTop = Math.floor(headerRect.top);
     var headerHeight = Math.floor(headerRect.height);
     var scrollPos = Math.round(window.scrollY);
-    var offsetY = element.offsetTop - (headerTop + headerHeight);
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 15);
 
     if (offsetY == scrollPos) {
       return;
     }
 
-    if (headerTop == 0  && offsetY > scrollPos.y) {
-      offsetY += headerHeight + 2;
-    } else if (headerTop < 0  && offsetY < scrollPos.y) {
-      offsetY -= headerHeight - 2;
-    }
-
+//  if (headerTop == 0  && offsetY > scrollPos) {
+//    offsetY += headerHeight + 2;
+//  } else if (headerTop < 0  && offsetY < scrollPos) {
+//    offsetY -= headerHeight - 2;
+//  }
     smoothScrollTo(offsetY);
   }
 
