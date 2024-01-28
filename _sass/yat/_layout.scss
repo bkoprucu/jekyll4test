@@ -79,7 +79,7 @@ html {
 }
 
 .site-brand {
-  line-height: $header-height;
+  line-height: $header-height - 2;
   margin-right: 50px;
 
   .site-brand-inner {
@@ -97,7 +97,7 @@ html {
 
 .site-nav {
   @include relative-font-size(1.1);
-  line-height: $header-height;
+  line-height: $header-height - 2;
   position: absolute;
   right: 0;
   top: 0;
