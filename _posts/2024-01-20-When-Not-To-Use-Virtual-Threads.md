@@ -43,7 +43,7 @@ Here we see T1 is used as a carrier thread (a platform thread in schedulers pool
 5. When VT3 is finished, carrier thread T1 becomes available. Scheduler runs it on T1. 
 
 
-### Culprit: Delayed execution with CPU intensive operations
+### The culprit: Delayed execution with CPU intensive operations
 
 The scheduler does not have a control over when a virtual thread will be scheduled or how much CPU time it will get. Scheduling only occurs when a running virtual thread gets blocked or finished. Therefore, the waiting time for the virtual threads in the queue can be long and unpredictable.
 
@@ -155,6 +155,6 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
 
 <div class="imginc"></div>
 
-<div style="font-size: 15"><sup>*</sup>A quick look indicates that platform threads initialize at around 64KB, virtual threads at 2KB.</div>
+<div style="font-size: 15"><sup>*</sup>A quick measurement indicates that a platform thread initialize with around 64KB memory allocation, virtual thread at around 2KB. A platform thread reserves 1024 KB of virtual memory for stack.</div>
 
 
