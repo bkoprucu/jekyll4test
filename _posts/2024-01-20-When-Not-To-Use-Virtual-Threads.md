@@ -145,16 +145,16 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
 #### Summary of differences
 <div class="table800 bordered-table"></div>
 
-| **Platform**                            | **Virtual**                                        |
-|-----------------------------------------|----------------------------------------------------|
-| Expensive to create, finite             | Cheap to create, uses much less memory<sup>*</sup> |
-| Scheduled by the OS, preemptively       | Scheduled by the JVM, when blocked or finished     |
-| Can have different priority than normal | Priority is fixed to normal                        |
-| Can be daemon, not daemon by default    | Always daemon                                      |
-| Has auto-generated name by default      | Default name is empty string                       |
+| **Platform**                            | **Virtual**                                    |
+|-----------------------------------------|------------------------------------------------|
+| Expensive to create, finite             | Cheap to create, uses much less memory *       |
+| Scheduled by the OS, preemptively       | Scheduled by the JVM, when blocked or finished |
+| Can have different priority than normal | Priority is fixed to normal                    |
+| Can be daemon, not daemon by default    | Always daemon                                  |
+| Has auto-generated name by default      | Default name is empty string                   |
 
-<div class="imginc"></div>
+<div style="height: 50px"></div>
 
-<div style="font-size: 15"><sup>*</sup>A quick measurement indicates that a platform thread initialize with around 64KB memory allocation, virtual thread at around 2KB. A platform thread reserves 1024 KB of virtual memory for stack.</div>
+<sup>*</sup><span class="subtext">A quick measurement indicates that a platform thread initializes with around 64KB memory allocation, virtual thread around 2KB. Also, a platform thread reserves ~1024 KB of virtual memory for stack.</span>
 
 
