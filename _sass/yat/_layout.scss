@@ -490,10 +490,13 @@ html {
 .sharelinks {
   text-align: right;
   font-size: $small-font-size;
+  @include media-query($on-palm) {
+    font-size: 13;
+  }
   color: $muted-color;
   transition: color .25s;
   span {
-    margin: 0 8px;
+    margin: 0 6px;
     transition: color .25s;
     cursor: pointer;
     text-decoration: underline;

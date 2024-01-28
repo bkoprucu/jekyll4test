@@ -13,6 +13,10 @@
 
   .post-menu-content {
     ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
       border-left: 1px solid #e9ecef;
       $indent: 4;
       $active-bgcolor: #ecebec;
