@@ -491,12 +491,12 @@ html {
   text-align: right;
   font-size: $small-font-size;
   @include media-query($on-palm) {
-    font-size: 13;
+    font-size: 14px;
   }
   color: $muted-color;
   transition: color .25s;
   span {
-    margin: 0 6px;
+    margin: 0 4px;
     transition: color .25s;
     cursor: pointer;
     text-decoration: underline;
