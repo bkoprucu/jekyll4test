@@ -26,11 +26,11 @@
 #   url: 'youtube.com/@marchoftime'
 #   title: 'YouTube'
 
-- type: rss
+#- type: rss
   # icon: 'fas fa-rss-square'
-  icon: 'fas fa-rss'
-  noblank: true
-  title: 'RSS'
+#  icon: 'fas fa-rss'
+#  noblank: true
+#  title: 'RSS'
 
 #- type: twitter
 #  icon: "fab fa-twitter"

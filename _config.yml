@@ -97,7 +97,7 @@ markdown: kramdown
 #   theme: "github-light"
 #   follow_site_theme: true
 plugins:
-  - jekyll-feed
+#  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
