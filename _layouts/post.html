@@ -31,10 +31,13 @@ sidebar:
     {%- assign shareurl = site.url | append: page.url | relative_url -%}
     <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
     <div class="sharelinks">
+      <span class="clickable" onclick="window.smoothScrollTo(0)"><i style="font-size: 17px" class="fas fa-arrow-up">&nbsp;</i>Back to top</span>
+      <span>
       Share on
-      <span onclick="shareOnLinkedIn('{{ shareurl }}')"><i style="font-size: 21px" class="fab fa-linkedin">&nbsp;</i>Linkedin</span>
+      <span class="clickable" onclick="shareOnLinkedIn('{{ shareurl }}')">Linkedin <i style="font-size: 20px" class="fab fa-linkedin"></i></span>
       or
-      <span onclick="copyUrlToClipboard('{{ shareurl }}')">copy URL</span>
+      <span class="clickable" onclick="copyUrlToClipboard('{{ shareurl }}')">copy URL</span>
+      </span>
     </div>
   {%- endunless -%}
 
