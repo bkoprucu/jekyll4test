@@ -12,9 +12,9 @@ tags: [Kubernetes, Docker, DevOps, Java, Spring Boot]
 
 Missing 'exec' command on dockerfile / shell script may cause the containerized process to miss the SIGTERM signal sent by the container manager.
 
-In this case the process gets stopped with the SIGKILL signal, without properly releasing the resources. This can leave the system in an inconsistent state.
+This will cause the process being stopped with the SIGKILL signal, without properly releasing the resources, potentially leaving the system in an inconsistent state.
 
-To demonstrate this, we write simple application with a shutdown hook:
+To demonstrate this, we write a program that waits for a termination signal and triggers a shutdown hook before exiting: 
 
 ```java
 public static void main(String[] args) {
@@ -31,7 +31,6 @@ public static void main(String[] args) {
 }
 ```
 
-Execution will block and wait for the termination signal, after which the shutdown hook should be triggered before exiting the application.
 
 We will run this using a shell script:
 
@@ -52,7 +51,7 @@ COPY docker-entrypoint.sh .
 ENTRYPOINT ["./docker-entrypoint.sh"]
 ```
 
-We run the container:
+Running the container. Note that the PID is not 1. 
 
 ```console
 $ docker build -t shutdowndemo .
@@ -61,24 +60,23 @@ $ docker run --name demo shutdowndemo
 PID: 5
 ```
 
-Note that the PID is not 1. 
+We stop the container. No "Clean shutdown" message is written.
 
 ```console
 $ docker stop demo
 $ _
 ```
-No "Clean shutdown" message is written.
 
-The reason is that instead of our application, the shell script `docker-entrypoint.sh` has been assigned to PID 1, which receives the TERM signal from Docker.
+The reason is that instead of our program, the shell script `docker-entrypoint.sh` has been assigned to PID 1, which received the SIGTERM signal from Docker.
 
-Sending the following command to the container will confirm this (we read the contents from `/proc`, since the `ps` command is missing in the container):
+Executing `cat /proc/1/cmdline` in the container confirms this (`ps` command is missing in the container):
 
 ```console
 $ docker exec demo cat /proc/1/cmdline
 /bin/sh./docker-entrypoint.sh
 ```
 
-After a timeout, container manager kills the container, killing the application process without releasing the resources.
+Container manager stops the container by sending a SIGKILL signal, after a timeout.
 Since the application starts successfully, the problem may go unnoticed.
 
 ### Fix: Adding the 'exec' command
@@ -119,11 +117,9 @@ ENTRYPOINT exec java -jar app.jar
 >#### Isn't PID 1 the init process?
 >Linux provides namespaces for various system resources, including PID, which is used for virtualization.
 
-### Preventative measure / failing fast
+### Failing fast
 
-To be more safe, we can check the PID at startup and send a warning, or abort the startup.  
-
-Here is a Spring Boot example for aborting the startup if PID is not 1 for profiles 'kubernetes' and 'docker':
+This Spring Boot example aborts startup if the PID is not 1 for the 'kubernetes' and 'docker' profiles.
 
 ```java
 @Component
