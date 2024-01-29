@@ -488,14 +488,16 @@ html {
 }
 
 .sharelinks {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
   font-size: $small-font-size;
   @include media-query($on-palm) {
     font-size: 14px;
   }
   color: $muted-color;
   transition: color .25s;
-  span {
+
+  .clickable {
     margin: 0 4px;
     transition: color .25s;
     cursor: pointer;
