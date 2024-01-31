@@ -63,18 +63,21 @@ html {
   z-index: 1000;
 
   & > .wrapper {
-    margin: 0 60px 0 60px;
+    margin: 0 auto;
     padding: 0;
-    max-width: 100%;
-    transition: margin .3s;
+    max-width: 1700px;
     @include media-query($on-palm) {
-      margin: 0 20px;
       max-width: unset;
     }
   }
 
   .site-header-inner {
+    margin: 0 60px;
     position: relative;
+    transition: margin .25s;
+    @include media-query($on-palm) {
+      margin: 0 20px;
+    }
   }
 }
 
