@@ -21,7 +21,7 @@ html[data-theme="dark"]  {
     color: $dark-text-color;
     background-color: $dark-background-color;
     strong {
-      color: #ccc;
+      color: #bbb;
     }
   }
 
@@ -252,9 +252,10 @@ html[data-theme="dark"]  {
     }
   }
 
-  .post .post-content {
-    h1, h2, h3, h4, h5, h6 {
-      color: #aaa;
+  .post {
+    .post-title { color: #bbb; }
+    .post-content {
+      h1, h2, h3, h4, h5, h6 { color: #bbb; }
     }
   }
 
