@@ -4,7 +4,7 @@ subtitle: "Tips For Adopting and Taking Care of Cats"
 seo_enabled: true
 categories: [Other]
 tags: [Cats]
-hide: [related, comments]
+hide: [related, comments, share]
 hidden: 1
 permalink: "/other/cats/tips.html"
 sidebar: [article-menu]
