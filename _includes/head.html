@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- assign pageseo = true -%}
-  {%- if page.hide %}
+  {%- if page.hidden %}
     {%- unless page.seo_enabled %}
       {%- assign pageseo = false %}
     {%- endunless %}
