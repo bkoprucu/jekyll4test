@@ -3,7 +3,7 @@ title: "Taking Care of Pamuk and Küçük"
 subtitle: "Tips For Taking Care of Pamuk and Küçük"
 categories: [Other]
 tags: [Cats]
-hide: [related, comments, navigator]
+hide: [related, comments, navigator, share]
 hidden: 1
 permalink: "/other/cats/sitting.html"
 sidebar: [article-menu]
