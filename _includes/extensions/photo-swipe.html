@@ -1,21 +1,20 @@
-<script src="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.9/umd/photoswipe-lightbox.umd.min.js" async></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.9/umd/photoswipe.umd.min.js" async></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.9/photoswipe.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.9/umd/photoswipe-lightbox.umd.min.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.9/umd/photoswipe.umd.min.js" async></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.9/photoswipe.min.css" rel="stylesheet" />
 <style>
-
-  .pswp .pswp__container .pswp__img {
+.pswp .pswp__container .pswp__img {
   html[data-theme="light"] {
     background-color: white;
   }
   html[data-theme="dark"] {
     background-color: black;
   }
-  }
+}
 </style>
 
 <script>
-  function initPhotoSwipe() {
-    let customOptions = {};
+function initPhotoSwipe() {
+  let customOptions = {};
 
     try {
       const data = `{{ site.photo_previewer }}`.replaceAll("=>", ":");
@@ -72,11 +71,11 @@
       </a>`;
     });
 
-    // Initialize PhotoSwipe 5
-    var lightbox = new PhotoSwipeLightbox(options);
+  // Initialize PhotoSwipe 5
+  var lightbox = new PhotoSwipeLightbox(options);
 
-    lightbox.init();
-  }
+  lightbox.init();
+}
 
-  window.addEventListener("load", initPhotoSwipe);
+window.addEventListener("load", initPhotoSwipe);
 </script>
