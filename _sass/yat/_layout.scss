@@ -65,7 +65,7 @@ html {
   & > .wrapper {
     margin: 0 auto;
     padding: 0;
-    max-width: 1700px;
+    max-width: 1950px;
     @include media-query($on-palm) {
       max-width: unset;
     }
