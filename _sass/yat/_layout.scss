@@ -793,7 +793,7 @@ a:visited .badge-new {
 
 div.headless-table {
    + table {
-    max-width: 600px;
+    width: max-content;
     thead { display: none; }
   }
 }
