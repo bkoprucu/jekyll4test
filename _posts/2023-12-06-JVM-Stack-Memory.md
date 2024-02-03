@@ -58,12 +58,12 @@ The tests below confirm this and also reveal [excessive memory allocation when r
 
 <div class="headless-table"></div>
 
-|                        |        |                                                         |
-|------------------------|--------|---------------------------------------------------------|
-| **Operating Systems:** | **\:** | &nbsp; MacOS 13.6, Linux Ubuntu 22.04                   |
-| **Architectures**      | **\:** | &nbsp; ARM64, X86_64                                    |
-| **Java Versions**      | **\:** | &nbsp; Amazon Corretto 21.0.1, 17.0.9, 11.0.21, 8.0.392 |
-| **Docker Engine**      | **\:** | &nbsp; 24.0.6                                           |
+|                        |                      |                                                  |
+|------------------------|----------------------|--------------------------------------------------|
+| **Operating Systems**  | &nbsp; **\:** &nbsp; | MacOS 13.6 / Linux Ubuntu 22.04                  |
+| **Architectures**      | &nbsp; **\:** &nbsp; | ARM64, X86_64                                    |
+| **Java Versions**      | &nbsp; **\:** &nbsp; | Amazon Corretto 21.0.1, 17.0.9, 11.0.21, 8.0.392 |
+| **Docker Engine**      | &nbsp; **\:** &nbsp; | 24.0.6                                           |
 
 
 ### Implementation
@@ -277,18 +277,19 @@ $ ps -o rss,comm -p 8530
 
  - **Java 8 and 11 utilizes memory less efficiently on MacOS:**
 
-   - On MacOS / ARM64, Java 8 utilized around 80% more memory, 558 MB.
+   - On MacOS / ARM64, Java 8 utilized around 80% more memory, compared to Java 17 and 21.
 
-   - On MacOS, for both ARM and x86 architectures, Java 11 utilized around 20% more memory.
+   - On MacOS, for both ARM and x86 architectures, Java 11 utilized around 20% more memory then Java 17 and 21.
 
-NMT reports for MacOs are available [here](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports)
+NMT reports for MacOs are [here](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports)
 
 
 ### Testing in a container
 
-The comparison will focus on the container's memory usage as reported by Docker under various stack size configurations.
 
-[The implementation](https://github.com/bkoprucu/article-jvm-stack/) can be used to create images tagged with current Java version on Maven install phase.
+We will compare the container's memory usage as reported by Docker under various stack size configurations.
+
+[This implementation](https://github.com/bkoprucu/article-jvm-stack/) is used to create images tagged with current Java version.
 
 **Test parameters:**
 - Container memory limit: 2GB                                               
@@ -319,7 +320,7 @@ Docker arguments used:
 
 #### Excessive memory usage on MacOS
 
-We see an abnormally high memory usage reported by 'docker stats' on container with 2040 KB stack size:
+We see a high memory usage reported by 'docker stats' on container with 2040 KB stack size:
 
 ```plaintext
   NAME        CPU %     MEM USAGE / LIMIT    MEM %       PIDS
@@ -353,11 +354,11 @@ Like the previous test, this only occurs on MacOS, with LTS Java versions 17 and
 
 ## Conclusion
 
-- JVM Stack size option '-Xss' determines how much of virtual memory is reserved per thread. Since actual memory allocation occurs dynamically, this does not affect total memory usage (besides the minimum effect of mapping table size), however;
+- JVM Stack size option '-Xss' determines how much virtual memory is reserved per thread. Since actual memory allocation occurs dynamically, this does not affect total memory usage, or scalability, besides the minimum effect of mapping table size, but,
 
-- **When the JVM is in the version range of 8-17 and operates within a container on MacOS, it consumes significantly higher memory when the stack size is set more than 1024 KB. However, Java 21 is not affected by this issue.**
+- **Significant high memory usage has been observed on Java versions 8 - 17 running in a container on MacOs, when the stack size is set more than 1024 KB**.
 
-- The default stack size on ARM64 architecture is either [2040 or 2048 KB](#default-jvm-stack-size). This results in Macs with Apple Silicon encountering the mentioned issue with the default JVM configuration. 
+- The default stack size on ARM64 architecture being [twice of X86 architecture](#default-jvm-stack-size) result in Macs with Apple Silicon encountering the mentioned high memory consumption issue with the default JVM configuration. 
 
 - **Java 8 and Java 17 on MacOS allocates memory less efficiently than Java 17 and 21, [the difference is bigger on Java 8](#results)** You may check native memory tracking reports [here](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports).  
 
