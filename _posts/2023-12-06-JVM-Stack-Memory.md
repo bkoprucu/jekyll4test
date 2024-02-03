@@ -360,7 +360,7 @@ Like the previous test, this only occurs on MacOS, with LTS Java versions 17 and
 
 - The default stack size on ARM64 architecture being [twice of X86 architecture](#default-jvm-stack-size) result in Macs with Apple Silicon encountering the mentioned high memory consumption issue with the default JVM configuration. 
 
-- **Java 8 and Java 17 on MacOS allocates memory less efficiently than Java 17 and 21, [the difference is bigger on Java 8](#results)** You may check native memory tracking reports [here](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports).  
+- **Java 8 and Java 17 on MacOS allocates memory less efficiently than Java 17 and 21, [the difference is bigger on Java 8](#results)** NMT reports are [here](https://github.com/bkoprucu/article-jvm-stack/tree/main/nmt-reports).  
 
 
 Only a few services require more than 1024 KB of stack, with Elasticsearch being one of them. Using Java 21 or applying `-Xss1024k` argument will lower the memory consumption of containers.

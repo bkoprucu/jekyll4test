@@ -14,7 +14,7 @@ Missing 'exec' command on dockerfile / shell script may cause the containerized 
 
 This will cause the process being stopped with the SIGKILL signal, without properly releasing the resources, potentially leaving the system in an inconsistent state.
 
-To demonstrate this, we write a program that waits for a termination signal and triggers a shutdown hook before exiting: 
+To demonstrate this, we use the snippet below, which waits for a termination signal and triggers a shutdown hook before exiting: 
 
 ```java
 public static void main(String[] args) {
@@ -30,7 +30,6 @@ public static void main(String[] args) {
     }
 }
 ```
-
 
 We will run this using a shell script:
 
@@ -51,7 +50,7 @@ COPY docker-entrypoint.sh .
 ENTRYPOINT ["./docker-entrypoint.sh"]
 ```
 
-Running the container. Note that the PID is not 1. 
+We run the container. Note that the PID is not 1. 
 
 ```console
 $ docker build -t shutdowndemo .
@@ -60,7 +59,7 @@ $ docker run --name demo shutdowndemo
 PID: 5
 ```
 
-We stop the container. No "Clean shutdown" message is written.
+No "Clean shutdown" message is written, when stopping the container: 
 
 ```console
 $ docker stop demo

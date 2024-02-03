@@ -34,22 +34,22 @@ Virtual threads are queued tasks. Unlike platform threads, their scheduling and 
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/vt_scheduling2.png" description="Scheduling of virtual threads" -%}
 
-Here we see T1 is used as a carrier thread (a platform thread in schedulers pool for executing virtual threads), running virtual threads VT2 and VT3 while waiting for VT1 to get unblocked. Note the uneven scheduling periods of the threads.
+Here we see T1 is used as a carrier thread (a platform thread in schedulers pool for executing virtual threads), running virtual threads VT2 and VT3, while waiting for VT1 to get unblocked. Note the uneven scheduling periods of the threads.
 
-1. Virtual thread (or task) is taken from the queue, and mounted onto one of the available platform threads of scheduler. Here VT1 mounted on T1.
-2. VT1 gets executed, then it is blocked by making an external service call. It gets unmounted; its stack is saved to the heap and its status is set to 'parked' (blocked) and put in the schedulers queue.
-3. Scheduler takes virtual thread VT2 from the queue, runs using T1. After VT2 is finished, it does the same for VT3. 
-4. Response from the external service is received, VT1 can be scheduled. What actually happens here is that operating system notifies the JVM about I/O resource being ready. The message is forwarded to the scheduler, which removes the blocked status of VT1 ('parked' -> 'runnable'). But VT1 cannot be scheduled right away, because no carrier thread is available at the moment.
-5. When VT3 is finished, carrier thread T1 becomes available. Scheduler runs it on T1. 
+1. Virtual thread VT1 is taken from the queue, and mounted onto one of the available platform threads (carrier thread) of the scheduler. VT1 gets executed, then it is blocked by making an external service call.
+2. VT1 gets unmounted; its stack is saved to the heap and its status is set to 'parked' (blocked) and put in the schedulers queue.
+3. Scheduler takes the virtual thread VT2 from the queue, runs using T1. After VT2 is finished, it does the same for VT3. 
+4. Response from the external service is received, VT1 can be scheduled. What actually happens is that operating system notifies the JVM about unblocked I/O resource. The message is forwarded to the scheduler, which removes the blocked status of VT1 ('parked' -> 'runnable'). But VT1 cannot be scheduled right away, because no carrier thread is available at the moment.
+5. When VT3 is finished, carrier thread T1 becomes available. VT1 gets scheduled to run on T1. 
 
 
 ### The culprit: Delayed execution with CPU intensive operations
 
 The scheduler does not have a control over when a virtual thread will be scheduled or how much CPU time it will get. Scheduling only occurs when a running virtual thread gets blocked or finished. Therefore, the waiting time for the virtual threads in the queue can be long and unpredictable.
 
-To demonstrate this easily, we will allow JVM to use two CPU cores, with JVM argument `-XX:ActiveProcessorCount=2`.
+To demonstrate this easily, we will allow JVM to use two CPU cores, with JVM argument `XX:ActiveProcessorCount=2`.
 
-We start two virtual threads and give them CPU heavy tasks, and a third one doing less work:
+We start two virtual threads with CPU heavy operations, and a third one doing less work:
 
 ```java
 
@@ -128,7 +128,7 @@ List<Long> result = future.get();
 
 ### Conclusion
 
-CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU intensive and low latency / high priority tasks should be run on platform threads (in a separate thread pool). This is why JVM runs garbage collector and compiler threads on platform threads, even though they may be idle from time to time. They should not get in the queue behind virtual threads.
+CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU intensive and low latency / high priority tasks should be run on platform threads, in a separate thread pool. This is why JVM runs garbage collector and compiler threads on platform threads, even though they may be idle from time to time. They should not get in the queue behind virtual threads.
 
 
 **Virtual threads are good for tasks which,**
@@ -155,6 +155,4 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
 
 <div style="height: 50px"></div>
 
-<sup>*</sup><span class="subtext">A quick measurement indicates that a platform thread initializes with around 64KB memory allocation, virtual thread around 2KB. Also, a platform thread reserves ~1024 KB of virtual memory for stack.</span>
-
-
+<sup>*</sup><span class="subtext">A quick measurement indicates that a platform thread initializes with around 64KB memory allocation, virtual thread around 2KB. Also, a platform thread reserves ~1024 KB on X86 and ~2048 KB on ARM64 of virtual memory for its stack.</span>
