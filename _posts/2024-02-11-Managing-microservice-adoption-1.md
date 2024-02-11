@@ -1,7 +1,7 @@
 ---
-title: "Managing microservice adoption - 1"
+title: "Managing microservices adoption - 1"
 excerpt_text: "First part of ideas for managing adoption of microservices"
-excerpt_image: "/assets/images/posts/2024-02-11-Managing-microservice-adoption-1/growtika-ZfVyuV8l7WU-unsplash.webp"
+excerpt_image: "/assets/images/posts/2024-02-11-Managing-microservice-adoption-1/growtika-ZfVyuV8l7WU-unsplash-1.webp"
 excerpt_image_copyright: 'Picture by unsplash.com/@growtika'
 categories: [Engineering Management]
 tags: [Microservices, Engineering Management]
@@ -9,15 +9,16 @@ tags: [Microservices, Engineering Management]
 
 Here are some management ideas for improving microservices adoption, based on my observations and experiences over the past decade.
 
-### 1. Microservices architecture is a solution to a management problem
+### 1. Microservices is a solution to a management problem
 
-The biggest benefit of using microservices is more organizational than technical: It allows agile teams to develop, deploy and innovate independently. 
+
+The biggest benefit of using microservices architecture is more organizational than technical: It allows agile teams to develop, deploy and innovate independently. 
 
 It also offers organizational flexibility: Each team can become a supplier, which can be replaced by another supplier.
 
-**As it involves both the management and the delivery teams, it is important for everyone to know (at least) the above aspect of microservices.** (I leave other aspects to another post)
+As it involves both the management and the delivery teams, it is important for everyone to know (at least) the above aspect of microservices.
 
-Getting everyone on board and recognizing microservices as more than just a technical solution can help allocate the necessary resources for their proper establishment. 
+**Getting everyone on board in recognizing microservices as more than just a technical solution can help allocate the necessary resources for their proper establishment.** 
 
 It is expensive after all.
 
@@ -47,7 +48,7 @@ These libraries also create a tight-coupling between services, compromising the 
 Often, the library brings some transient dependencies which makes upgrades or changing the technology harder. Another microservices promise, "fast and independent innovation" is also broken. 
 
 
-#### The following practices can assist in managing libraries within microservices:
+#### The following can assist in managing libraries within microservices:
 
 - Avoid mandating teams to use a domain-wide library.
 - Teams may maintain their own libraries if they handle them carefully. 
