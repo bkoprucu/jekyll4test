@@ -794,13 +794,16 @@ a:visited .badge-new {
 div.headless-table {
    + table {
     width: max-content;
+    max-width: 100%;
     thead { display: none; }
+    td { vertical-align: top; }
   }
 }
 
 div.narrow-table {
   + table {
     width: max-content;
+    max-width: 100%;
     th {
       padding-bottom: 5px;
       border-bottom: 1px solid #888;
