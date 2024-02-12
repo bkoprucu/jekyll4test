@@ -1,13 +1,13 @@
 ---
-title: "Managing microservices adoption - 1"
-excerpt_text: "First part of ideas for managing adoption of microservices"
+title: "Managing microservices adoption - Part 1"
+excerpt_text: "Here are some management ideas for improving microservices adoption and avoiding pitfalls"
 excerpt_image: "/assets/images/posts/2024-02-11-Managing-microservice-adoption-1/growtika-ZfVyuV8l7WU-unsplash-1.webp"
 excerpt_image_copyright: 'Picture by unsplash.com/@growtika'
 categories: [Engineering Management]
 tags: [Microservices, Engineering Management]
 ---
 
-Here are some management ideas for improving microservices adoption, based on my observations and experiences over the past decade.
+Here are some management ideas for improving microservices adoption and avoiding pitfalls on implementing microservices,  based on my observations and experiences over the past decade.
 
 ### 1. Microservices architecture is expensive
 
@@ -41,13 +41,14 @@ Therefore, **making sure everyone sees microservices as more than just a technic
 
 ### 3. Shared libraries among services are tricky to manage
 
-In the early stages of building a system, it may seem like a good idea to share reusable code by introducing a library. Initially, it improves productivity and consistency.
+In the early stages of building a system, sharing reusable code by introducing a library improves productivity and consistency.
 
-However, if not manged carefully, these libraries tend to create tight coupling between services, compromising the autonomy of the teams. 
+However, if not manged carefully, these libraries can create tight coupling between services, compromising the autonomy of the teams. 
 
-As the organization grows, the ownership of the library may become ambiguous, leading to multiple teams making changes on it. Given that any alteration could disrupt the work of other teams, developers can only introduce new code, not make any modifications or deletions. Over time, this results in a large and difficult to manage codebase.
+As the organization grows, the ownership of the library may become ambiguous, leading to multiple teams making changes on it. To avoid disrupting the work of other teams, developers tend to only introduce new code, not make any modifications or deletions. Over time, this results in a large and difficult to manage codebase.
 
-Even with a designated owner, meeting requirements of all the teams can be a challenge. Transient dependencies of the library can make upgrades and adoption of different technologies harder. This goes against another promise of microservices; "Fast and independent innovation".
+Besides that, transient dependencies of the library can make upgrades and adoption of different technologies harder. This goes against another promise of microservices; "Fast and independent innovation".
+
 
 #### The following can assist in managing libraries within microservices:
 
@@ -55,9 +56,29 @@ Even with a designated owner, meeting requirements of all the teams can be a cha
     - Owned by a designated team, responsible for maintaining the library, reviewing, and merging pull requests, including those created by other teams.
     - Maintain a clearly defined scope of functionality.
     - Avoid introducing unnecessary transient dependencies.
-
 - Libraries limited to a team scope typically pose fewer problems, allowing teams to make changes to their own library freely.
 
 
+### 4. The importance of establishing an API evolution strategy 
 
-_To be continued..._
+A well-designed microservices architecture has two main pillars:
+
+- Good separation of concerns between the services: Each service performs a distinct task within the business domain.
+- Robust API: This contract between services (and clients), which enables efficient task execution without restricting independent service development.
+
+Even with a good initial API design, changes will inevitably be necessary over time.
+
+Modifying the API freely isn't viable as it risks disrupting communication between services and their consumers.
+
+One approach is to avoid changing or removing anything from the API, only adding to it. While this will work, it can lead to a less understandable domain over time, particularly for new team members.
+
+Alternatively, API versioning can be implemented. Changes are made to a new version of the API, with both old and new versions running simultaneously. Consumers are notified of the change, and once it's certain that the older API is no longer in use, it can be removed. 
+
+While technologies like Hypermedia can aid in API evolution, as far as I know, there isn't a comprehensive protocol, library, or tool specifically designed for the purpose of API evolution, especially expiration.
+
+Therefore, a management process for handling API evolution and expiration is needed.
+
+Traceability is important this process to be effective. 
+
+
+_Will continue with traceability on Part 2_
