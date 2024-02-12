@@ -7,9 +7,9 @@ categories: [Engineering Management]
 tags: [Microservices, Engineering Management]
 ---
 
-Here are some management ideas for improving microservices adoption and avoiding pitfalls on implementing microservices,  based on my observations and experiences over the past decade.
+Here are some management practices for improving microservices adoption and avoiding pitfalls on implementing microservices, based on my observations and experiences over the past decade.
 
-### 1. Microservices architecture is expensive
+## Microservices architecture is expensive
 
 Using microservices introduces:
 
@@ -28,7 +28,7 @@ To be able to justify the costs, we should be focusing on getting from microserv
 Which brings us to...
 
 
-### 2. Microservices is a solution to a management problem
+## Microservices is a solution to a management problem
 
 The biggest benefit of using microservices architecture is more organizational than technical: Allowing agile teams to develop, deploy and innovate independently and promote continuous delivery.
 
@@ -39,7 +39,7 @@ So it involves both the management and delivery teams.
 Therefore, **making sure everyone sees microservices as more than just a technical solution will help us get the resources needed for proper establishment of microservices and agile methodologies.** 
 
 
-### 3. Shared libraries among services are tricky to manage
+## Shared libraries among services are tricky to manage
 
 In the early stages of building a system, sharing reusable code by introducing a library improves productivity and consistency.
 
@@ -59,7 +59,7 @@ Besides that, transient dependencies of the library can make upgrades and adopti
 - Libraries limited to a team scope typically pose fewer problems, allowing teams to make changes to their own library freely.
 
 
-### 4. The importance of establishing an API evolution strategy 
+## Establish an API evolution strategy early on 
 
 A well-designed microservices architecture has two main pillars:
 
@@ -78,7 +78,10 @@ While technologies like Hypermedia can aid in API evolution, as far as I know, t
 
 Therefore, a management process for handling API evolution and expiration is needed.
 
-Traceability is important this process to be effective. 
+It is important to have a good traceability for this process to be effective. 
 
+<br>
+
+<br>
 
 _Will continue with traceability on Part 2_
