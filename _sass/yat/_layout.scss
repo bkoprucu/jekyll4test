@@ -387,7 +387,7 @@ html {
   @extend %post-header;
   max-width: $post-width;
   .post-header {
-    margin: 50px auto 70px;
+    margin: 25px auto 70px;
     padding: 0 0 30px;
     @include borderb();
     .post-title {
