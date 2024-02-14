@@ -797,7 +797,10 @@ div.headless-table {
     width: max-content;
     max-width: 100%;
     thead { display: none; }
-    td { vertical-align: top; }
+    td {
+      vertical-align: top;
+      padding: 5px 0;
+    }
   }
 }
 
@@ -809,6 +812,7 @@ div.narrow-table {
       padding-bottom: 5px;
       border-bottom: 1px solid #888;
     }
+    td { vertical-align: top; }
     margin-bottom: 5px;
     border-bottom: 1px solid #888;
   }
@@ -827,13 +831,14 @@ div.bordered-table {
     font-size: $small-font-size;
     th {
        border-bottom: 1px solid #888;
-       padding-bottom: 4px;
+       padding-bottom: 5px;
     }
     td {
-      padding-top: 4px;
-      padding-bottom: 4px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      vertical-align: top;
     }
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     margin-top: 50px;
     border-bottom: 1px solid #888;
   }
