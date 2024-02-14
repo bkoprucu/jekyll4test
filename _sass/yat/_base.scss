@@ -176,6 +176,9 @@ table {
   text-align: $table-text-align;
   border-collapse: collapse;
   overflow: auto;
+  td {
+    line-height: 1.3;
+  }
 }
 
 %flex {
