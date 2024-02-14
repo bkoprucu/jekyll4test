@@ -10,7 +10,7 @@ tags: [Java, Virtual threads, Concurrency]
 We'll take a look at how platform and virtual threads are scheduled, demonstrate the consequences of using the wrong type of thread, and outline the differences between them.
 
   
-### Scheduling of platform threads
+## Scheduling of platform threads
 
 
 Platform threads are scheduled by the operating system. Active threads are distributed among CPU cores. When more threads arrive, CPU time is shared among unblocked threads; each thread is given a “time slice”. After the time is up, a kernel triggers an interrupt signal, which suspends the current thread and assigns the CPU to the next one. This behavior is transparent to the programmer (preemptive).
@@ -28,7 +28,7 @@ Service application threads often experience significant blocking while waiting 
 When no threads are available, the application will come to a halt, despite CPU usage being low.    
 
 
-### Scheduling of virtual threads
+## Scheduling of virtual threads
 
 Virtual threads are queued tasks. Unlike platform threads, their scheduling and queueing is managed by the JVM (ForkJoinPool).
 
@@ -43,7 +43,7 @@ Here we see T1 is used as a carrier thread (a platform thread in schedulers pool
 5. When VT3 is finished, carrier thread T1 becomes available. VT1 gets scheduled to run on T1. 
 
 
-### The culprit: Delayed execution with CPU intensive operations
+## The culprit: Delayed execution with CPU intensive operations
 
 The scheduler does not have a control over when a virtual thread will be scheduled or how much CPU time it will get. Scheduling only occurs when a running virtual thread gets blocked or finished. Therefore, the waiting time for the virtual threads in the queue can be long and unpredictable.
 
@@ -116,17 +116,15 @@ $ _
 
 #### What if the operation is both blocking and CPU intensive?
 
-Sending the CPU intensive part to the specific executor and blocking the virtual thread will do the trick:
+We'll send the CPU intensive part to its executor and block the virtual thread we're in:
 ```java
 ...
-// Send CPU intensive task to executor with platform threads
 Future<List<Long>> future = cpuIntensiveExecutor.submit(() -> findPrimeNumbers(1, 1000));
-// Block the virtual thread
 List<Long> result = future.get();
 ...
 ```
 
-### Conclusion
+## Conclusion
 
 CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU intensive and low latency / high priority tasks should be run on platform threads, in a separate thread pool. This is why JVM runs garbage collector and compiler threads on platform threads, even though they may be idle from time to time. They should not get in the queue behind virtual threads.
 
@@ -135,6 +133,7 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
  - May get blocked 
  - Don’t have critical latency requirements
  - Are plenty
+
 
 **Platform threads are good for tasks which,**
  - Are CPU bound
