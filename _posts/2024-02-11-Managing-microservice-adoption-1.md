@@ -82,6 +82,5 @@ It is important to have a good traceability for this process to be effective.
 
 <br>
 
-<br>
 
 _Will continue with traceability on Part 2_

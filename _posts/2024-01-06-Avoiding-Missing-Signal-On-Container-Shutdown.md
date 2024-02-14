@@ -8,7 +8,7 @@ categories: [DevOps]
 tags: [Kubernetes, Docker, DevOps, Java, Spring Boot]
 ---
 
-### How shutdown signal can be missed by the container 
+## How shutdown signal can be missed by the container 
 
 Missing 'exec' command on dockerfile / shell script may cause the containerized process to miss the SIGTERM signal sent by the container manager.
 
@@ -78,7 +78,7 @@ $ docker exec demo cat /proc/1/cmdline
 Container manager stops the container by sending a SIGKILL signal, after a timeout.
 Since the application starts successfully, the problem may go unnoticed.
 
-### Fix: Adding the 'exec' command
+## Fixing with 'exec'
 
 ```bash
 #!/bin/sh
@@ -100,7 +100,7 @@ Clean shutdown
 $ _
 ```
 
-#### Without the shell script
+### Without the shell script
 
 The `exec` command should be added to `Dockerfile` if no shell script is used: 
 
@@ -116,7 +116,7 @@ ENTRYPOINT exec java -jar app.jar
 >#### Isn't PID 1 the init process?
 >Linux provides namespaces for various system resources, including PID, which is used for virtualization.
 
-### Failing fast
+## Failing fast
 
 This Spring Boot example aborts startup if the PID is not 1 for the 'kubernetes' and 'docker' profiles.
 
