@@ -5,6 +5,7 @@ excerpt_image: "/assets/images/posts/2024-02-11-Managing-microservice-adoption-1
 excerpt_image_copyright: 'Picture by unsplash.com/@growtika'
 categories: [Engineering Management]
 tags: [Microservices, Engineering Management]
+hidden: true
 ---
 
 Here are some management practices for improving microservices adoption and avoiding pitfalls on implementing microservices, based on my observations and experiences over the past decade.
