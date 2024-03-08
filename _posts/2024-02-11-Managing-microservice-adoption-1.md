@@ -1,10 +1,11 @@
 ---
 title: "Managing microservices adoption - Part 1"
-excerpt_text: "Here are some management ideas for improving microservices adoption and avoiding pitfalls"
+excerpt_text: "Here are some management practices for improving microservices adoption and avoiding pitfalls"
 excerpt_image: "/assets/images/posts/2024-02-11-Managing-microservice-adoption-1/growtika-ZfVyuV8l7WU-unsplash-1.webp"
 excerpt_image_copyright: 'Picture by unsplash.com/@growtika'
 categories: [Engineering Management]
 tags: [Microservices, Engineering Management]
+hidden: true
 ---
 
 Here are some management practices for improving microservices adoption and avoiding pitfalls on implementing microservices, based on my observations and experiences over the past decade.
@@ -70,15 +71,15 @@ Even with a good initial API design, changes will inevitably be necessary over t
 
 Modifying the API freely isn't viable as it risks disrupting communication between services and their consumers.
 
+This problem is more apparent on point-to-point architecture (usually synchronous protocols like REST or gRPC), since the API itself builds more rigid dependency between services, but asynchronous, publish / subscribe architecture needs to be evolved as well.     
+
 One approach is to avoid changing or removing anything from the API, only adding to it. While this will work, it can lead to a less understandable domain over time, particularly for new team members.
 
 Alternatively, API versioning can be implemented. Changes are made to a new version of the API, with both old and new versions running simultaneously. Consumers are notified of the change, and once it's certain that the older API is no longer in use, it can be removed. 
 
-While technologies like Hypermedia can aid in API evolution, as far as I know, there isn't a comprehensive protocol, library, or tool specifically designed for the purpose of API evolution, especially expiration.
+While technologies like Hypermedia can aid in (synchronous) API evolution, but AFAIK, there isn't a comprehensive protocol, library, or tool specifically designed for the purpose of API evolution and expiration.
 
-Therefore, a management process for handling API evolution and expiration is needed.
-
-It is important to have a good traceability for this process to be effective. 
+Therefore, good traceability of the request flow and a policy (a management process) is needed for API evolution and expiration.
 
 <br>
 

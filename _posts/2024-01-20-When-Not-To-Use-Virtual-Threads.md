@@ -12,7 +12,6 @@ We'll take a look at how platform and virtual threads are scheduled, demonstrate
   
 ## Scheduling of platform threads
 
-
 Platform threads are scheduled by the operating system. Active threads are distributed among CPU cores. When more threads arrive, CPU time is shared among unblocked threads; each thread is given a “time slice”. After the time is up, a kernel triggers an interrupt signal, which suspends the current thread and assigns the CPU to the next one. This behavior is transparent to the programmer (preemptive).
 
 {%- include image.html url="/assets/images/posts/2024-01-When-Not-To-Use-Virtual-Threads/platform_thread_scheduling.png" description="Scheduling of platform threads under heavy load.<br>Note the even distribution of CPU time among the threads" -%}
@@ -124,16 +123,15 @@ List<Long> result = future.get();
 ...
 ```
 
+
 ## Conclusion
 
 CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU intensive and low latency / high priority tasks should be run on platform threads, in a separate thread pool. This is why JVM runs garbage collector and compiler threads on platform threads, even though they may be idle from time to time. They should not get in the queue behind virtual threads.
-
 
 **Virtual threads are good for tasks which,**
  - May get blocked 
  - Don’t have critical latency requirements
  - Are plenty
-
 
 **Platform threads are good for tasks which,**
  - Are CPU bound
@@ -142,6 +140,7 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
 
 
 #### Summary of differences
+
 <div class="table800 bordered-table"></div>
 
 | **Platform**                            | **Virtual**                                    |
@@ -149,9 +148,9 @@ CPU intensive tasks will disrupt the scheduling of virtual threads. Both CPU int
 | Expensive to create, finite             | Cheap to create, uses much less memory *       |
 | Scheduled by the OS, preemptively       | Scheduled by the JVM, when blocked or finished |
 | Can have different priority than normal | Priority is fixed to normal                    |
-| Can be daemon, not daemon by default    | Always daemon                                  |
+| Can be daemon, is not daemon by default | Always daemon                                  |
 | Has auto-generated name by default      | Default name is empty string                   |
 
 <div style="height: 50px"></div>
 
-<sup>*</sup><span class="subtext">A quick measurement indicates that a platform thread initializes with around 64KB memory allocation, virtual thread around 2KB. Also, a platform thread reserves ~1024 KB on X86 and ~2048 KB on ARM64 of virtual memory for its stack.</span>
+<sup>*</sup><span class="subtext">A quick measurement indicates that a platform thread allocates around 64KB memory initially, a virtual thread around 2KB. Also, a platform thread reserves ~1024 KB on X86 and ~2048 KB on ARM64 of virtual memory for its stack.</span>
