@@ -69,29 +69,53 @@ You may let them out before going to sleep.
 
 ## Feeding
 
-- Take one pouch from this box for each cat in the morning:
+- Take one pouch from this box in the morning and evening:
 
 ![](/assets/images/posts/cat-sitting/food_pouch.jpeg)
 
 
 For wet food, You may use flat plate instead of their bowl, to avoid cleaning.
-However, Pamuk will spill some food to the floor, put napkins under the plate.
 
-Kucuk is shy, so Pamuk eats her food. To prevent this:
+![](/assets/images/posts/cat-sitting/food_dishes.jpg)
+
+Pamuk may spill some food, a piece of napkins under the plate can help.
+
+
+Pamuk eats more wet food, Kucuk rarely eats, therefore I give ~70% of the pouch to Pamuk, and ~30% to Kucuk:
+
+{%- include image.html url="/assets/images/posts/cat-sitting/wet_food_distribution.jpg" description="Wet food distribution. Pamuk eats ~70%, Kucuk ~30%" -%}
+
+
+To compensate, I give Kucuk more dry food:
+
+{%- include image.html url="/assets/images/posts/cat-sitting/dry_food_distribution.jpg" description="Dry food distribution. Pamuk eats ~10%, Kucuk ~90%" -%}
+
+
+
+Pamuk eats Kucuk's food. To prevent this you need to separate them:
 
 - Put Pamuk's food under kitchen table first.
 - While he is eating, put Kucuk's food in bedroom, under the chair.
-- Close the door and leave her alone.
-- Pamuk will wait at her door, demanding opening the door. Don't open, give Kucuk at least 5 minutes to eat, after which you may open the door.
-- After 10 minutes or so, they'll want dry food, esp. Kucuk. Give them some.
+- Close the door and leave her alone. You may instead close the kitchen door, leaving Pamuk inside the kitchen.  
+- Pamuk will wait at her door, demanding opening the door. Allow Kucuk to at least 5 minutes in piece, after which you may open the door.
+- Now you can give them dry food, again in separate rooms.
+ 
 
-Food in the pouch box will be over after three days. You can continue with the food in small boxes:
 
-![](/assets/images/posts/cat-sitting/food_box.jpeg)
+[//]: # (Food in the pouch box will be over after three days. You can continue with the food in small boxes:)
 
-Share one box between two cats for morning, one for evening. So you'll consume two boxes per day.
+[//]: # (![]&#40;/assets/images/posts/cat-sitting/food_box.jpeg&#41;)
 
-**Don't forget to rinse and change their water**
+[//]: # (Share one box between two cats for morning, one for evening. So you'll consume two boxes per day.)
+
+**Don't forget to rinse and change their water once a day**
+
+## Pamuk's medicine
+
+Pamuk has to take his pill on Saturday and Monday. I crushed the pills and made dust, and put them in little glasses, in the picture below. All you have to do is pour one glass on his wet food. I've prepared 3 glasses, one is for safety.
+
+{%- include image.html url="/assets/images/posts/cat-sitting/pamuk_medicine_glasses.jpg" description="Each glass contains medicine for two days" -%}
+ 
 
 ## Litter Box
 - There should not be much litter in the box, it should be around 3 centimeters deep
