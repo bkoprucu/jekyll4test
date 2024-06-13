@@ -25,17 +25,10 @@ Female, shy, never gets aggressive. Likes dry food, affection, getting brushed.
 
 ### Blankets
 
-Küçük sleeps under blankets. Sitting or laying on them without checking can be fatal.
+Küçük sleeps under blankets. Sitting on them without checking can hurt:
 
 {%- include image.html url="/assets/images/posts/cat-sitting/kucuk_duvet.webp" description="For most of the time, paws won't be visible" height="350px" -%}
 
-### Stove
-
-They jump on it and may accidentally turn it on or burn their paws.
-
-Place the pan handle so that it block the turn on switch:
-
-{%- include image.html url="/assets/images/posts/cat-sitting/stove.webp" description="Handle blocking the switches" height="350px" -%}
 
 ### Being Locked Outside
 
@@ -49,19 +42,17 @@ Adjust the lever, to make sure window won't be closed by a drift:
 
 ![](//www.youtube.com/watch?v=1iZoru6Wl-g?width=700&height=400)
 
-To stop cold, you may push the kitchen door, so they can push it open when they come back.
-
-![door](/assets/images/posts/cat-sitting/door.jpeg)
-
 
 ## Feeding
 
-- Take one pouch from this box in the morning and evening:
+- In the morning, make sure that they are both inside and close the window.
+
+- Take one pouch from this box:
 
 ![](/assets/images/posts/cat-sitting/food_pouch.jpeg)
 
 
-For wet food, You may use flat plate instead of their bowl, to avoid cleaning.
+For wet food, You may use a flat plate.
 
 ![](/assets/images/posts/cat-sitting/food_dishes.jpg)
 
@@ -84,6 +75,8 @@ Pamuk eats Kucuk's food. To prevent this you need to separate them:
 - Pamuk will wait at her door, demanding opening the door. Allow Kucuk to at least 5 minutes in piece, after which you may open the door.
 - Now you can give them dry food, again in separate rooms.
 
+- After feeding in the evening, [you may open the window](#being-locked-outside)
+
 
 **Rinse and change their water once a day**
 
@@ -94,4 +87,6 @@ You may give Pamuk his pill on Sunday. I crushed the pills and made dust, and pu
 {%- include image.html url="/assets/images/posts/cat-sitting/pamuk_medicine_glasses.jpg" description="Each glass contains medicine for two days" -%}
 
 
-**Thank you! :)**
+**I'll be happy if you can keep me updated**
+
+## **Thank you! :)**
