@@ -113,16 +113,15 @@ sidebar:
       {%- include extensions/comments/disqus.html %}
       {%- endif -%}
 
-      {%- if site.gitment.username -%}
-      {%- include extensions/comments/gitment.html %}
+      {%- if site.giscus.enabled == true -%}
+      {%- include extensions/comments/giscus.html %}
       {%- endif -%}
 
       {%- if site.utterances.repo -%}
       {%- include extensions/comments/utterances.html %}
-      {%- endif %}
-    {%- endif -%}
+      {%- endif -%}
+    {%- endif %}
     </div>
-  {%- endunless -%}
-
+  {%- endunless %}
 </section>
 </div>
