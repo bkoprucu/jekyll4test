@@ -3,6 +3,7 @@
   width: 108px;
   margin-top: 16px;
   margin-left: auto;
+  transition: margin .3s;
 
   label, .toggle {
     border-radius: 4px;
@@ -64,6 +65,4 @@
   [type="checkbox"]:checked ~ label .light {
     color: #ccc;
   }
-
-  transition: margin .3s;
 }
