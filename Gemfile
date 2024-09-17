@@ -6,7 +6,7 @@ source "https://rubygems.org"
 #     bundle exec jekyll serve
 #
 # This will help ensure the proper Jekyll version is running.
-gem "jekyll", "~> 4.3.3"
+gem "jekyll", "~> 4.3.4"
 
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and

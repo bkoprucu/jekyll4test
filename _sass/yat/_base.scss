@@ -170,7 +170,7 @@ hr {
 
 /* Tables */
 table {
-//   display: block;
+//  display: block;
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
@@ -193,9 +193,9 @@ table {
 /* Flex sticky */
 @mixin flex-sticky($top) {
   position: sticky;
+  top: $top;
   align-self: flex-start; /* <-- fix the sticky not work issue */
   //transform: scale(0.9999); /* <-- fix the sticky x overflow issue */
-  top: $top;
 }
 
 @mixin vertical-center($position) {
@@ -225,12 +225,12 @@ table {
   font-size: 38px;
   font-weight: 600;
   margin: 10px 50px 75px 0;
+  padding-bottom: 10px;
+  @include borderb();
   @include media-query($on-laptop) {
     margin-right: 15px;
   }
   @include media-query($on-palm) {
     margin-right: 0;
   }
-  padding-bottom: 10px;
-  @include borderb();
 }
