@@ -78,24 +78,19 @@ markdown: kramdown
 #   image_height: 160px     # Image default height
 #   text_size: 350          # Words default size
 
-# Gitment comments
-# gitment:
-#   username: "Your GitHub username"
-#   repo: "The repo to store comments"
-#   client_id: "Your client ID"
-#   client_secret: "Your client secret"
-#   redirect_uri: "Your redirect url"   # If you use a custom domain name
+giscus:
+  enabled: true
 
 # Utterances comments
 # See https://utteranc.es/
 # set follow_site_theme true to make utterances' theme follow the site's
-
 # utterances:
 #   repo: "owner/repo"
 #   issue_term: "title"
 #   label: "utterances comment"
 #   theme: "github-light"
 #   follow_site_theme: true
+
 plugins:
 #  - jekyll-feed
   - jekyll-seo-tag
