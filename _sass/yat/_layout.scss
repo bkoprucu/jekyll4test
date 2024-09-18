@@ -1,5 +1,6 @@
 /* Animation for transparent header */
 html {
+/*
   &[data-header-transparent] {
     header.site-header {
       position: fixed;
@@ -12,18 +13,15 @@ html {
       margin-top: 12px;
       background-color: transparent;
       transition: 0.1s height,background-color,box-shadow;
-
       &.site-header {
         .site-brand-inner, .page-link {
           color: #fff;
           transition: color 0.25s;
         }
-
         @include media-query($on-laptop) {
           .page-link {
             color: $header-text-color;
           }
-
           .menu-icon {
             > svg {
               fill: $white-color;
@@ -33,14 +31,15 @@ html {
       }
     }
   }
+ */
 
-  @media screen and ((max-height: ($on-palm - 200)) or (max-width: $on-palm)) {
+  @media screen and ((max-height: ($on-palm - 50)) or (max-width: $on-palm)) {
     &[data-scroll-status='down'] {
       header.site-header {
         top: -$header-height;
       }
       .framework .sidebar {
-        top: 20px;
+        top: 10px;
       }
     }
   } 
@@ -855,4 +854,3 @@ div.table600 {
     max-width: 600px;
     }
 }
-
