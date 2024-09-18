@@ -49,7 +49,7 @@
       saveThemeData(themeData);
       html.dataset.theme = nightShift ? 'dark' : 'light';
       setTimeout(function() {
-        sw.checked = nightShift ? true : false;
+        sw.checked = nightShift;
       }, 50);
     }
 
