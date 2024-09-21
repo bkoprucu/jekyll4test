@@ -42,6 +42,11 @@ hide_from_related: 1   # Don't appear in "More Articles"
 permalink: "/reference.html"  # Custom url
 # top: 1 # Pinned post 
 
-`bundle update`
 
+// -- Maintenance:
+`bundle update`
+`jek = bundle exec jekyll`
+`jek clean`
+`jek build`
+`jek s` 
 ```
