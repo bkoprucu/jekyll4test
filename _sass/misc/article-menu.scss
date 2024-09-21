@@ -19,7 +19,7 @@
 
       border-left: 1px solid #e9ecef;
       $indent: 4;
-      $active-bgcolor: #ecebec;
+      $active-bgcolor: #eee;
 
       @for $i from 2 to 7 {
         .h-h#{$i} {
@@ -51,7 +51,7 @@
         margin-left: -2px;
 
         &:hover {
-          background-color: lighten($active-bgcolor, 2%);
+          background-color: color.adjust($active-bgcolor, $lightness: 3%);
         }
 
         a {
