@@ -1,4 +1,5 @@
 @charset "utf-8";
+@use "sass:color";
 $theme-color: #fff;
 $brand-color: #bb5120; // #ff5100
 
@@ -16,9 +17,6 @@ $more-muted-color: #ccc;
 $background-color: #fff !default;
 
 $grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark: darken($grey-color, 25%) !default;
-
 $white-color: #fdfdfd !default;
 
 $table-text-align: left !default;
@@ -28,8 +26,8 @@ $header-text-color: #ccc;
 $header-background-color: #1a1d20 !default;
 $header-transparent: false;
 
-$footer-height: $header-height * 1.05 !default;
-$footer-text-color: lighten(invert($theme-color), 50%) !default;
+$footer-height: 66px;
+$footer-text-color: #777;
 $footer-background-color: #eee !default; 
 
 $banner-height: 330px !default;
