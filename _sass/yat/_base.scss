@@ -89,17 +89,11 @@ big-font {
 }
 
 /* Code formatting */
-pre,
-code {
-  font-size: 13.5px;
-//   white-space: pre-wrap;
-}
-
 *:not(pre) > code {
+  font-size: .85em;
   padding: 3px 5px;
   border-radius: 5px;
   background-color: #eee;
-  margin: 0 5px;
 }
 
 pre {
@@ -110,6 +104,7 @@ pre {
 
   > code {
     display: inline-block;
+    font-size: 13.5px;
     padding: 16px 22px !important;
     background-color: transparent;
     border: 0;

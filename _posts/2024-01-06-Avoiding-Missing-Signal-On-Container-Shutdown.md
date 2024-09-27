@@ -78,7 +78,7 @@ $ docker exec demo cat /proc/1/cmdline
 Container manager stops the container by sending a SIGKILL signal, after a timeout.
 Since the application starts successfully, the problem may go unnoticed.
 
-## Fixing with 'exec'
+## Fixing with `exec`
 
 ```bash
 #!/bin/sh
