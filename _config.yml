@@ -97,6 +97,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+  - jekyll-redirect-from
 
 
 permalink: "/:short_year/:i_month/:title"
