@@ -116,7 +116,7 @@ Since version 9, Java (and the bytecode) is evolving fast, requiring byte code m
 
 Rarely, different versions of bytecode manipulation libraries may interfere with each other, or may behind the bytecode version of the compiled class, leading to unpredictable behavior. I've encountered this problem once; an older version of Lombok silently disabled circuit breaker annotations.
 
-The [Class-file API](https://openjdk.org/jeps/457), introduced in Java 22, provides a standard API to address this. 
+The [Class-file API](https://openjdk.org/jeps/457) will provide a standard way to address this. 
 
 **How to handle:**
 - Keep Lombok and other dependency versions up to date.
@@ -129,20 +129,17 @@ The Java development team is evolving Java rapidly, yet in a planned, structured
 We should not assume the features offered by Lombok are not considered by them.
 Unlike Kotlin interoperability, compatibility with Lombok is rarely a consideration during Java's development.
 
-Furthermore, Java is not designed to prioritize concise abstractions at the expense of clarity. It was conceived to meet the practical industrial needs in a teamwork. For example, Java records can be seen as named tuples, unlike Scala's `Tuple2`, `Tuple3` etc. or Kotlin's `Pair`. 
-
-Lombok, on the other hand, provides conciseness, leaving the responsibility entirely on users. 
+Furthermore, Java is not designed to prioritize concise abstractions at the expense of clarity. It was conceived to meet the practical industrial needs in a teamwork. For example, Java records are named tuples, unlike Scala's `Tuple2`, `Tuple3` etc. or Kotlin's `Pair`. 
 
 **How to handle:**
 - Keep an eye on future development path of Java.
 - Use Lombok with good knowledge and consideration on Java's evolving features and philosophy.
 
 
-
 ## Conclusion
 
 We might wonder if all these risks mean we should remove Lombok from our projects. Doing so may not necessarily improve design or maintainability of our project.
 
-Many of the mentioned risks stem from our habitual, hurried coding. Concise code may create a sense of cleanliness and improved productivity, but compared to benefits of good sotfware design, this effect is rather small. No automated code generator can provide a good design consistently. 
+Many of the mentioned risks stem from our habitual, hurried coding. Concise code may create a sense of cleanliness and improved productivity, but compared to benefits of a good design, this effect is rather small. No automated code generator can provide a good design consistently. 
 
-That being said, Lombok provides a set annotations, with unrelated purposes and varying usefulness and risks. Therefore, we can utilize Lombok best, when we know it well and consider the risks and benefits in the context of our project and team.
+Lombok provides set annotations, with unrelated purposes and varying usefulness and risks. Therefore, we can utilize Lombok best, when we know it well and consider the risks and benefits in the context of our project and team.
