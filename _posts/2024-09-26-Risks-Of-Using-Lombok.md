@@ -108,19 +108,16 @@ Lombok's generated code can complicate debugging, especially when breakpoints ar
 Annotations such as `@AllArgsConstructor`, `@Getter` and `@Locked` are common examples where debugging can become more complex.
 
 
-## Potential Bytecode Manipulation Interference
+## Integration with Frameworks
 
-Lombok and many other libraries and frameworks generates and manipulates the bytecode of class files. These are dependency injection (e.g.Micronout), Hibernate, AOP libraries like AspectJ, circuit breakers like Resilience4j, and monitoring agents like Datadog.
+While Lombok operates at compile time and manipulates the abstract syntax tree (AST) rather than bytecode, it can still occasionally interact unexpectedly with other frameworks that rely on reflection or runtime proxies, such as dependency injection frameworks, AOP libraries, or circuit breakers like Hystrix.
 
-Since version 9, Java (and the bytecode) is evolving fast, requiring byte code manipulation libraries to keep up.  
-
-Rarely, different versions of bytecode manipulation libraries may interfere with each other, or may behind the bytecode version of the compiled class, leading to unpredictable behavior. I've encountered this problem once; an older version of Lombok silently disabled circuit breaker annotations.
-
-The [Class-file API](https://openjdk.org/jeps/457) will provide a standard way to address this. 
+For instance, I once experienced an issue where an older version of Lombok interfered with circuit breaker annotations, silently disabling them. These cases are rare, but worth noting when using Lombok alongside complex frameworks.
 
 **How to handle:**
-- Keep Lombok and other dependency versions up to date.
-- Test critical functions handled by class file manipulation.
+
+- Keep Lombok and framework versions up to date.
+- Test critical integrations, especially with frameworks that rely on reflection or proxies.
 
 
 ## Future Technical Debt
