@@ -1,22 +1,17 @@
 ---
 title: "Risks of using Lombok"
-seo_enabled: true
+seo_enabled: false
+hidden: 1
 excerpt_text: "What could go wrong by using Lombok to automate boilerplate code generation in Java?"
 excerpt_image: /assets/images/posts/2024-09-Risks-Of-Using-Lombok/banner-lombok.webp
 categories: [Programming]
 tags: [Java, Lombok]
 ---
 
-## What Could Go Wrong by Using Lombok?
-
-[Lombok](https://projectlombok.org/) is a widely used Java library that reduces boilerplate code, by providing annotations to generate them.
-
-However, improper or excessive use of Lombok can introduce risks to software design, maintainability and manageability.
 
 ## Common Lombok Annotation Pitfalls
 
-We'll look at some commonly used Lombok annotations, potential pitfalls associated with them, and how we can avoid these risks.
-
+We'll look at some commonly used Lombok annotations, how they can be misused, and how we can avoid these risks.
 
 ### `@AllArgsConstructor`, `@RequiredArgsConstructor`, `@NoArgsConstructor`
 
