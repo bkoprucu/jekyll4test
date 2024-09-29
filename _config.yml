@@ -13,9 +13,8 @@ favicon: "/favicon.ico"
 
 #twitter_username: jekyllrb
 #github_username:  jekyll
-
-
 #sitemap: true
+
 header_pages:
   - index.html
   - about.html
@@ -97,6 +96,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
+  - jekyll-redirect-from
 
 
 permalink: "/:short_year/:i_month/:title"
