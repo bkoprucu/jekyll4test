@@ -33,6 +33,7 @@ Other times, visual simplicity might come at the expense of better design. If `@
 
 {%- include image.html url="/assets/images/posts/2024-09-Using-Lombok-Wisely/AllArgsConstructor_pseudo_sample.png" description="@AllArgsConstructor looks better, but is missing a validation" -%}
 
+
 If the code has a potential for refactoring in the future, having the code clearly visible can help with reflecting on design decisions or applying new Java features. This is similar to how explaining code to a rubber duck can be helpful - out of sight can lead to out of mind. Yet again, some cases, like builders, might not need this.
 
 
@@ -65,7 +66,7 @@ By the time of writing this article, native withers for records are in developme
 
 For builders: Named arguments like in Kotlin probably won't come to Java, but Project Valhalla's [value classes](https://openjdk.org/jeps/401) will promote domain driven design solutions (less primitive obsession), allowing for safer to constructors, which reduces the need for builders - perhaps a topic for another article.
 
-If these features are present by the time you're reading, consider using them.  
+If these features are present by the time you're reading, consider using them. (By now, most developers already prefer records over `@Value`, therefore I won't get into records here).
 
 
 ## Final thoughts
