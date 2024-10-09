@@ -1,9 +1,9 @@
 ---
 title: "Using Lombok wisely: Questions to consider"
 seo_enabled: true
-hidden: false
+description: "Risks of using Lombok"
 excerpt_text: "Like any other tool, Lombok can be useful or misused. Misuse or overuse happens, which, probably is what makes Lombok..."
-excerpt_image: /assets/images/posts/2024-09-Using-Lombok-Wisely/banner-lombok.webp
+excerpt_image: /assets/images/posts/2024-10-Using-Lombok-Wisely/banner-lombok.webp
 categories: [Programming]
 tags: [Java, Lombok, Software Team Management]
 redirect_from: "/24/9/Risks-Of-Using-Lombok"
@@ -31,7 +31,7 @@ Sometimes, this compromise works well; `@EqualsAndHashCode`, can help avoid mist
 
 Other times, visual simplicity might come at the expense of better design. If `@AllArgsConstructor` is used just for the concise visible code it provides, a validator can be missed as shown in the pseudocode below.
 
-{%- include image.html url="/assets/images/posts/2024-09-Using-Lombok-Wisely/AllArgsConstructor_pseudo_sample.png" description="@AllArgsConstructor looks better, but is missing a validation" -%}
+{%- include image.html url="/assets/images/posts/2024-10-Using-Lombok-Wisely/AllArgsConstructor_pseudo_sample.webp" description="@AllArgsConstructor looks better, but is missing a validation" -%}
 
 
 In some cases, visible code can help with reflecting on design decisions or applying new Java features. This is similar to how explaining code to a rubber duck can be helpful - out of sight can lead to out of mind. Though not every annotation needs this.
@@ -66,7 +66,9 @@ By the time of writing this article, native withers for records are in developme
 
 For builders: Named arguments like in Kotlin probably won't come to Java, but Project Valhalla's [value classes](https://openjdk.org/jeps/401) will promote domain driven design solutions (less primitive obsession), allowing for safer to constructors, which reduces the need for builders - perhaps a topic for another article.
 
-If these features are present by the time you're reading, consider using them. (By now, most developers already prefer records over `@Value`, therefore I won't get into records here).
+If these features are present by the time you're reading, consider using them. 
+
+Besides that, record classes are making `@Value`, `@Getter`, etc. redundant, while bringing new semantics and new possibilities to software design.   
 
 
 ## Final thoughts
