@@ -20,7 +20,7 @@ Questions in this article may help to reflect on these factors.
 
 Lombok generates and hides potentially repetitive code. Since code generating tools cannot introduce new semantics or paradigms to the language, the design of the project cannot (and shouldn't) change by using them.
 
-Whether Lombok can be considered a language extension depends on the perspective; it brings visible syntax changes, but the actual capabilities and paradigms of the language does not.
+Whether Lombok can be considered a language extension depends on the perspective; it brings visible syntax changes, but the actual capabilities of the language remains the same.
 
 
 ## Is the improvement mainly visual?
@@ -63,11 +63,18 @@ In such cases, it is a good idea to test these tools against potential interfere
 
 ## Did we consider native Java features instead of `@Builder`, `@With`, etc.?
 
+(At this point I )
+
 By the time of writing this article, native withers for records are in development: [JEP-468](https://openjdk.org/jeps/468).
 
 For builders: Named arguments like in Kotlin probably won't come to Java, but Project Valhalla's [value classes](https://openjdk.org/jeps/401) will promote domain driven design solutions (less primitive obsession), allowing for safer to constructors, which reduces the need for builders - perhaps a topic for another article.
 
 If these features are present by the time you're reading, consider using them. 
+
+
+## Are we using records effectively?
+
+Record classes are not introduced provide a concise syntax or as an answer to `@Value`, `@Getter` etc. They are new semantics and provide  
 
 Besides that, record classes are making `@Value`, `@Getter`, etc. redundant, while bringing new semantics, and new possibilities to software design.   
 
