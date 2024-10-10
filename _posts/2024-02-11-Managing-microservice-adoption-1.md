@@ -1,5 +1,6 @@
 ---
 title: "Managing microservices adoption - Part 1"
+published: false
 excerpt_text: "Here are some management practices for improving microservices adoption and avoiding pitfalls"
 excerpt_image: "/assets/images/posts/2024-02-11-Managing-microservice-adoption-1/growtika-ZfVyuV8l7WU-unsplash-1.webp"
 excerpt_image_copyright: 'Picture by unsplash.com/@growtika'

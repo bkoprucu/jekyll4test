@@ -3,7 +3,8 @@ title: "Avoiding missing signal on container shutdown"
 excerpt_image: assets/images/posts/2024-01-06-Avoiding-Missing-Signal-On-Container-Shutdown/Shipwreck_Concept_c.webp
 excerpt_image_copyright: 'Rust concept art'
 seo_enabled: true
-excerpt_text: "Missing 'exec' command on dockerfile / shell script may cause the containerized process to miss the SIGTERM signal"
+description: "Importance of using exec in Dockerfile"
+excerpt_text: "Missing 'exec' command in Dockerfile / shell script may cause the containerized process to miss the SIGTERM signal"
 categories: [DevOps]
 tags: [Kubernetes, Docker, DevOps, Java, Spring Boot]
 ---
@@ -14,7 +15,7 @@ Missing 'exec' command on dockerfile / shell script may cause the containerized 
 
 This will cause the process being stopped with the SIGKILL signal, without properly releasing the resources, potentially leaving the system in an inconsistent state.
 
-To demonstrate this, we use the snippet below, which waits for a termination signal and triggers a shutdown hook before exiting: 
+The example below will demonstrate this. It waits for a termination signal and triggers a shutdown hook before exiting:
 
 ```java
 public static void main(String[] args) {
@@ -39,7 +40,7 @@ We will run this using a shell script:
 java -jar app.jar
 ```
 
-...and Dockerfile: 
+...and a Dockerfile: 
 
 ```dockerfile
 FROM azul/zulu-openjdk-alpine:17-jre
@@ -50,7 +51,7 @@ COPY docker-entrypoint.sh .
 ENTRYPOINT ["./docker-entrypoint.sh"]
 ```
 
-We run the container. Note that the PID is not 1. 
+Running the container shows that the PID is not 1: 
 
 ```console
 $ docker build -t shutdowndemo .
@@ -59,14 +60,14 @@ $ docker run --name demo shutdowndemo
 PID: 5
 ```
 
-No "Clean shutdown" message is written, when stopping the container: 
+No "Clean shutdown" message when container is stopped: 
 
 ```console
 $ docker stop demo
 $ _
 ```
 
-The reason is that instead of our program, the shell script `docker-entrypoint.sh` has been assigned to PID 1, which received the SIGTERM signal from Docker.
+The reason for that is, instead of our program, the shell script `docker-entrypoint.sh` has been assigned to PID 1, which received the SIGTERM signal from the container manager.
 
 Executing `cat /proc/1/cmdline` in the container confirms this (`ps` command is missing in the container):
 
@@ -75,7 +76,7 @@ $ docker exec demo cat /proc/1/cmdline
 /bin/sh./docker-entrypoint.sh
 ```
 
-Container manager stops the container by sending a SIGKILL signal, after a timeout.
+After a timeout, container manager stops the container by sending a SIGKILL signal.
 Since the application starts successfully, the problem may go unnoticed.
 
 ## Fixing with `exec`

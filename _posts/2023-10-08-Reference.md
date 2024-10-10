@@ -3,6 +3,7 @@ author: "Berk Koprucu"
 title: "Variable reference"
 subtitle: "List of front matter variables"
 excerpt_text: "Front matter reference" # Custom excerpt text
+description: "Seo description"
 #seo_enabled: true # Force seo for hidden page
 #excerpt_image: /assets/images/test/diagram_1.png
 #banner: /assets/images/test/berk_logo_funny.png
@@ -12,6 +13,7 @@ categories: [Other]
 tags: []
 hide: [related, navigator] # Can be header, navigator, related, comments. Implementation in post.html
 hidden: true # Hide from listing
+published: false
 permalink: "/reference.html"  # Custom url
 sidebar: [article-menu] # about-box, article-menu, category-list, tag-list, archive-list
 ---
