@@ -24,8 +24,9 @@
     <script src="/assets/js/sharelink.js"></script>
     {%- include extensions/code-highlight.html -%}
     {%- include extensions/photo-swipe.html -%}
-  {%- else if page.layout == 'about' -%}
-      {%- include extensions/photo-swipe.html -%}
+  {%- endif %}
+  {%- if page.layout == 'about' -%}
+    {%- include extensions/photo-swipe.html -%}
   {%- endif %}
 
   {%- include custom-head.html -%}
