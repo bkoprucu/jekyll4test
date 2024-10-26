@@ -9,6 +9,8 @@ tags: [Java, Lombok, Software Team Management]
 redirect_from: "/24/9/Risks-Of-Using-Lombok"
 ---
 
+Should you use Lombok? If yes, to which extent?
+
 Like any tool, Lombok can be useful or misused. Misuse of it is probably what makes Lombok polarizing.
 
 Usefulness of it depends on factors like project requirements, which Lombok annotations are being used etc.
