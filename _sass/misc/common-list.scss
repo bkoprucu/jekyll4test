@@ -23,7 +23,7 @@
       color: #777;
       transition: color,background-color .2s;
       &:hover {
-        background-color: mix($theme-color, #eaeaea, 20%);
+        background-color: color.mix($theme-color, #eaeaea, 20%);
         color: #000;
       }
     }
