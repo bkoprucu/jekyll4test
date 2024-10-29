@@ -42,7 +42,7 @@ Place the pan handle in a way that it blocks the switch:
 {%- include image.html url="/assets/images/posts/cat-sitting/stove.webp" description="Handle blocking the switch" height="350px" -%}
 
 
-### Being Locked Outside
+### Being locked outside
 
 Don't close the kitchen window when they're outside.
 
@@ -52,9 +52,9 @@ If they're home, close the windows.
 
 ### Kitchen sponge
 
-Kucuk chews it. After use, leave it in the small sink.
+Küçük chews it. After use, leave it in the small sink.
 
-## Letting Them Out
+## Letting them out
 
 If you let them out, they'll show up after some time by the window. Keep the kitchen window open, they will come back.
 
@@ -69,7 +69,7 @@ Adjust the lever, to make sure window won't be closed by a drift:
 
 You can close the kitchen door, but leave a small gap so they can push it open when they return.
 
-![door](/assets/images/posts/cat-sitting/door.jpeg)
+{%- include image.html url="/assets/images/posts/cat-sitting/door.jpeg" height="400px" description="The gap allows them to open the door" -%}
 
 
 You may let them out (open the kitchen window as instructed above, and making sure they have their collars on) before going to sleep.
@@ -129,7 +129,7 @@ I crushed Pamuks' pills and put their dust in little glasses, as shown in the pi
 
 Once in three days, I'll remind you to pour one glass on his wet food.
 
-## Litter Box
+## Litter box
 - There should not be more than 3 centimeters litter in the box.
 - There is a bottom tray and meshed container on top, which lets the pee flow to the bottom tray.
 - For couple days no cleaning is usually needed. You may take the turd from top with the shovel and stir the litter a bit.
@@ -138,9 +138,9 @@ Once in three days, I'll remind you to pour one glass on his wet food.
 
 ## Brushing
 
-To keep the flea away, I'm brushing them once a day, instead of using flea drops, which has been detrimental to their health.
+Flea drops have been bad for their health. Instead, I'm brushing them daily, especially Pamuk, who goes out often.
 
-The brush is by the TV. 
+The brush is by the TV.  
 
 They, especially Kucuk, will demand it, but Pamuk needs it more. 
 
@@ -150,7 +150,7 @@ They, especially Kucuk, will demand it, but Pamuk needs it more.
 ### Wifi
 BR_5 / XXXXX (Ask me)
 
-### Laundry Room
+### Laundry room
 Rule: You have to take the room in one hour after booking time, otherwise the booking will be dropped.
 
 Use following address to book it:
@@ -159,7 +159,7 @@ Use following address to book it:
 Username: 01551050<br>
 Password: XXXX (ask me)<br>
 
-You should book T26A or T32A.
+You can book T26A or T32A.
 
 You can use the Ikea bags in the wardrobe, I use them to carry clean laundry. For dirty, I use the gray box in the bathroom.
 
@@ -172,13 +172,14 @@ Use the top buttons on the remote to turn on / off the reading light in main roo
 All the other lights have three stages brightness. Turn off - on to switch between brightness levels.
 
 
-### Dishwasher Soap
+### Dishwasher soap
 
 Dishwasher soap is in the cabinet, on the left side of vacuum.<br>
 - **The package doesn't melt in the dishwasher, you'll have to open it**
 - **Soap box emits toxic gas. so keep the box in its cabinet**
 
 ![](/assets/images/posts/cat-sitting/dishwasher_soap.jpeg)
+
 
 
 **Please keep me informed with a daily message. Thank you!** 
