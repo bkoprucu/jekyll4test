@@ -8,9 +8,6 @@ permalink: "/other/cats/sitting.html"
 sidebar: [article-menu]
 ---
 
-Here is quick info for how to take care of Pamuk and Kucuk:
-
-
 ### Pamuk
 ![Pamuk](/assets/images/posts/cat-sitting/pamuk.webp)
 
@@ -21,9 +18,7 @@ Male. Aware of everything. Only likes to be petted by me. Likes to eat, and go o
 
 Female, shy but talkative. Never gets aggressive. Likes eating kibble, affection, getting brushed.
 
-
-## Dangers
- 
+## Dangers 
 
 ### Blankets
 
@@ -139,7 +134,7 @@ Once in three days, I'll remind you to pour one glass on his wet food.
 
 Flea drops have been bad for their health. Instead, I'm brushing them daily, especially Pamuk, who goes out often.
 
-The brush is by the TV.  
+The brush is by the TV.
 
 They, especially Kucuk, will demand it, but Pamuk needs it more. 
 
