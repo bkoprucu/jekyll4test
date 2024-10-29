@@ -1,6 +1,5 @@
 ---
-title: "Taking Care of Pamuk and Küçük"
-subtitle: "Tips For Taking Care of Pamuk and Küçük"
+title: "Taking care of Pamuk and Küçük"
 categories: [Other]
 tags: [Cats]
 hide: [related, comments, navigator, share]
@@ -175,8 +174,8 @@ All the other lights have three stages brightness. Turn off - on to switch betwe
 ### Dishwasher soap
 
 Dishwasher soap is in the cabinet, on the left side of vacuum.<br>
-- **The package doesn't melt in the dishwasher, you'll have to open it**
-- **Soap box emits toxic gas. so keep the box in its cabinet**
+- The package doesn't melt in the dishwasher, you'll have to open it.
+- Soap box emits toxic gas. so keep the box in its cabinet.
 
 ![](/assets/images/posts/cat-sitting/dishwasher_soap.jpeg)
 
