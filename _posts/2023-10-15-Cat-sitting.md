@@ -40,7 +40,7 @@ Place the pan handle in a way that it blocks the switch:
 
 Don't close the kitchen window when they're outside.
 
-If you're leaving home, if they're outside, make sure to leave the window open as shown at [Letting Out](#letting-out) section.
+If you're leaving home, if they're outside, make sure to leave the window open as shown at [Letting Out](#letting-them-out) section.
 
 If they're home, close the windows.
 
@@ -119,7 +119,7 @@ Kucuk may demand more food during the day. You may give her a little. If Pamuk i
 
 I crushed Pamuks' pills and put their dust in little glasses, as shown in the picture below:
 
-{%- include image.html url="/assets/images/posts/cat-sitting/pamuk_medicine_glasses.jpg" description="Each glass contains medicine for two days" -%}
+{%- include image.html url="/assets/images/posts/cat-sitting/pamuk_medicine_glasses.webp" description="Each glass contains medicine for two days" -%}
 
 Once in three days, I'll remind you to pour one glass on his wet food.
 
