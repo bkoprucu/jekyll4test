@@ -2,7 +2,7 @@
 title: "Using Lombok wisely: Questions to consider"
 seo_enabled: true
 description: "Risks of using Lombok"
-excerpt_text: "Like any tool, Lombok can be useful or misused. Misuse of it is probably what makes Lombok polarizing..."
+excerpt_text: "Should you use Lombok? If yes, to which extend? Like any tool, Lombok can be useful or misused. Misuse of it is probably what makes Lombok polarizing..."
 excerpt_image: /assets/images/posts/2024-10-Using-Lombok-Wisely/banner-lombok.webp
 categories: [Programming]
 tags: [Java, Lombok, Software Team Management]
@@ -74,8 +74,14 @@ If these features are present by the time you're reading, consider using them.
 Also, consider using records, instead of `@Value` and similar annotations, not only to reduce boilerplate, but to take advantage of the new semantics they introduce, which allows for pattern matching, decomposition and more.
 
 
-## Final thoughts
+## Conclusion - Remembering business needs and where Java stands
 
-Not using Lombok won't improve the design, but misusing or overusing it won't boost productivity.
+When choosing development tools and libraries, we must consider the needs of the business, maintenance costs, security implications, and architectural impact. We shouldn't let the satisfaction of writing concise code or using smart abstractions take precedence over these factors.
+
+This applies to tools like Lombok, as well as the choice of programming languages.
+
+We should also remember that Java was designed for improving industrial application development in teams, by addressing the challenges they were facing with programming languages like C++ at the time. To achieve this, some features found in other languages were intentionally omitted, and some verbosity is introduced. This philosophy continues to guide the platform today.
+
+Not using Lombok won't improve the design, but misusing or overusing it can hinder productivity and manageability.
 
 I hope this article can help with finding the right balance for your team and project.
