@@ -66,15 +66,15 @@ To retain the focus of the article, we'll skip other scenarios.
 
 In the early, monolithic stages of system, sharing reusable code by introducing a library can improve productivity and consistency.
 
-When applied to a microservices architecture, these libraries tend to become shared tight coupling points between services, compromising team autonomy.
+When applied to a microservices architecture, these libraries tend to become a common coupling points between services, compromising team autonomy.
 
 {%- include image.html url="/assets/images/posts/2025-01-05-Microservices-Challenges-1/kelly-ziesenis-carter-unsplash-cropped.webp" description="Your library without a clear owner may become a problem" title="Photo by Kelly Ziesenis Carter" -%}
 
 > Clear ownership of services is crucial when establishing microservices.
 
-Over time, with multiple teams making changes, ownership of libraries may become ambiguous. To avoid disrupting other teams work, developers may avoid modifying existing code, opting only to add new ones, leading to a bloated codebase.
+Over time, with multiple teams making changes, ownership of libraries may become ambiguous. To avoid disrupting other teams work, developers may choose not to modify existing code, only add new ones, which leads to a bloated codebase.
 
-On top of that, transient dependencies of libraries may lead to dependency conflicts, getting in the way of upgrades and adoption of different technologies. Constantly adding new code but never removing it also retains old transient dependencies grows the problem over time.  
+On top of that, transient dependencies of libraries may lead to dependency conflicts, getting in the way of upgrades and adoption of different technologies. Constantly adding new code, but never removing it accumulates old dependencies, which grows the issue further.  
 
 This can also complicate working with external providers; should they depend on the library, or should the library adapt to their API changes over time?
 
