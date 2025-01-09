@@ -38,7 +38,7 @@ Let's remember;
 
 Here are few scenarios where using microservices might not be optimal.
 
-{%- include image.html url="/assets/images/posts/2025-01-05-Microservices-Challenges-1/monolith_space_odyssey.webp" description="Sometimes, embracing a monolith lets you rest easy" title="Sometimes, embracing a monolith lets you rest easy" height="320px" -%}
+{%- include image.html url="/assets/images/posts/2025-01-05-Microservices-Challenges-1/monolith_space_odyssey_c.webp" description="Sometimes, embracing a monolith lets you rest easy" title="Sometimes, embracing a monolith lets you rest easy" height="320px" -%}
 
 - #### Requirements and API are not yet stable
 **Microservices provide flexibility in many areas, but not when it comes to API.**
