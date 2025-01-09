@@ -15,10 +15,6 @@ We’ll explore some challenges on establishing microservices, focusing on commo
 
 Drawn for years of experience, handling of these challenges will bring significant benefits, as I've observed in systems adopting them. You may have dealt with some of them.
 
-To retain the focus, I'll not dive deep into technical details, or analyze all the solutions and cases, rather provide a perspective for the  specific challenge your organization might be facing.
-
-We'll start by remembering the main purpose of microservices, and continue with the challenges.  
-
 
 ## The main reason to use microservices
 
