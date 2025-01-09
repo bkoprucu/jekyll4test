@@ -1,9 +1,9 @@
 ---
-title: "Microservices Challenges: Balancing Costs and Benefits – Part 1"
+title: "Microservices Challenges: Balancing Costs and Benefits – 1"
 published: true
 seo_enabled: true
 description: "Discover key challenges in microservices adoption, from API evolution to team autonomy, and learn strategies to balance costs and benefits effectively."
-excerpt_text: "We’ll explore some challenges on establishing microservices, focusing on common, yet less mentioned problems faced by organizations"
+excerpt_text: "I'll highlight some common challenges in establishing microservices. From my observations, addressing these early "
 excerpt_image: "/assets/images/posts/2025-01-05-Microservices-Challenges-1/growtika-ZfVyuV8l7WU-unsplash-1.webp"
 excerpt_image_copyright: 'Picture by unsplash.com/@growtika'
 categories: [Engineering Management, Software Architecture]
@@ -11,10 +11,9 @@ tags: [Microservices, API Strategy, Software Team Management]
 hidden: false
 ---
 
-We’ll explore some challenges on establishing microservices, focusing on common, yet less mentioned problems faced by organizations.
+I'll highlight some common challenges in establishing microservices. From my observations, addressing these early can yield significant benefits.
 
-Drawn for years of experience, handling of these challenges will bring significant benefits, as I've observed in systems adopting them. You may have dealt with some of them.
-
+We'll begin by revisiting the main purpose of microservices and continue with the challenges.
 
 ## The main reason to use microservices
 
