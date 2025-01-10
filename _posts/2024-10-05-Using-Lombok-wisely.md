@@ -4,8 +4,8 @@ seo_enabled: true
 description: "Risks of using Lombok"
 excerpt_text: "Should you use Lombok? If yes, to which extend? Like any tool, Lombok can be useful or misused. Misuse of it is probably what makes Lombok polarizing..."
 excerpt_image: /assets/images/posts/2024-10-Using-Lombok-Wisely/banner-lombok.webp
-categories: [Programming]
-tags: [Java, Lombok, Software Team Management]
+categories: [Engineering Management, Programming]
+tags: [Java, Lombok]
 redirect_from: "/24/9/Risks-Of-Using-Lombok"
 ---
 
