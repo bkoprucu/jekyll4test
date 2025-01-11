@@ -1,5 +1,5 @@
 ---
-title: "Microservices Challenges: Balancing Costs and Benefits – 1"
+title: "Microservices challenges: Balancing costs and benefits – 1"
 published: true
 seo_enabled: true
 description: "Common challenges in microservices adoption - Part1: Microservices vs. monolith, shared libraries and microservices"
